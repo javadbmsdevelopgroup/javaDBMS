@@ -7,7 +7,7 @@ import java.io.*;
  * @author Michael Huang
  *
  */
-public class ChatClient {
+public class SocketClient {
     Socket s = null;
     DataOutputStream dos = null;
     DataInputStream dis = null;
