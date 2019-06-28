@@ -33,8 +33,8 @@ public class ClientListener {
         // dis=new DataInputStream(this.server.);
 
         //创建新的接受线程
-        tRecv=new Thread(()->{
-            try {
+        tRecv=new Thread(
+                ()->{ try {
                 while (connect) {
                     System.out.println("listen " +client.getLocalSocketAddress()+":"+client.getRemoteSocketAddress());
                     BufferedReader br=new BufferedReader(new InputStreamReader(client.getInputStream()));
@@ -54,8 +54,13 @@ public class ClientListener {
                 server.notifyDeleteClient(client,this);
                 connect=false;
             }
-
         });
         tRecv.start();
     }
+
+
+
+
+
+
 }

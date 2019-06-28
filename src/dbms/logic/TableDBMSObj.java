@@ -1,14 +1,13 @@
-package dbms;
+package dbms.logic;
 
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import java.io.*;
 
-import java.io.File;
-import java.io.IOException;
 /////////////////////////////表逻辑对象
 public class TableDBMSObj extends BaseDBMSObject{
     String tbName="";
     DatabaseDBMSObj dbBelongedTo=null;
-    public TableDBMSObj(String name,DatabaseDBMSObj db) throws IOException{
+    TableStructure tableStructure=null;
+    public TableDBMSObj(String name,DatabaseDBMSObj db) throws IOException,ClassNotFoundException{
         File f=new File(db.rootPath+"\\"+tbName) ;
         if(!f.exists()) throw new IOException("Database Not Found");
         //System.out.println(name);
@@ -18,6 +17,13 @@ public class TableDBMSObj extends BaseDBMSObject{
         f=new File(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs") ;
         //System.out.println(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs");
         if(!f.exists()) throw new IOException("Table Structure File Not Found!");
+
+        //读取表结构
+        FileInputStream fis=new FileInputStream(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs");
+        ObjectInputStream ois=new ObjectInputStream(fis);
+        tableStructure=(TableStructure)ois.readObject();
+        fis.close();
+        ois.close();
     }
     @Override
     public String getType(){

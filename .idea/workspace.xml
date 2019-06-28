@@ -2,18 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dbms/BaseIntergrityConstraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/IIntergrityConstraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/IntergrityConstraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/NoNULLConstain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/RelationItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/TableStructure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/TableStructureItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TableBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbms/logic/DataType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableDBMSObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableDBMSObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/BaseDBMSObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/BaseDBMSObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/DatabaseDBMSObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/DatabaseDBMSObj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TableDBMSObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableDBMSObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/a.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/a.tbs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/BaseDBMSObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/DatabaseDBMSObj.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IDBSObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableDBMSObj.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/ClientListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/ClientListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/BaseDBMSObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/BaseDBMSObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/BaseIntergrityConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/BaseIntergrityConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/DatabaseDBMSObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/IIntergrityConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/IIntergrityConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/IntergrityConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/IntergrityConstraint.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/NoNULLConstain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/NoNULLConstain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableDBMSObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableStructureItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/ClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/ClientListener.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,20 +36,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/event/ServerMessageIn.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
+            <state relative-caret-position="445">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#210#211#0" expanded="true" />
+                <element signature="e#236#237#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/ClientListener.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/IIntergrityConstraint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
-              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,43 +72,55 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/TableStructure.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/TableStructureItem.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/IntergrityConstraint.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/IntergrityConstraint.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+              <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/dbms/NoNULLConstain.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/NoNULLConstain.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/BaseDBMSObject.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="549">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -119,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/network/event/ClientInEvent.java" />
         <option value="$PROJECT_DIR$/src/network/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/network/SocketClient.java" />
-        <option value="$PROJECT_DIR$/src/network/ClientListener.java" />
         <option value="$PROJECT_DIR$/src/filesystem/PropertiesFileTool.java" />
         <option value="$PROJECT_DIR$/src/filesystem/Database.java" />
         <option value="$PROJECT_DIR$/src/dbms/DBMSObject.java" />
@@ -129,11 +163,23 @@
         <option value="$PROJECT_DIR$/src/dbms/TableDBMSObj.java" />
         <option value="$PROJECT_DIR$/src/dbms/BaseIntergrityConstraint.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableStructure.java" />
-        <option value="$PROJECT_DIR$/src/dbms/TableStructureItem.java" />
         <option value="$PROJECT_DIR$/src/dbms/IIntergrityConstraint.java" />
         <option value="$PROJECT_DIR$/src/dbms/IntergrityConstraint.java" />
         <option value="$PROJECT_DIR$/src/dbms/RelationItem.java" />
         <option value="$PROJECT_DIR$/src/dbms/NoNULLConstain.java" />
+        <option value="$PROJECT_DIR$/src/dbms/TableStructureItem.java" />
+        <option value="$PROJECT_DIR$/src/network/ClientListener.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/BaseDBMSObject.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/DataType.java" />
+        <option value="$PROJECT_DIR$/src/TableBuilder.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/IntergrityConstraint.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/IIntergrityConstraint.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/NoNULLConstain.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" />
       </list>
     </option>
   </component>
@@ -148,6 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,6 +215,12 @@
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="DB" type="462c0819:PsiDirectoryNode" />
+              <item name="studentDB" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -180,20 +233,14 @@
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="filesystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="dbms" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,13 +267,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.DatabaseDBMSObj">
+  <component name="RunManager" selected="Application.TableBuilder">
     <configuration name="B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dbms.B" />
       <module name="javaDBMS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dbms.*" />
+          <option name="PATTERN" value="dbms.logic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -239,7 +286,7 @@
       <module name="javaDBMS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dbms.*" />
+          <option name="PATTERN" value="dbms.logic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -248,11 +295,11 @@
       </method>
     </configuration>
     <configuration name="DatabaseDBMSObj" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="dbms.DatabaseDBMSObj" />
+      <option name="MAIN_CLASS_NAME" value="dbms.logic.DatabaseDBMSObj" />
       <module name="javaDBMS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dbms.*" />
+          <option name="PATTERN" value="dbms.logic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -260,39 +307,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SocketClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="network.SocketClient" />
+    <configuration name="TableBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TableBuilder" />
       <module name="javaDBMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="network.event.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SocketServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="network.SocketServer" />
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="javaDBMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="network.event.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TableBuilder" />
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.DatabaseDBMSObj" />
         <item itemvalue="Application.Database" />
         <item itemvalue="Application.B" />
-        <item itemvalue="Application.SocketServer" />
-        <item itemvalue="Application.SocketClient" />
       </list>
     </recent_temporary>
   </component>
@@ -312,18 +347,19 @@
       <workItem from="1561610360160" duration="2368000" />
       <workItem from="1561679293244" duration="191000" />
       <workItem from="1561679623911" duration="29000" />
-      <workItem from="1561679806380" duration="6126000" />
+      <workItem from="1561679806380" duration="7165000" />
+      <workItem from="1561694091524" duration="8432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24535000" />
+    <option name="totallyTimeSpent" value="34006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -332,7 +368,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.25568798" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25568798" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -409,49 +445,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/DBMSObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#main#0;class#Database#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#close#0;class#SocketServer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/DBMSObject.java" />
+    <entry file="file://$PROJECT_DIR$/src/dbms/Database.java" />
     <entry file="file://$PROJECT_DIR$/src/network/event/ClientLeaveEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="8" column="47" selection-start-line="8" selection-start-column="47" selection-end-line="8" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="165" column="29" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
-          <folding>
-            <element signature="method#beginRec#0;class#SocketClient#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -462,88 +461,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/ClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/BaseDBMSObject.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/DatabaseDBMSObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableDBMSObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#529#530#0" expanded="true" />
-            <element signature="e#557#558#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/event/ServerMessageIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/BaseIntergrityConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="52" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableStructureItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/IIntergrityConstraint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/network/event/IThreeArugumentEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -551,10 +468,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/IntergrityConstraint.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic.java" />
+    <entry file="file://$PROJECT_DIR$/src/network/event/ServerMessageIn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="50" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+        <state relative-caret-position="240">
+          <caret line="8" column="96" selection-start-line="8" selection-start-column="96" selection-end-line="8" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/ClientListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="61" column="4" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#967#1721#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="40" column="34" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding>
+            <element signature="e#120#121#0" expanded="true" />
+            <element signature="e#137#138#0" expanded="true" />
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SocketServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1585">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#close#0;class#SocketServer#0" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -562,17 +517,120 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3778">
+          <caret line="165" column="29" selection-start-line="165" selection-start-column="29" selection-end-line="165" selection-end-column="29" />
           <folding>
-            <element signature="e#78#79#0" expanded="true" />
-            <element signature="e#105#106#0" expanded="true" />
+            <element signature="method#beginRec#0;class#SocketClient#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/NoNULLConstain.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/BaseDBMSObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/BaseIntergrityConstraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="1" lean-forward="true" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/DataType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/ObjectOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7870">
+          <caret line="1183" column="26" selection-start-line="1183" selection-start-column="26" selection-end-line="1183" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/IIntergrityConstraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/NoNULLConstain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+          <caret line="6" column="74" selection-start-line="6" selection-start-column="74" selection-end-line="6" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/IntergrityConstraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="7" column="90" selection-start-line="7" selection-start-column="90" selection-end-line="7" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#210#211#0" expanded="true" />
+            <element signature="e#236#237#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

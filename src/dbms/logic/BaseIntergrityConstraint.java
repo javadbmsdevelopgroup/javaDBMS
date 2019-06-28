@@ -1,4 +1,6 @@
-package dbms;
+package dbms.logic;
+
+import dbms.RelationItem;
 
 /////完整性约束基类
 public  abstract class BaseIntergrityConstraint{

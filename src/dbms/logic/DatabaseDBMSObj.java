@@ -1,13 +1,12 @@
 /*数据库逻辑对象*/
-package dbms;
-import javafx.scene.control.Tab;
+package dbms.logic;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 public class DatabaseDBMSObj extends BaseDBMSObject{
     public String dbName="";
-    public String rootPath="";
+    public static String rootPath="C:\\Users\\akb\\Desktop\\java\\javaDBMS\\DB";
     public DatabaseDBMSObj(String dbName,String rootPath){
         this.dbName=dbName;
         this.rootPath=rootPath;
@@ -23,6 +22,8 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
             tdos.add(new TableDBMSObj(f.getName(),this));
             }catch (IOException ioe){
                 ioe.printStackTrace();
+            }catch (ClassNotFoundException c){
+                c.printStackTrace();
             }
         }
 
