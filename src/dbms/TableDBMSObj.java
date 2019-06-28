@@ -4,7 +4,7 @@ import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.File;
 import java.io.IOException;
-
+/////////////////////////////表逻辑对象
 public class TableDBMSObj extends BaseDBMSObject{
     String tbName="";
     DatabaseDBMSObj dbBelongedTo=null;

@@ -1,13 +1,10 @@
+/*数据库逻辑对象*/
 package dbms;
-
-
 import javafx.scene.control.Tab;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 public class DatabaseDBMSObj extends BaseDBMSObject{
     public String dbName="";
     public String rootPath="";

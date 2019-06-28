@@ -1,5 +1,5 @@
 package dbms;
-//数据库管理系统对象，包含表对象、数据库对象、视图对象等
+//数据库管理系统对象基类，包含表对象、数据库对象、视图对象等
 interface IDBSObject{
     public String getType();
     public boolean create();
