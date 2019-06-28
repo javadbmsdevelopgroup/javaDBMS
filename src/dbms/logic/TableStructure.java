@@ -7,7 +7,7 @@ import java.util.List;
 
 ////////////////////表结构
 public class TableStructure implements Serializable {
-    List<TableStructureItem> dts=new ArrayList<>();  //表结构项对象
+    public List<TableStructureItem> dts=new ArrayList<>();  //表结构项对象
     public void addItem(TableStructureItem a){
         dts.add(a);
     }

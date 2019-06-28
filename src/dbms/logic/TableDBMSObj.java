@@ -4,9 +4,13 @@ import java.io.*;
 
 /////////////////////////////表逻辑对象
 public class TableDBMSObj extends BaseDBMSObject{
-    String tbName="";
-    DatabaseDBMSObj dbBelongedTo=null;
-    TableStructure tableStructure=null;
+    public String tbName="";
+    public DatabaseDBMSObj dbBelongedTo=null;
+    public TableStructure tableStructure=null;
+    //索引
+    public boolean useIndex=false;
+
+
     public TableDBMSObj(String name,DatabaseDBMSObj db) throws IOException,ClassNotFoundException{
         File f=new File(db.rootPath+"\\"+tbName) ;
         if(!f.exists()) throw new IOException("Database Not Found");

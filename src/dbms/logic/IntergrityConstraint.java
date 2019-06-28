@@ -1,6 +1,6 @@
 package dbms.logic;
 
-import dbms.RelationItem;
+import dbms.RelationSItem;
 
 import java.io.Serializable;
 
@@ -14,7 +14,7 @@ public class IntergrityConstraint extends BaseIntergrityConstraint implements Se
     }
 
     @Override
-    public boolean check(RelationItem ri){
+    public boolean check(RelationSItem ri){
         if(constranitMethod==null) return false;
         return constranitMethod.check(tbs,ri);
     }

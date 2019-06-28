@@ -1,7 +1,8 @@
 package dbms.logic;
 
-import dbms.RelationItem;
+import dbms.RelationSItem;
 
 public interface IIntergrityConstraint {
-    boolean check(TableStructureItem tbs, RelationItem ri);
+    //参数为 一个表属性，关系项
+    boolean check(TableStructureItem tbs, RelationSItem ri);
 }
