@@ -8,8 +8,12 @@ public class TablePage {
     RelationRow[] records=null;  //页内记录
     public TableDBMSObj tableDBMSObj=null;
     private int recordSize=-1;
+    private int pageNum=-1;
     public int getPageSize(){
         return  pageSize;
+    }
+    public int getPageNum(){
+        return pageNum;
     }
     public TablePage(TableDBMSObj tableDBMSObj, int pageSize){
         this.pageSize=pageSize;
