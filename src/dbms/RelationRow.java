@@ -1,5 +1,6 @@
 package dbms;
 
+import dbms.exceptions.ConlumNameNotFound;
 import dbms.logic.IntergrityConstraint;
 import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructure;
@@ -20,7 +21,26 @@ public class RelationRow {
             sis.add(new RelationSItem(item.type));
         }
     }
+    @Override
+    public String toString(){
+        String str="[";
+        for(RelationSItem ris:sis){
+            str+=ris.elementObj.val.toString()+" , ";
+        }
+        str+="]";
+        return str;
 
+    }
+    public boolean setVal(String conlumName,Object val) {
+        for(int i=0;i<tbs.dts.size();i++){
+            if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
+                sis.get(i).elementObj.setVal(val);
+                return true;
+            }
+        }
+        //throw new ConlumNameNotFound("Conlum Name '"+conlumName+"' Not Found!");
+        return false;
+    }
     public boolean checkIntegrity(){
         for(int i=0;i<sis.size();i++){
            for(IntergrityConstraint ic:tbs.dts.get(i).ics){

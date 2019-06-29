@@ -12,6 +12,10 @@ import java.util.Scanner;
  * @author Michael Huang
  *
  */
+
+
+
+
 public class SocketClient {
     Socket s = null;   //服务器的socket
     DataOutputStream dos = null;
@@ -23,9 +27,15 @@ public class SocketClient {
     Thread tRecv;
 
 
+
+
     public SocketClient(){
 
+
     }
+
+
+
     public SocketClient(Socket s){
         this.s=s;
 

@@ -7,7 +7,7 @@ public class ElementObj {
     public void setNull(){
         valNull=true;
     }
-
+    public boolean isValNull(){return valNull;}
     public ElementObj(DataType dt){
         this.dataType=dt;
     }
@@ -19,5 +19,6 @@ public class ElementObj {
 
     public void setVal(Object val){
         this.val=val;
+        valNull=false;
     }
 }
