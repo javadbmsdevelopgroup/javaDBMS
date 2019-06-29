@@ -25,7 +25,7 @@ public class TableWriter {
                 System.out.println("Write "+relationItems.get(i));
                 for(int j=0;j<relationItems.get(i).sis.size();j++){   //分别写入每项
                     if(!relationItems.get(i).sis.get(j).elementObj.isValNull()){
-                        System.out.println(relationItems.get(i).sis.get(j).elementObj.val);
+                        //System.out.println(relationItems.get(i).sis.get(j).elementObj.val);
                         switch (relationItems.get(i).sis.get(j).elementObj.dataType){
                             case INT32:
                                 int val=((int)relationItems.get(i).sis.get(j).elementObj.val);

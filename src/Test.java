@@ -1,6 +1,10 @@
 ////////////////////////////////////////////////测试专用文件
 
 
+import dbms.TableReader;
+import dbms.logic.DatabaseDBMSObj;
+import dbms.logic.TableDBMSObj;
+
 import java.io.*;
 
 interface I1{
@@ -27,22 +31,13 @@ class C implements I1{
 
 public class Test {
     public static void main(String[] args){
-        B b1=new B(new A(new C()));
-        b1.a1.i.doSomething();
         try{
-        //FileOutputStream fos=new FileOutputStream("obj",true);
-        //ObjectOutputStream oos=new ObjectOutputStream(fos);
-        //oos.writeObject(b1);
-        //fos.close();
-        //oos.close();
-            FileInputStream fis=new FileInputStream("obj");
-            ObjectInputStream ois=new ObjectInputStream(fis);
-            B b2=(B)ois.readObject();
-            b2.a1.i.doSomething();
-            fis.close();
-            ois.close();
+        //创建表逻辑对象
+            TableDBMSObj tableDBMSObj = new TableDBMSObj("student", new DatabaseDBMSObj("studentDB", "C:\\Users\\akb\\Desktop\\java\\javaDBMS\\DB"));
+            System.out.println("TableDBMSObj Create Successful!");
+            TableReader te=new TableReader(tableDBMSObj,20);
         }catch (Exception e){
-
+            e.printStackTrace();
         }
 
     }
