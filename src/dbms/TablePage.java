@@ -15,11 +15,12 @@ public class TablePage {
     public int getPageNum(){
         return pageNum;
     }
-    public TablePage(TableDBMSObj tableDBMSObj, int pageSize){
+    public TablePage(TableDBMSObj tableDBMSObj, int pageSize,int pageNum){
         this.pageSize=pageSize;
         this.tableDBMSObj=tableDBMSObj;
         calcSize();
         records=new RelationRow[pageSize];
+        this.pageNum=pageNum;
     }
     private void calcSize(){
         this.recordSize=tableDBMSObj.tableStructure.getSize();

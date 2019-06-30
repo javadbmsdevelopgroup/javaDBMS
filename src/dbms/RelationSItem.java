@@ -9,7 +9,9 @@ public class RelationSItem {
     public void setNull(){
         elementObj.setNull();
     }
-
+    public Object getVal(){
+        return elementObj.val;
+    }
     public RelationSItem(DataType dt){
         this.elementObj=new ElementObj(dt);
     }

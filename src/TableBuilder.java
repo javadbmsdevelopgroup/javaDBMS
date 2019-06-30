@@ -14,8 +14,12 @@ public class TableBuilder {
     //////////////////////////////创表
     public static void main(String[] args){
         try {
+            //表逻辑对象
+            TableDBMSObj tableDBMSObj_student=new TableDBMSObj("student",new DatabaseDBMSObj("studentDB",DatabaseDBMSObj.rootPath));
+            TableDBMSObj tableDBMSObj_course=new TableDBMSObj("course",new DatabaseDBMSObj("studentDB",DatabaseDBMSObj.rootPath));
+            TableDBMSObj tableDBMSObj_elect=new TableDBMSObj("stuCourse",new DatabaseDBMSObj("studentDB",DatabaseDBMSObj.rootPath));
             //学生表
-            TableStructure tbs_student = new TableStructure();
+            TableStructure tbs_student = new TableStructure(tableDBMSObj_student);
             tbs_student.addItem(new TableStructureItem(DataType.INT32, 4, true, true,tbs_student,"学号"));  //学号
             tbs_student.addItem(new TableStructureItem(DataType.INT32, 4, false, true,tbs_student,"班级"));  //班级
             tbs_student.addItem(new TableStructureItem(DataType.STRING, 10, false, true,tbs_student,"姓名")); //姓名
@@ -23,7 +27,7 @@ public class TableBuilder {
             tbs_student.writeToStructFile("studentDB", "student");
 
             //课程表
-            TableStructure tbs_course = new TableStructure();
+            TableStructure tbs_course = new TableStructure(tableDBMSObj_course);
             tbs_course.addItem(new TableStructureItem(DataType.INT32, 4, true, true,tbs_student,"课程编号"));  //课程编号
             tbs_course.addItem(new TableStructureItem(DataType.STRING, 20, false, true,tbs_student,"课程名称"));  //课程名称
             tbs_course.addItem(new TableStructureItem(DataType.INT32, 4, false, true,tbs_student,"课程容量")); //课程容量
@@ -32,7 +36,7 @@ public class TableBuilder {
             tbs_course.writeToStructFile("studentDB", "course");
 
             //选课信息
-            TableStructure select_course = new TableStructure();
+            TableStructure select_course = new TableStructure(tableDBMSObj_elect);
             select_course.addItem(new TableStructureItem(DataType.INT32, 4, true, true,tbs_student,"学号"));  //学号
             select_course.addItem(new TableStructureItem(DataType.INT32, 4, false, true,tbs_student,"课程编号"));  //课程编号
             select_course.addItem(new TableStructureItem(DataType.STRING, 30, false, true,tbs_student,"课程容量")); //课程容量
@@ -73,6 +77,8 @@ public class TableBuilder {
 
         }catch (IOException e){
             e.printStackTrace();
+        }catch (ClassNotFoundException c){
+            c.printStackTrace();
         }
 
     }

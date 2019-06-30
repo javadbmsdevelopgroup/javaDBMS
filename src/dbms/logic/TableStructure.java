@@ -8,12 +8,17 @@ import java.util.List;
 ////////////////////表结构
 public class TableStructure implements Serializable {
     private int size=0;
-
+    private TableDBMSObj tableDBMSObjBelongedTo=null;
     public List<TableStructureItem> dts=new ArrayList<>();  //表结构项对象
     public void addItem(TableStructureItem a){
         dts.add(a);
     }
-
+    public TableStructure(TableDBMSObj tableDBMSObj){
+        this.tableDBMSObjBelongedTo=tableDBMSObj;
+    }
+    public TableDBMSObj getTableDBMSObjBelongedTo(){
+        return tableDBMSObjBelongedTo;
+    }
     public int getSize(){
         int s=0;
         for (TableStructureItem tsi : dts){

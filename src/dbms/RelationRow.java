@@ -1,8 +1,7 @@
 package dbms;
 
-import dbms.exceptions.ConlumNameNotFound;
-import dbms.logic.IntergrityConstraint;
-import dbms.logic.TableDBMSObj;
+import dbms.logic.ElementObj;
+import dbms.logic.intergrityconstrain.IntergrityConstraint;
 import dbms.logic.TableStructure;
 import dbms.logic.TableStructureItem;
 
@@ -30,6 +29,15 @@ public class RelationRow {
         str+="]";
         return str;
 
+    }
+    public Object getVal(String conlumName){
+        for(int i=0;i<tbs.dts.size();i++){
+            if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
+
+                return sis.get(i).elementObj.val;
+            }
+        }
+        return null;
     }
     public boolean setVal(String conlumName,Object val) {
         for(int i=0;i<tbs.dts.size();i++){
