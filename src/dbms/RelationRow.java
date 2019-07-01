@@ -36,7 +36,6 @@ public class RelationRow implements Comparable<RelationRow>{
     public Object getVal(String conlumName){
         for(int i=0;i<tbs.dts.size();i++){
             if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
-
                 return sis.get(i).elementObj.val;
             }
         }
