@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 ////关系实例
-public class RelationRow {
+public class RelationRow implements Comparable<RelationRow>{
     //未完成
     TableStructure tbs=null;
    // TableDBMSObj tbBelongedTo=null;
-    List<RelationSItem> sis=new ArrayList<>();
+    List<RelationSItem > sis=new ArrayList<>();
     public RelationRow(TableStructure structure){
         tbs=structure;
         for(TableStructureItem item:tbs.dts){
@@ -56,6 +56,23 @@ public class RelationRow {
            }
         }
         return true;
+    }
+
+    @Override
+    public int compareTo(RelationRow r){
+        //单个元素比较
+        if(this.sis.size()<r.sis.size()) return -1;
+        if(this.sis.size()>r.sis.size()) return 1;
+        for(int i=0;i<this.sis.size();i++){
+            if(this.sis.get(i).elementObj.dataType!=r.sis.get(i).elementObj.dataType) return -2;
+            if(this.sis.get(i).elementObj.compareTo(r.sis.get(i).elementObj)==0){
+                continue;
+            }else{
+                if(this.sis.get(i).elementObj.compareTo(r.sis.get(i).elementObj)<0) return -1;
+                else return 1;
+            }
+        }
+        return 0;
     }
 
 

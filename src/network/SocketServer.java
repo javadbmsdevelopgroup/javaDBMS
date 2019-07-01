@@ -9,19 +9,20 @@ import java.net.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+///////////////////////////////////////////////Socket服务器类//////////////////////////////////////////////////
 public class SocketServer {
 
-    private int port=9239;
+    private int port=9239;    //端口
     private ServerSocket server=null;
-    private ITwoArugumentEvent serverMessageIn=null;
-    private ITwoArugumentEvent clientIn=null;
-    private IOneArugumentEvent clientLeave=null;
-    private boolean opened=false;
+    //事件接口
+    private ITwoArugumentEvent serverMessageIn=null;   //服务器信息抵达事件
+    private ITwoArugumentEvent clientIn=null;         //客户端进入事件
+    private IOneArugumentEvent clientLeave=null;       //客户端离开事件
+    private boolean opened=false;                   //连接是否已打开
     private DataInputStream dis=null;
-    private List<SocketClient> clientList=new ArrayList<>();
+    private List<SocketClient> clientList=new ArrayList<>();    //客户端列表
     private Thread tRecv=null;
-    private List<ClientListener> clientListener=new ArrayList<>();
+    private List<ClientListener> clientListener=new ArrayList<>();         //客户端监听器
     private boolean threadflagOpen=false;
     public SocketServer(int port){
         this.port=port;
