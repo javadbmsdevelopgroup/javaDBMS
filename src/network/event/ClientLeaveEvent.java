@@ -2,7 +2,7 @@ package network.event;
 
 import java.net.Socket;
 
-/////客户端离开
+/////客户端离开事件
 public class ClientLeaveEvent implements ITwoArugumentEvent{
     @Override
     public void doEvent(Object client,Object server){

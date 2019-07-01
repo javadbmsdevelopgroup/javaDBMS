@@ -3,15 +3,18 @@ package dbms;
 import dbms.logic.DataType;
 import dbms.logic.ElementObj;
 
+//元组中的某项
 public class RelationSItem {
-    boolean valNull=true;
-    ElementObj elementObj=null;
-    public void setNull(){
+    boolean valNull=true;   //是否为null值
+    ElementObj elementObj=null;   //元素对象
+    public void setNull(){   //设置为null值
         elementObj.setNull();
     }
+    //获取值
     public Object getVal(){
         return elementObj.val;
     }
+    //构造函数
     public RelationSItem(DataType dt){
         this.elementObj=new ElementObj(dt);
     }

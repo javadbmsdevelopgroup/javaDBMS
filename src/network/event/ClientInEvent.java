@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-///////////////////////////////////客户端进入
+///////////////////////////////////客户端进入事件
 public class ClientInEvent implements ITwoArugumentEvent{
     @Override
     public void doEvent(Object client,Object server){

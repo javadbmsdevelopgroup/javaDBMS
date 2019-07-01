@@ -6,8 +6,9 @@ import dbms.logic.TableStructure;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.List;
-
+/////////////////////////////////////////表的写入工具
 public class TableWriter {
+    //在末尾添加
     public void appendRelations(List<RelationRow> relationItems, TableDBMSObj tableDBMSObj) throws IOException {
         //不用索引的情况
         if(!tableDBMSObj.useIndex){
@@ -50,6 +51,7 @@ public class TableWriter {
             randomAccessFile.close();
         }
     }
+    //替换掉某条记录
     public void replace(int recordNum,RelationRow relationRow, TableDBMSObj tableDBMSObj) throws IOException{
         //不用索引的情况
         if(!tableDBMSObj.useIndex){
@@ -93,6 +95,7 @@ public class TableWriter {
             }
 
         }
+        //删除掉某条记录
     public void delete(int recordNum, TableDBMSObj tableDBMSObj) throws IOException{
         //不用索引的情况
         if(!tableDBMSObj.useIndex){

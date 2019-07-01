@@ -8,18 +8,20 @@ import dbms.logic.TableStructureItem;
 import java.util.ArrayList;
 import java.util.List;
 
-////关系实例
+////表中的一行。。也就是一个元组
 public class RelationRow implements Comparable<RelationRow>{
-    //未完成
-    TableStructure tbs=null;
+
+    TableStructure tbs=null;   //对应的表结构
    // TableDBMSObj tbBelongedTo=null;
-    List<RelationSItem > sis=new ArrayList<>();
+    List<RelationSItem > sis=new ArrayList<>();   //元组中的每项
     public RelationRow(TableStructure structure){
         tbs=structure;
         for(TableStructureItem item:tbs.dts){
             sis.add(new RelationSItem(item.type));
         }
     }
+
+    //重载toString
     @Override
     public String toString(){
         String str="[";
@@ -30,6 +32,7 @@ public class RelationRow implements Comparable<RelationRow>{
         return str;
 
     }
+    //获取某列的值
     public Object getVal(String conlumName){
         for(int i=0;i<tbs.dts.size();i++){
             if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
@@ -39,6 +42,7 @@ public class RelationRow implements Comparable<RelationRow>{
         }
         return null;
     }
+    //设置值，提供列名和值
     public boolean setVal(String conlumName,Object val) {
         for(int i=0;i<tbs.dts.size();i++){
             if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
@@ -49,6 +53,8 @@ public class RelationRow implements Comparable<RelationRow>{
         //throw new ConlumNameNotFound("Conlum Name '"+conlumName+"' Not Found!");
         return false;
     }
+
+    //检查完整性
     public boolean checkIntegrity(){
         for(int i=0;i<sis.size();i++){
            for(IntergrityConstraint ic:tbs.dts.get(i).ics){
@@ -58,6 +64,8 @@ public class RelationRow implements Comparable<RelationRow>{
         return true;
     }
 
+
+    //重载比较函数，用来比较两个元组
     @Override
     public int compareTo(RelationRow r){
         //单个元素比较

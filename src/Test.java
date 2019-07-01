@@ -8,28 +8,7 @@ import dbms.logic.TableDBMSObj;
 
 import java.io.*;
 
-interface I1{
-    void doSomething();
-}
-class A implements Serializable {
-    I1 i;
-    A(I1 x){
-        i=x;
-    }
-}
-class B{
-    A a1=null;
-    B(A a1){
-        this.a1=a1;
-    }
-}
-class C implements I1{
-    @Override
-    public void doSomething(){
-        System.out.println(111);
-    }
-}
-
+/////////测试类。。。有什么想测试的代码可以在这写写;
 public class Test {
     public static void main(String[] args){
 

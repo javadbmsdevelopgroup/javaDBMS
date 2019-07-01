@@ -9,11 +9,11 @@ import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 import java.util.List;
 
-
+///////////////////////////////表读取器
 public class TableReader {
 
-    public TableDBMSObj tableDBMSObj=null;
-    TableBuffer tableBuffer;
+    public TableDBMSObj tableDBMSObj=null;   //表逻辑对象
+    TableBuffer tableBuffer;        //缓冲
     int pageSize;  //页大小
 
     int kh=1;

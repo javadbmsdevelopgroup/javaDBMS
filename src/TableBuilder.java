@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TableBuilder {
-    //////////////////////////////创表
+    //////////////////////////////创表类。。。。用来现阶段生成测试数据的。。。
     public static void main(String[] args){
         try {
             //表逻辑对象

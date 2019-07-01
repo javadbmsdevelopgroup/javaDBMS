@@ -5,7 +5,7 @@ import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructureItem;
 
 import java.io.Serializable;
-
+//////////////////非空约束
 public class NoNULLConstain implements IIntergrityConstraint, Serializable {
     @Override
     public boolean check(TableStructureItem tbs, RelationSItem ri, TableDBMSObj tableDBMSObj){

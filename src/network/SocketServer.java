@@ -26,17 +26,17 @@ public class SocketServer {
     private boolean threadflagOpen=false;
     public SocketServer(int port){
         this.port=port;
-    }
+    }                            //构造函数
     public void setServerMessageInEvent(ITwoArugumentEvent event){
         serverMessageIn=event;
-    }
+    }       //设置服务器收到信息的事件
     public void setClientInEvent(ITwoArugumentEvent oe){
         clientIn=oe;
-    }
+    }                  //设置客户端进入事件
 
 
     public void beginRec(Socket client){
-        ClientListener cl=new ClientListener(client,this);
+        ClientListener cl=new ClientListener(client,this);     //创建一个客户端监听器
         clientListener.add(cl);
         cl.beginRecv();
     }
@@ -50,15 +50,16 @@ public class SocketServer {
     }
 
 
+    //打开服务器
     public boolean connect()  {
         try{
         server=new ServerSocket(port);
         opened=true;
 
         while (opened){
-            Socket s=server.accept(); //Wait for user
+            Socket s=server.accept(); //开始等待客户端进入    (此函数会阻塞当前线程，直到有客户端进入)
             clientList.add(new SocketClient(s));    //把客户socket加入列表
-            beginRec(s);
+            beginRec(s);    //让客户端进入接受消息的状态
             if(clientIn!=null) clientIn.doEvent(s,this);   //客户端进入事件处理
         }
         }catch (IOException ioe){
@@ -68,6 +69,8 @@ public class SocketServer {
         return true;
     }
 
+
+    //关闭服务器
     public void close(){
         try{
             for(int i=0;i<clientList.size();i++){
@@ -82,6 +85,8 @@ public class SocketServer {
         }
     }
 
+
+    //发送消息到某个客户端  参数一:文本  参数二：客户端socket
     public void sendMessageToClient(String str,Socket client){
         try {
             System.out.println("In server: send:"+client.getLocalSocketAddress()+"->"+client.getRemoteSocketAddress());
@@ -99,6 +104,8 @@ public class SocketServer {
     public ITwoArugumentEvent getServerMessageIn(){
         return serverMessageIn;
     }
+
+
     public static void main(String[] args){
         SocketServer ss=new SocketServer(3456);
         ss.setClientInEvent(new ClientInEvent());

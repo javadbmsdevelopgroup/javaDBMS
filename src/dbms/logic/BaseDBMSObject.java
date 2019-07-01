@@ -7,6 +7,7 @@ interface IDBSObject{
 }
 
 
+//DBMS对象基类   DBMS对象包含数据库对象、数据表对象
 public abstract class BaseDBMSObject implements IDBSObject{
     @Override
     public abstract String getType();  //获取DBMS对象类型

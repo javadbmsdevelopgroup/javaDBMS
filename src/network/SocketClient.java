@@ -15,7 +15,7 @@ import java.util.Scanner;
 
 
 
-
+//////////////一个封装的类，将客户端socket封装起来了
 public class SocketClient {
     Socket s = null;   //服务器的socket
     DataOutputStream dos = null;
@@ -54,6 +54,9 @@ public class SocketClient {
     public void setMessageInEvent(ITwoArugumentEvent event){
         this.messageIn=event;
     }
+
+
+    //....好像是将某消息发送给客户端的函数。。。我也忘了。。可以试试。。。SocketClient和SocketServer里有main函数。。可以用来测试
     public boolean send(String str){
 
         if(s==null) return false;
@@ -173,7 +176,7 @@ public class SocketClient {
                 //scss.nextLine();
 
             System.out.println("main Thread");
-            sc.send("AKBsdd试试");
+            sc.send("adaase4311");
             System.out.println("send finish");
 
         }catch (Exception e){

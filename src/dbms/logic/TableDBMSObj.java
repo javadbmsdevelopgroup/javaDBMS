@@ -2,15 +2,15 @@ package dbms.logic;
 
 import java.io.*;
 
-/////////////////////////////表逻辑对象
+/////////////////////////////表逻辑对象  包含表名 等
 public class TableDBMSObj extends BaseDBMSObject{
-    public String tbName="";
-    public DatabaseDBMSObj dbBelongedTo=null;
-    public TableStructure tableStructure=null;
+    public String tbName="";   //表名
+    public DatabaseDBMSObj dbBelongedTo=null;    //所属的数据库
+    public TableStructure tableStructure=null;   //表结构
     //索引
-    public boolean useIndex=false;
+    public boolean useIndex=false;     //是否使用索引
 
-
+//构造函数，需要提供表名和一个数据库逻辑对象（表示该表所属的数据库）
     public TableDBMSObj(String name,DatabaseDBMSObj db) throws IOException,ClassNotFoundException{
         File f=new File(db.rootPath+"\\"+tbName) ;
         if(!f.exists()) throw new IOException("Database Not Found");
@@ -30,6 +30,7 @@ public class TableDBMSObj extends BaseDBMSObject{
         fis.close();
         ois.close();
     }
+
     @Override
     public String getType(){
         return "DBMSOBJ.Table";
