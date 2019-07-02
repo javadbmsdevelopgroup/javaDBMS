@@ -10,12 +10,26 @@ public class TransitionInf {
 
     TransitionType type;
     String t_content="";
+    public ITransMethod transMethod=null;
+
+    //从某结点到某结点 转移类型 转移内容
     public TransitionInf(AutomatonNode s, AutomatonNode e, TransitionType t, String c){
         from=s;
         end=e;
         type=t;
         t_content=c;
     }
+
+    public TransitionInf(AutomatonNode s, AutomatonNode e, TransitionType t, String c,ITransMethod iTransMethod){
+        from=s;
+        end=e;
+        type=t;
+        t_content=c;
+        this.transMethod=iTransMethod;
+    }
+
+
+
     public String getEncodedStr() {
         if(from.nodeCode<=0 || end.nodeCode<=0) return "";
         StringBuilder coded=new StringBuilder("");

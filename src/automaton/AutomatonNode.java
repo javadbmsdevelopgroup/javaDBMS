@@ -12,5 +12,10 @@ public class AutomatonNode {
         this.owariNode=owariNode;
     }
 
+    public AutomatonNode(int nodeCode,boolean owariNode,INodeFunc method){
+        this.nodeCode=nodeCode;
+        this.owariNode=owariNode;
+        nodeMethod=method;
+    }
 
 }

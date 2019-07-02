@@ -1,11 +1,35 @@
 package filesystem;
 
+import java.io.*;
+import java.util.Properties;
+
 public class PropertiesFileTool {
     private static PropertiesFileTool instance=null;
     private PropertiesFileTool(){
     }
-    public PropertiesFileTool getInstance(){
+    public static PropertiesFileTool getInstance(){
         if(instance==null) instance=new PropertiesFileTool();
         return instance;
+    }
+    public void writeConfig(String key,String value) throws IOException {
+        FileOutputStream fileOutputStream=new FileOutputStream("config.properties",true);
+        Properties prop=new Properties();
+        prop.setProperty(key,value);
+        prop.store(fileOutputStream,"");
+        fileOutputStream.close();
+    }
+    public String readConfig(String key) throws IOException {
+        InputStream in=new BufferedInputStream(new FileInputStream("config.properties"));
+        Properties prop=new Properties();
+        prop.load(in);
+        return prop.getProperty(key);
+    }
+
+    public static void main(String[] args){
+        try{
+            PropertiesFileTool.getInstance().writeConfig("DBRoot","C:\\Users\\akb\\Desktop\\java\\javaDBMS\\DB");
+        }catch (IOException ioe){
+            ioe.printStackTrace();
+        }
     }
 }

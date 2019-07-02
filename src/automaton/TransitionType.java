@@ -1,5 +1,5 @@
 package automaton;
 
 public enum TransitionType{
-    KEYWORD, OBJNAME;
+    KEYWORD,OBJNAME,MARK;
 }

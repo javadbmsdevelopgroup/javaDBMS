@@ -48,7 +48,10 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
         File f=new File(rootPath+"\\"+dbName);
         if(f.exists() && f.isDirectory()) return true; else return false;
     }
-
+    public static boolean isExist(String databaseName){
+        File f=new File(rootPath+"\\"+databaseName);
+        if(f.exists() && f.isDirectory()) return true; else return false;
+    }
 
 
 

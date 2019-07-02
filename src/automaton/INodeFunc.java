@@ -1,5 +1,5 @@
 package automaton;
 
 public interface INodeFunc {
-    Object doWork(Automaton automaton);
+    Object doWork(InfCollection infCollection,Object... objs);
 }
