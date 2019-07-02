@@ -1,12 +1,16 @@
 package automaton;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 //有限自动机类
 public class Automaton{
     int states;    //状态数
     int endindex;  //终态
     int sindex=0;
+    Map<Integer,AutomatonNode> automatonNodeMap=new HashMap<>();
     TranstionFunc transitionFuns=new TranstionFunc();  //转移函数
     public Automaton(int statecount,int endstateindex,int startstateindex,TranstionFunc ts) throws Exception{
         //check validity
@@ -34,9 +38,9 @@ public class Automaton{
         int c=0;
         for(InputItem i:is){
             System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur+"->");
-            cur=transitionFuns.transition(cur,i);
+            AutomatonNode automatonNode=transitionFuns.transition(automatonNodeMap.get( cur),i);
             System.out.println(cur);
-            if(cur==endindex) {c++; System.out.println("----------------------------\n"+"匹配数+1 total:"+c+"   自动机状态初始化\n"+"----------------------------"); cur=1;}
+            if(automatonNode.owariNode) {c++; System.out.println("----------------------------\n"+"匹配数+1 total:"+c+" n"+"----------------------------");}
         }
         //System.out.println(transitionFuns.transition(1,));
         return c;
