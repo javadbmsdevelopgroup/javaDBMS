@@ -1,7 +1,9 @@
 package automaton;
 
+import automaton.methods.DBNameTrans;
 import automaton.methods.KeyWordTrans;
 import automaton.methods.ShowMethod;
+import automaton.methods.UseMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +29,20 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(show_tans1);
         transtionFunc.addAtransition(show_tans2);
         transtionFunc.addAtransition(show_tran3);
+
+
+        //use
+        ////node
+        AutomatonNode show_node4=new AutomatonNode(4,false);
+        AutomatonNode show_node5=new AutomatonNode(5,true,new UseMethod());
+        ////trans Edge
+        TransitionInf show_tans4=new TransitionInf(start,show_node4,TransitionType.KEYWORD,"USE");
+        TransitionInf show_tans5=new TransitionInf(show_node4,show_node5,TransitionType.OBJNAME,"",new DBNameTrans());
+
+        automatonNodeList.add(show_node4);
+        automatonNodeList.add(show_node5);
+        transtionFunc.addAtransition(show_tans4);
+        transtionFunc.addAtransition(show_tans5);
 
 
         try{

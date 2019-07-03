@@ -4,6 +4,14 @@ import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
 import dbms.logic.DatabaseDBMSObj;
+import dbms.logic.TableDBMSObj;
+import dbms.view.RelationView;
+import filesystem.PropertiesFileTool;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ShowMethod implements INodeFunc {
     @Override
@@ -13,13 +21,41 @@ public class ShowMethod implements INodeFunc {
         switch (infCollection.keyWords.pop()){
             case "TABLES":
                 if(sqlSession.curUseDatabase.compareTo("")==0 || !DatabaseDBMSObj.isExist(sqlSession.curUseDatabase)){
-                    System.out.println("当前未选择任何数据库,或数据库不存在");
+                    System.out.println("No database selected");
+                }else{
+                    DatabaseDBMSObj databaseDBMSObj;
+                    try {
+                        databaseDBMSObj= new DatabaseDBMSObj(sqlSession.curUseDatabase, PropertiesFileTool.getInstance().readConfig("DBRoot"));
+                    }catch (Exception e){
+                        System.out.println("Fatal: Error:Database Root Not Found!");
+                        return null;
+                    }
+                    RelationView tablesView=new RelationView("Tables_in_"+sqlSession.curUseDatabase);
+                    for(TableDBMSObj t: databaseDBMSObj.listTables()){
+                        tablesView.addRow(t.tbName);
+                    }
+                    tablesView.printRelationView();
                 }
                 break;
             case "DATABASES":
+                try {
+                    String dbRootPath= PropertiesFileTool.getInstance().readConfig("DBRoot");
+                    //System.out.println(dbRoot);
+                    File dbRoot = new File(dbRootPath);
+                    File[] dbFiles = dbRoot.listFiles();
+                    RelationView databasesView = new RelationView("Databases");
+                    for(File dbf : dbFiles){
+                        if(dbf.isDirectory()){
+                            databasesView.addRow(dbf.getName());
+                        }
+                    }
+                    databasesView.printRelationView();
+                }catch (IOException e){
+                    System.out.println("Can't not found database root path.");
+                }
+
                 break;
         }
-
 
         return null;
     }

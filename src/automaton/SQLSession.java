@@ -1,14 +1,24 @@
 package automaton;
-//数据库会话
+
+import java.util.Scanner;
+
+//sql会话
 public class SQLSession {
     public String curUseDatabase="";
     public Automaton sqlAutomaton=null;
 
 
-    /////////////SQL会话测试
+    /////////////SQL会话
     public static void main(String[] args){
         SQLSession sqlSession=new SQLSession();
         SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
-        sqlAutomaton.matchingGrammar("show tables");
+        Scanner sc=new Scanner(System.in);
+        while (true){
+            System.out.print("YuiSQL> ");
+            String sql=sc.nextLine();
+            if(sql.compareTo("\\q")==0) return;
+            sqlAutomaton.matchingGrammar(sql);
+        }
+
     }
 }

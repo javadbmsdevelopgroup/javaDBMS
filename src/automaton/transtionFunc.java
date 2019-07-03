@@ -62,7 +62,7 @@ public class TranstionFunc {
         for(int i=0;i<tifs.size();i++){
             TransitionInf tmp_tif=tifs.get(i);
             if(tmp_tif.from.nodeCode!=cur.nodeCode) continue;
-            //System.out.println("找到起始为"+tmp_tif.from.nodeCode+" begin");
+
             switch (tmp_tif.type){
                 //转移类型是关键字或记号x`x`
                 case KEYWORD:case MARK:
@@ -75,28 +75,33 @@ public class TranstionFunc {
                         t_exe=true;
                         if(tmp_tif.transMethod!=null) tmp_tif.transMethod.trans(this.infCollection,tmp_tif.t_content);
                         if(cur.owariNode) cur.nodeMethod.doWork(this.infCollection,objects);
+                        //System.out.println("转移完毕");
                         break;
                     }
                     break;
+
                 case OBJNAME:
-                    System.out.println(String.valueOf(cur)+"->"+tifs.get(i).end);
+                    System.out.println("转移类型 "+"Object name");
+                    System.out.println(String.valueOf(cur.nodeCode)+"->"+tifs.get(i).end.nodeCode);
                     cur=tifs.get(i).end;
                     t_exe=true;
-                    if(tifs.get(i).transMethod!=null) tifs.get(i).transMethod.trans(this.infCollection,tmp_tif.t_content);
+
+                    if(tifs.get(i).transMethod!=null) tifs.get(i).transMethod.trans(this.infCollection,input.content);
                     if(cur.owariNode) cur.nodeMethod.doWork(this.infCollection,objects);
                     break;
             }
 
+            if(t_exe) break;
 
-        }
+    }
 
 
         if(!t_exe){
             if(tf_strOany!=null){
-                System.out.println(String.valueOf(cur)+"->"+ tf_strOany.end);
+                System.out.println(String.valueOf(cur.nodeCode)+"->"+ tf_strOany.end.nodeCode);
                 cur=tf_strOany.end;
             }else if(tf_WordTypeOany!=null){
-                System.out.println(String.valueOf(cur)+"->"+tf_WordTypeOany.end);
+                System.out.println(String.valueOf(cur.nodeCode)+"->"+tf_WordTypeOany.end.nodeCode);
                 cur=tf_WordTypeOany.end;
             }else
                 return null; //对于某个输入无法转移

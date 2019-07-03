@@ -24,7 +24,7 @@ public class TableDBMSObj extends BaseDBMSObject{
 
         //读取表结构
         FileInputStream fis=new FileInputStream(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs");
-        System.out.println(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs");
+        //System.out.println(db.rootPath+"\\"+db.dbName+"\\"+tbName+".tbs");
         ObjectInputStream ois=new ObjectInputStream(fis);
         tableStructure=(TableStructure)ois.readObject();
         fis.close();
