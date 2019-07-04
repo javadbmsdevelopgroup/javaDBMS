@@ -9,4 +9,13 @@ public class InfCollection {
     public Stack<String> logicExpressions=new Stack<>();   //逻辑表达式栈
     public Stack<String> columNames=new Stack<>();  //列名栈
     public Stack<String> keyWords=new Stack<>(); //关键词栈
+    public Stack<String> others=new Stack<>();
+    public void cleanStacks(){
+        tableNames.clear();
+        dbNames.clear();
+        logicExpressions.clear();
+        columNames.clear();
+        keyWords.clear();
+        others.clear();
+    }
 }

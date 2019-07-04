@@ -10,8 +10,10 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class TableBuilder {
-    //////////////////////////////创表类。。。。用来现阶段生成测试数据的。。。
+    //////////////////////////////创表类。。。。用来现阶段生成测试数据的。。。会创建3个表。。。。最后不会用上这个类。。这个类是用来手动生成测试数据而已
     public static void main(String[] args){
         try {
             //表逻辑对象

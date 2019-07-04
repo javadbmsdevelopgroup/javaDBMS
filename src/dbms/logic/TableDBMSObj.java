@@ -2,7 +2,7 @@ package dbms.logic;
 
 import java.io.*;
 
-/////////////////////////////表逻辑对象  包含表名 等
+/////////////////////////////表节点对象  包含表名 等
 public class TableDBMSObj extends BaseDBMSObject{
     public String tbName="";   //表名
     public DatabaseDBMSObj dbBelongedTo=null;    //所属的数据库

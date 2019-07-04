@@ -1,17 +1,17 @@
 /*数据库逻辑对象*/
 package dbms.logic;
-import java.io.File;
-import java.io.IOException;
+import filesystem.PropertiesFileTool;
+
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-/*数据库逻辑对象
+/*数据库节点对象  (节点对象，没有什么很实际的作用）
 * 包含数据库的具体地址   在本项目中数据库根目录设置在DB文件夹
 * 数据库名之类的
-*
 * */
 public class DatabaseDBMSObj extends BaseDBMSObject{
     public String dbName="";
-    public static String rootPath="C:\\Users\\akb\\Desktop\\java\\javaDBMS\\DB";
+    public static String rootPath= PropertiesFileTool.getInstance().readConfig("DBRoot");
     //构造函数，需要提供数据库根目录和数据库名
     public DatabaseDBMSObj(String dbName,String rootPath){
         this.dbName=dbName;
@@ -41,6 +41,25 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
         return tdos;
     }
 
+    //获取表结构对象
+    public TableStructure getTableStructure(String tableName) throws Exception {
+        FileInputStream fis = new FileInputStream(rootPath+"\\"+dbName+"\\"+tableName+".tbs");
+        ObjectInputStream objectInputStream = new ObjectInputStream(fis);
+        TableStructure tableStructure = (TableStructure) objectInputStream.readObject();
+        return tableStructure;
+
+    }
+    //判断当前数据库下是否有某张表
+    public boolean isTableExist(String tableName){
+        File dbf=new File(rootPath+"\\"+dbName);
+        if(!dbf.exists() || !dbf.isDirectory()) return false;
+        File[] ts=dbf.listFiles();
+        for(File f:ts){
+            if(f.getName().indexOf(".tbs")<0) continue;
+            if(f.getName().indexOf(tableName)>=0) return true;
+        }
+        return false;
+    }
 
     //获取数据库根目录
     public String getRootPath(){

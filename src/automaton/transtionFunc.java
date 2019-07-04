@@ -57,7 +57,8 @@ public class TranstionFunc {
     AutomatonNode transition(AutomatonNode from,InputItem input,Object... objects){
         AutomatonNode cur=from;
         boolean t_exe=false;
-        TransitionInf tf_strOany=null;
+        boolean allowany=false;
+        TransitionInf tf_OBJany=null;
         TransitionInf tf_WordTypeOany=null;
         for(int i=0;i<tifs.size();i++){
             TransitionInf tmp_tif=tifs.get(i);
@@ -81,21 +82,31 @@ public class TranstionFunc {
                     break;
 
                 case OBJNAME:
-                    System.out.println("转移类型 "+"Object name");
-                    System.out.println(String.valueOf(cur.nodeCode)+"->"+tifs.get(i).end.nodeCode);
-                    cur=tifs.get(i).end;
-                    t_exe=true;
-
-                    if(tifs.get(i).transMethod!=null) tifs.get(i).transMethod.trans(this.infCollection,input.content);
-                    if(cur.owariNode) cur.nodeMethod.doWork(this.infCollection,objects);
+                    allowany=true;
+                    tf_OBJany=tifs.get(i);
                     break;
+
             }
 
             if(t_exe) break;
 
+
     }
 
+        if(!t_exe){
+            if( allowany){
+                System.out.println("转移类型 "+"Object name");
+                System.out.println(String.valueOf(cur.nodeCode)+"->"+tf_OBJany.end.nodeCode);
+                cur=tf_OBJany.end;
+                t_exe=true;
 
+                if(tf_OBJany.transMethod!=null) tf_OBJany.transMethod.trans(this.infCollection,input.content);
+                if(cur.owariNode) cur.nodeMethod.doWork(this.infCollection,objects);
+            }else{return null;}
+
+
+        }
+/*
         if(!t_exe){
             if(tf_strOany!=null){
                 System.out.println(String.valueOf(cur.nodeCode)+"->"+ tf_strOany.end.nodeCode);
@@ -106,7 +117,7 @@ public class TranstionFunc {
             }else
                 return null; //对于某个输入无法转移
         }
-
+*/
         return cur;
     }
 }

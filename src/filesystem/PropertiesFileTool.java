@@ -2,7 +2,7 @@ package filesystem;
 
 import java.io.*;
 import java.util.Properties;
-
+/////////////////////配置文件读取工具。采用单例模式
 public class PropertiesFileTool {
     private static PropertiesFileTool instance=null;
     private PropertiesFileTool(){
@@ -18,11 +18,16 @@ public class PropertiesFileTool {
         prop.store(fileOutputStream,"");
         fileOutputStream.close();
     }
-    public String readConfig(String key) throws IOException {
+    public String readConfig(String key)  {
+        try{
         InputStream in=new BufferedInputStream(new FileInputStream("config.properties"));
         Properties prop=new Properties();
         prop.load(in);
         return prop.getProperty(key);
+        }catch (IOException ioe){
+            return "";
+        }
+
     }
 
     public static void main(String[] args){

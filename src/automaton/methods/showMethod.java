@@ -38,7 +38,6 @@ public class ShowMethod implements INodeFunc {
                 }
                 break;
             case "DATABASES":
-                try {
                     String dbRootPath= PropertiesFileTool.getInstance().readConfig("DBRoot");
                     //System.out.println(dbRoot);
                     File dbRoot = new File(dbRootPath);
@@ -50,9 +49,6 @@ public class ShowMethod implements INodeFunc {
                         }
                     }
                     databasesView.printRelationView();
-                }catch (IOException e){
-                    System.out.println("Can't not found database root path.");
-                }
 
                 break;
         }

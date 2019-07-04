@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-/////////////////////////////////////////////表结构(属性)项//////////////////////////
+/////////////////////////////////////////////表结构(属性)项,对应表中的属性列信息//////////////////////////
 
 public class TableStructureItem implements Serializable {
     public DataType type;     //数据类型

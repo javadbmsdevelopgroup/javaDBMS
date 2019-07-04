@@ -13,11 +13,8 @@ public class UseMethod implements INodeFunc {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         String dbName = (infCollection.dbNames.pop());
-        try {
-            DatabaseDBMSObj.rootPath = PropertiesFileTool.getInstance().readConfig("DBRoot");
-        }catch (IOException ioe){
 
-        }
+        DatabaseDBMSObj.rootPath = PropertiesFileTool.getInstance().readConfig("DBRoot");
 
         if(!DatabaseDBMSObj.isExist(dbName)){
             System.out.println("Unknow database '"+dbName+"'");

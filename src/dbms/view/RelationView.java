@@ -6,21 +6,27 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+///////////////////////////////////视图层的关系显示
+/////目前存在的问题。当大量行存在时（比如上百万行），未解决如何显示比较好的问题。应该这里也要添加缓存。
+///后面应该需要建立起 TableReader(提供了缓存技术)和RelationView的关系,通过缓存慢慢打印view
+
 public class RelationView {
     List<String> conlumNames=new ArrayList<>();
     List<RelationViewItem> rows=new ArrayList<>();
-
+    //提供列名信息
     public RelationView(String... conlumNames){
         for(int i=0;i<conlumNames.length;i++){
             this.conlumNames.add(conlumNames[i]);
         }
     }
-
+    //添加一行
     public void addRow(String... items){
         if(items.length!= this.conlumNames.size()) return ;
         this.rows.add(new RelationViewItem(items));
     }
 
+    //添加一列
     public void addConlum(String name,int position){
         if(position<0 || position>conlumNames.size()) return;
         conlumNames.add(position,name);
@@ -29,6 +35,7 @@ public class RelationView {
         }
     }
 
+    //删除一列
     public void deleteConlum(int position){
         if(position<0 || position>=conlumNames.size()) return;
         conlumNames.remove(position);
@@ -36,7 +43,7 @@ public class RelationView {
             rows.get(i).vals.remove(position);
         }
     }
-
+    //删除一列
     public void deleteConlum(String conlumName){
         int p=-1;
         for(int i=0;i<conlumNames.size();i++){
@@ -46,7 +53,7 @@ public class RelationView {
         }
         deleteConlum(p);
     }
-
+    //获取列索引
     public int getConlumIndex(String conlumName){
         int p=-1;
         for(int i=0;i<conlumNames.size();i++){
@@ -56,10 +63,13 @@ public class RelationView {
         }
         return p;
     }
+
+    //输出view
     public void printRelationView(){
         printRelationView(this.rows.size());
 
     }
+    //带限制地输出view
     public void printRelationView(int limit){
         if(limit>rows.size()) return;
         int[] maxLengths=new int[this.conlumNames.size()];

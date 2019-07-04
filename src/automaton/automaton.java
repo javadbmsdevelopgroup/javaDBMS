@@ -44,6 +44,7 @@ public class Automaton{
     //return machingNumber
 
     public AutomatonNode matchingGrammar(String input,Object... objects){
+        this.transitionFuns.infCollection.cleanStacks();
         System.out.println("obj count:"+objects.length);
         if(startNode==null) return null;
         List<InputItem> is=AutomatonTools.getInstance().toInputList(input);
@@ -67,7 +68,10 @@ public class Automaton{
                 //System.out.println("----------------------------\n"+"转移到达终态，无语法错误"+" \n"+"----------------------------");
             }
         }
-
+        if(!cur.owariNode){
+            System.out.println("\n----------------------------\n"+"无法识别的语法"+" \n"+"----------------------------");
+            return null;
+        }
         return cur;
     }
 
