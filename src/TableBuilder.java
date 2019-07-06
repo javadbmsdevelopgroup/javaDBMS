@@ -4,6 +4,7 @@ import automaton.SQLSession;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import com.sun.org.apache.xml.internal.serialize.LineSeparator;
 import dbms.RelationRow;
+import dbms.TableReader;
 import dbms.TableWriter;
 import dbms.logic.*;
 
@@ -31,9 +32,15 @@ public class TableBuilder {
         sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(20) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
 
 
-        /*执行sql数据的例子，如
+        /*执行sql语句的例子，如
          *  sqlAutomaton.matchingGrammar("insert into student values (111,www,333)");   //插入一条数据,注意不论是字符串还是整数都没有引好
+         *
+         * 插入好后如果想测试读取的话
+         * 按如下方式读取第i条记录:
+         *  TableReader tableReader=new TableReader(new TableDBMSObj("表名",new DatabaseDBMSObj("数据库名",DatabaseDBMSObj.rootPath)));
+         *   RelationRow r= tableReader.readRecord(i);
         * */
+
 
         ////Fill code here
         //学生数据要求百万条  选课数据没说  课程3门(要求的)
@@ -52,7 +59,7 @@ public class TableBuilder {
 
 
 
-        
+
         try {
             //表逻辑对象
            // TableDBMSObj tableDBMSObj_student=new TableDBMSObj("student",new DatabaseDBMSObj("studentDB",DatabaseDBMSObj.rootPath));
