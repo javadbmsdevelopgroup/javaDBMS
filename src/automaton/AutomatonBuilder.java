@@ -60,6 +60,31 @@ public class AutomatonBuilder {
         AutomatonNode create_node16= new AutomatonNode(16,true,new CreateMethod());
         AutomatonNode create_node17= new AutomatonNode(17,false);
         AutomatonNode create_node18= new AutomatonNode(18,false);
+        /////Index
+        AutomatonNode create_node53=new AutomatonNode(53,false);
+        AutomatonNode create_node54=new AutomatonNode(54,false);
+        AutomatonNode create_node55=new AutomatonNode(55,false);
+        AutomatonNode create_node56=new AutomatonNode(56,false);
+        AutomatonNode create_node57=new AutomatonNode(57,false);
+        AutomatonNode create_node58=new AutomatonNode(58,true,new IndexCreateMethod());
+        TransitionInf index_trans1=new TransitionInf(create_node6,create_node53,TransitionType.KEYWORD,"INDEX" );
+        TransitionInf index_trans2=new TransitionInf(create_node53,create_node54,TransitionType.KEYWORD,"ON");
+        TransitionInf index_trans3=new TransitionInf(create_node54,create_node55,TransitionType.OBJNAME,"",new TBNameTrans());
+        TransitionInf index_trans4=new TransitionInf(create_node55,create_node56,TransitionType.KEYWORD,"(");
+        TransitionInf index_trans5=new TransitionInf(create_node56,create_node57,TransitionType.OBJNAME,"",new ColumNameTrans());
+        TransitionInf index_trans6=new TransitionInf(create_node57,create_node58,TransitionType.KEYWORD,")");
+        automatonNodeList.add(create_node53);
+        automatonNodeList.add(create_node54);
+        automatonNodeList.add(create_node55);
+        automatonNodeList.add(create_node56);
+        automatonNodeList.add(create_node57);
+        automatonNodeList.add(create_node58);
+        transtionFunc.addAtransition(index_trans1);
+        transtionFunc.addAtransition(index_trans2);
+        transtionFunc.addAtransition(index_trans3);
+        transtionFunc.addAtransition(index_trans4);
+        transtionFunc.addAtransition(index_trans5);
+        transtionFunc.addAtransition(index_trans6);
         ////trans Edge
         /////Database
         TransitionInf create_trans6=new TransitionInf(start,create_node6,TransitionType.KEYWORD,"CREATE");

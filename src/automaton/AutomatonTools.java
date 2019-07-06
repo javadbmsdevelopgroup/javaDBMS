@@ -36,14 +36,7 @@ public class AutomatonTools {
             iis.add(new InputItem(cur));
         }
 
-/*
-        String[] inputTokens=str.split(" ");
-        for(int i=0;i<inputTokens.length;i++){
-            //System.out.println( hajime_tokens.get(i).getSurface()+'\t'+'\t'+hajime_tokens.get(i).getAllFeatures());
-            String wordt=inputTokens[i];
-            iis.add(new InputItem(wordt));
-        }
-        */
+
         return iis;
     }
 
