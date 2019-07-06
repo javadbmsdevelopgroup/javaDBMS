@@ -10,7 +10,7 @@ import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructure;
 import dbms.logic.TableStructureItem;
 import filesystem.PropertiesFileTool;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
 
 import java.util.ArrayList;
 import java.util.List;
