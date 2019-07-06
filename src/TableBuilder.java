@@ -1,9 +1,13 @@
+import automaton.AutomatonBuilder;
+import automaton.SQLAutomaton;
+import automaton.SQLSession;
 import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
 import com.sun.org.apache.xml.internal.serialize.LineSeparator;
 import dbms.RelationRow;
 import dbms.TableWriter;
 import dbms.logic.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -13,8 +17,42 @@ import java.util.List;
 
 
 public class TableBuilder {
-    //////////////////////////////创表类。。。。用来现阶段生成测试数据的。。。会创建3个表。。。。最后不会用上这个类。。这个类是用来手动生成测试数据而已
+    public static void generateData(){
+        SQLSession sqlSession=new SQLSession();   //SQL会话
+        SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);   //自动机
+
+        //创表
+        File file=new File("test");
+        if(file.exists() && file.isDirectory()) file.delete();
+        sqlAutomaton.matchingGrammar("create database test");
+        sqlAutomaton.matchingGrammar("use test");
+        sqlAutomaton.matchingGrammar("create table student (学号 int primary key ,姓名 string(12) not null ,班级 int)");
+        sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 string(12) not null ,选课时间 String(30) not null)");
+        sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(20) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
+
+
+        /*执行sql数据的例子，如
+         *  sqlAutomaton.matchingGrammar("insert into student values (111,www,333)");   //插入一条数据,注意不论是字符串还是整数都没有引好
+        * */
+
+        ////Fill code here
+        //学生数据要求百万条  选课数据没说  课程3门(要求的)
+    }
+    //////////////////////////////创表类。。。。用来现阶段生成测试数据的。。
     public static void main(String[] args){
+        if(true){
+            generateData();
+            return;
+        }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+        
         try {
             //表逻辑对象
            // TableDBMSObj tableDBMSObj_student=new TableDBMSObj("student",new DatabaseDBMSObj("studentDB",DatabaseDBMSObj.rootPath));
@@ -41,7 +79,7 @@ public class TableBuilder {
             TableStructure select_course = new TableStructure(null);
             select_course.addItem(new TableStructureItem(DataType.INT32, 4, true, true,tbs_student,"学号"));  //学号
             select_course.addItem(new TableStructureItem(DataType.INT32, 4, false, true,tbs_student,"课程编号"));  //课程编号
-            select_course.addItem(new TableStructureItem(DataType.STRING, 30, false, true,tbs_student,"课程容量")); //课程容量
+            select_course.addItem(new TableStructureItem(DataType.STRING, 30, false, true,tbs_student,"选课时间")); //选课时间
             tbs_course.writeToStructFile("studentDB", "stuCourse");
 
 
