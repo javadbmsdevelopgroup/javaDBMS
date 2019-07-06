@@ -16,6 +16,14 @@ public class ElementObj implements Comparable<ElementObj>{
     //构造函数,只提供数据类型。设置为null数据
     public ElementObj(DataType dt){
         this.dataType=dt;
+        switch (dataType){
+            case INT32:
+                val=0;
+                break;
+            case STRING:
+                val="";
+                break;
+        }
     }
     //构造函数，提供具体数据和数据类型
     public  ElementObj(DataType dt,Object obj){
