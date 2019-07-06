@@ -2,6 +2,7 @@ package automaton;
 
 import automaton.methods.*;
 import dbms.TableBuffer;
+import dbms.logic.DataType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -183,6 +184,141 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(insert_trans38);
         transtionFunc.addAtransition(insert_trans39);
         transtionFunc.addAtransition(insert_trans40);
+
+        //delete
+        ////Node
+        AutomatonNode delete_Node31=new AutomatonNode(31,false);
+        AutomatonNode delete_node32=new AutomatonNode(32,false);
+        AutomatonNode delete_node33=new AutomatonNode(33,false);
+        AutomatonNode delete_node34=new AutomatonNode(34,false);
+        AutomatonNode delete_node35=new AutomatonNode(35,false);
+        AutomatonNode delete_node36=new AutomatonNode(36,true,new DeleteMethod());
+        ////Edge
+        TransitionInf delete_trans1=new TransitionInf(start,delete_Node31, TransitionType.KEYWORD,"DELETE");
+        TransitionInf delete_trans2=new TransitionInf(delete_Node31,delete_node32, TransitionType.KEYWORD,"FROM");
+        TransitionInf delete_trans3=new TransitionInf(delete_node32,delete_node33, TransitionType.OBJNAME,"",new TBNameTrans());
+        TransitionInf delete_trans4=new TransitionInf(delete_node33,delete_node34, TransitionType.KEYWORD,"WHERE");
+        TransitionInf delete_trans5=new TransitionInf(delete_node34,delete_node34, TransitionType.KEYWORD,"(",new KeyWordTrans());
+        TransitionInf delete_trans6=new TransitionInf(delete_node34,delete_node35, TransitionType.OBJNAME,"",new ExpressionTrans());
+        TransitionInf delete_trans7=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"OR",new KeyWordTrans());
+        TransitionInf delete_trans8=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"AND",new KeyWordTrans());
+        TransitionInf delete_trans9=new TransitionInf(delete_node35,delete_node35, TransitionType.KEYWORD,")",new KeyWordTrans());
+        TransitionInf delete_trans10=new TransitionInf(delete_node35,delete_node36, TransitionType.KEYWORD,";",new KeyWordTrans());
+        automatonNodeList.add(delete_Node31);
+        automatonNodeList.add(delete_node32);
+        automatonNodeList.add(delete_node33);
+        automatonNodeList.add(delete_node34);
+        automatonNodeList.add(delete_node35);
+        automatonNodeList.add(delete_node36);
+        transtionFunc.addAtransition(delete_trans1);
+        transtionFunc.addAtransition(delete_trans2);
+        transtionFunc.addAtransition(delete_trans3);
+        transtionFunc.addAtransition(delete_trans4);
+        transtionFunc.addAtransition(delete_trans5);
+        transtionFunc.addAtransition(delete_trans6);
+        transtionFunc.addAtransition(delete_trans7);
+        transtionFunc.addAtransition(delete_trans8);
+        transtionFunc.addAtransition(delete_trans9);
+        transtionFunc.addAtransition(delete_trans10);
+
+
+
+        //update
+        ////nodes
+        AutomatonNode update_node37=new AutomatonNode(37,false);
+        AutomatonNode update_node38=new AutomatonNode(38,false);
+        AutomatonNode update_node39=new AutomatonNode(39,false);
+        AutomatonNode update_node40=new AutomatonNode(40,false);
+        AutomatonNode update_node41=new AutomatonNode(41,false);
+        AutomatonNode update_node42=new AutomatonNode(42,false);
+        AutomatonNode update_node43=new AutomatonNode(43,true,new UpdateMethod());
+        ////trans
+        TransitionInf update_trans1=new TransitionInf(start,update_node37,TransitionType.KEYWORD,"UPDATE");
+        TransitionInf update_trans2=new TransitionInf(update_node37,update_node38,TransitionType.OBJNAME,"",new TBNameTrans());
+        TransitionInf update_trans3=new TransitionInf(update_node38,update_node39,TransitionType.KEYWORD,"SET");
+        TransitionInf update_trans4=new TransitionInf(update_node39,update_node40,TransitionType.OBJNAME,"",new OtherTrans());
+        TransitionInf update_trans5=new TransitionInf(update_node40,update_node41,TransitionType.KEYWORD,"WHERE");
+        TransitionInf update_trans6=new TransitionInf(update_node41,update_node41,TransitionType.KEYWORD,"(",new KeyWordTrans());
+        TransitionInf update_trans7=new TransitionInf(update_node41,update_node42,TransitionType.OBJNAME,"",new ExpressionTrans());
+        TransitionInf update_trans8=new TransitionInf(update_node42,update_node41,TransitionType.KEYWORD,"OR",new KeyWordTrans());
+        TransitionInf update_trans9=new TransitionInf(update_node42,update_node41,TransitionType.KEYWORD,"AND",new KeyWordTrans());
+        TransitionInf update_trans10=new TransitionInf(update_node42,update_node42,TransitionType.KEYWORD,")",new KeyWordTrans());
+        TransitionInf update_trans11=new TransitionInf(update_node42,update_node43,TransitionType.KEYWORD,";");
+        automatonNodeList.add(update_node37);
+        automatonNodeList.add(update_node38);
+        automatonNodeList.add(update_node39);
+        automatonNodeList.add(update_node40);
+        automatonNodeList.add(update_node41);
+        automatonNodeList.add(update_node42);
+        automatonNodeList.add(update_node43);
+
+        transtionFunc.addAtransition(update_trans1);
+        transtionFunc.addAtransition(update_trans2);
+        transtionFunc.addAtransition(update_trans3);
+        transtionFunc.addAtransition(update_trans4);
+        transtionFunc.addAtransition(update_trans5);
+        transtionFunc.addAtransition(update_trans6);
+        transtionFunc.addAtransition(update_trans7);
+        transtionFunc.addAtransition(update_trans8);
+        transtionFunc.addAtransition(update_trans9);
+        transtionFunc.addAtransition(update_trans10);
+        transtionFunc.addAtransition(update_trans11);
+
+        //select
+        AutomatonNode select_node44=new AutomatonNode(44,false);
+        AutomatonNode select_node45=new AutomatonNode(45,false);
+        AutomatonNode select_node46=new AutomatonNode(46,false);
+        AutomatonNode select_node47=new AutomatonNode(47,false);
+        AutomatonNode select_node48=new AutomatonNode(48,false);
+        AutomatonNode select_node49=new AutomatonNode(49,false);
+        AutomatonNode select_node50=new AutomatonNode(50,false);
+        AutomatonNode select_node51=new AutomatonNode(51,false);
+        AutomatonNode select_node52=new AutomatonNode(52,true,new SelectMethod());
+
+        ////edges
+        TransitionInf select_trans1=new TransitionInf(start,select_node44,TransitionType.KEYWORD,"SELECT");
+        TransitionInf select_trans2=new TransitionInf(select_node44,select_node45,TransitionType.OBJNAME,"",new ColumNameTrans());
+        TransitionInf select_trans3=new TransitionInf(select_node45,select_node44,TransitionType.KEYWORD,",");
+        TransitionInf select_trans4=new TransitionInf(select_node45,select_node46,TransitionType.KEYWORD,"FROM");
+        TransitionInf select_trans5=new TransitionInf(select_node46,select_node47,TransitionType.OBJNAME,"",new TBNameTrans());
+        TransitionInf select_trans6=new TransitionInf(select_node47,select_node48,TransitionType.KEYWORD,"WHERE");
+        TransitionInf select_trans7=new TransitionInf(select_node48,select_node48,TransitionType.KEYWORD,"(",new KeyWordTrans());
+        TransitionInf select_trans8=new TransitionInf(select_node48,select_node49,TransitionType.OBJNAME,"",new ExpressionTrans());
+        TransitionInf select_trans9=new TransitionInf(select_node49,select_node48,TransitionType.KEYWORD,"OR",new ExpressionTrans());
+        TransitionInf select_trans10=new TransitionInf(select_node49,select_node48,TransitionType.KEYWORD,"AND",new ExpressionTrans());
+        TransitionInf select_trans11=new TransitionInf(select_node49,select_node49,TransitionType.KEYWORD,")",new ExpressionTrans());
+        TransitionInf select_trans12=new TransitionInf(select_node49,select_node52,TransitionType.KEYWORD,";");
+        TransitionInf select_trans13=new TransitionInf(select_node49,select_node50,TransitionType.KEYWORD,"ORDER");
+        TransitionInf select_trans14=new TransitionInf(select_node50,select_node50,TransitionType.KEYWORD,"BY");
+        TransitionInf select_trans15=new TransitionInf(select_node50,select_node51,TransitionType.OBJNAME,"",new OtherTrans());
+        TransitionInf select_trans16=new TransitionInf(select_node51,select_node52,TransitionType.KEYWORD,";");
+        TransitionInf select_trans17=new TransitionInf(select_node47,select_node52,TransitionType.KEYWORD,";");
+        automatonNodeList.add(select_node44);
+        automatonNodeList.add(select_node45);
+        automatonNodeList.add(select_node46);
+        automatonNodeList.add(select_node47);
+        automatonNodeList.add(select_node48);
+        automatonNodeList.add(select_node49);
+        automatonNodeList.add(select_node50);
+        automatonNodeList.add(select_node51);
+        automatonNodeList.add(select_node52);
+        transtionFunc.addAtransition(select_trans1);
+        transtionFunc.addAtransition(select_trans2);
+        transtionFunc.addAtransition(select_trans3);
+        transtionFunc.addAtransition(select_trans4);
+        transtionFunc.addAtransition(select_trans5);
+        transtionFunc.addAtransition(select_trans6);
+        transtionFunc.addAtransition(select_trans7);
+        transtionFunc.addAtransition(select_trans8);
+        transtionFunc.addAtransition(select_trans9);
+        transtionFunc.addAtransition(select_trans10);
+        transtionFunc.addAtransition(select_trans11);
+        transtionFunc.addAtransition(select_trans12);
+        transtionFunc.addAtransition(select_trans13);
+        transtionFunc.addAtransition(select_trans14);
+        transtionFunc.addAtransition(select_trans15);
+        transtionFunc.addAtransition(select_trans16);
+        transtionFunc.addAtransition(select_trans17);
 
         try{
             Automaton automaton=new Automaton(automatonNodeList,transtionFunc);

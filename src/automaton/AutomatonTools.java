@@ -21,7 +21,7 @@ public class AutomatonTools {
                     iis.add(new InputItem(cur));
                     cur="";
                 }
-            }else if(c==',' || c=='(' || c==')'){
+            }else if(c==',' || c=='(' || c==')' || c==';' || c=='*'){
                 if(cur.compareTo("")!=0){
                     iis.add(new InputItem(cur));
                     cur="";
