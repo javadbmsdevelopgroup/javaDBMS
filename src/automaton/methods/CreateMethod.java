@@ -37,7 +37,7 @@ public class CreateMethod implements INodeFunc {
             while (!infCollection.keyWords.empty()){
                 String cname=infCollection.columNames.pop();
                 String type=infCollection.keyWords.pop();
-                System.out.println(type);
+                System.out.println(type+" "+cname);
                 if(type.toUpperCase().compareTo("INT")==0 || type.toUpperCase().compareTo("STRING")==0){
 
                     newTableStructure.addItem(new TableStructureItem(
