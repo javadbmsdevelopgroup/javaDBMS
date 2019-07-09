@@ -328,7 +328,7 @@ public class AutomatonBuilder {
         TransitionInf select_trans20=new TransitionInf(select_node60,select_node52,TransitionType.KEYWORD,";");
         TransitionInf select_trans21=new TransitionInf(select_node51,select_node59,TransitionType.KEYWORD,"LIMIT");
         TransitionInf select_trans22=new TransitionInf(select_node49,select_node59,TransitionType.KEYWORD,"LIMIT");
-
+        TransitionInf select_trans23=new TransitionInf(select_node47,select_node50,TransitionType.KEYWORD,"ORDER");
         automatonNodeList.add(select_node44);
         automatonNodeList.add(select_node45);
         automatonNodeList.add(select_node46);
@@ -362,6 +362,7 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(select_trans20);
         transtionFunc.addAtransition(select_trans21);
         transtionFunc.addAtransition(select_trans22);
+        transtionFunc.addAtransition(select_trans23);
         try{
             Automaton automaton=new Automaton(automatonNodeList,transtionFunc);
             System.out.println("自动机创建成功");

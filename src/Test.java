@@ -17,6 +17,15 @@ public class Test {
 
     }
     public static void main(String[] args){
-        
+        TableWriter tableWriter=new TableWriter();
+        try{
+            TableDBMSObj tableDBMSObj=new TableDBMSObj("student",new DatabaseDBMSObj("test",DatabaseDBMSObj.rootPath));
+            tableWriter.delete(0,tableDBMSObj);
+            tableWriter.delete(0,tableDBMSObj);
+        }catch (Exception e){
+
+
+        }
+
     }
 }
