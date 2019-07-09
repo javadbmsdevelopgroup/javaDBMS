@@ -6,4 +6,5 @@ public class ClientMessageIn implements ITwoArugumentEvent{
     public void doEvent(Object message,Object client){
         System.out.println("Client Message In: "+(String)message);
     }
+
 }

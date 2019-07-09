@@ -25,9 +25,9 @@ public class TableBuilder {
         sqlAutomaton.matchingGrammar("create database test");
         sqlAutomaton.matchingGrammar("use test");
         sqlAutomaton.matchingGrammar("create table student (学号 int primary key ,姓名 string(12) not null ,班级 int,性别 string(1))");
-        sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 string(12) not null ,选课时间 String(30) not null)");
-        sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(20) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
-        sqlAutomaton.matchingGrammar("insert into student values (1110000,www,333,M)");
+        sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 int not null ,选课时间 String(30) not null)");
+        sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(30) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
+        //sqlAutomaton.matchingGrammar("insert into student values (1110000,www,333,M)");
 
 
         /*执行sql语句的例子，如

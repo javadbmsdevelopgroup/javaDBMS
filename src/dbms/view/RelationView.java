@@ -14,10 +14,18 @@ import java.util.Map;
 public class RelationView {
     List<String> conlumNames=new ArrayList<>();
     List<RelationViewItem> rows=new ArrayList<>();
+    int[] maxLengths;
     //提供列名信息
     public RelationView(String... conlumNames){
         for(int i=0;i<conlumNames.length;i++){
             this.conlumNames.add(conlumNames[i]);
+        }
+        maxLengths=new int[this.conlumNames.size()];
+        initMaxSizeArray();
+    }
+    private void initMaxSizeArray(){
+        for(int i=0;i<conlumNames.size();i++){
+            maxLengths[i]=conlumNames.get(i).length();
         }
     }
     //添加一行
@@ -30,6 +38,8 @@ public class RelationView {
     public void addConlum(String name,int position){
         if(position<0 || position>conlumNames.size()) return;
         conlumNames.add(position,name);
+        maxLengths=new int[conlumNames.size()];
+        initMaxSizeArray();
         for(int i=0;i<rows.size();i++){
             rows.get(i).vals.add(position,"");
         }
@@ -39,6 +49,8 @@ public class RelationView {
     public void deleteConlum(int position){
         if(position<0 || position>=conlumNames.size()) return;
         conlumNames.remove(position);
+        maxLengths=new int[conlumNames.size()];
+        initMaxSizeArray();
         for(int i=0;i<rows.size();i++){
             rows.get(i).vals.remove(position);
         }
@@ -72,10 +84,8 @@ public class RelationView {
     //带限制地输出view
     public void printRelationView(int limit){
         if(limit>rows.size()) return;
-        int[] maxLengths=new int[this.conlumNames.size()];
-        for(int i=0;i<conlumNames.size();i++){
-            maxLengths[i]=conlumNames.get(i).length();
-        }
+
+        initMaxSizeArray();
         for(int i=0;i<limit;i++){
             for(int j=0;j<conlumNames.size();j++){
                if(rows.get(i).vals.get(j).length()>maxLengths[j]) maxLengths[j]=rows.get(i).vals.get(j).length();
@@ -122,7 +132,68 @@ public class RelationView {
         System.out.println();
     }
 
+    public void printHeadLine(){
+        int limit=this.rows.size();
+        if(limit>rows.size()) return;
+        int[] maxLengths=new int[this.conlumNames.size()];
+        for(int i=0;i<conlumNames.size();i++){
+            maxLengths[i]=conlumNames.get(i).length();
+        }
+        for(int i=0;i<limit;i++){
+            for(int j=0;j<conlumNames.size();j++){
+                if(rows.get(i).vals.get(j).length()>maxLengths[j]) maxLengths[j]=rows.get(i).vals.get(j).length();
+            }
+        }
+        System.out.print("+");
+        //headline
+        for(int i=0;i<conlumNames.size();i++){
+            System.out.print(String.join("", Collections.nCopies(maxLengths[i]+2, "-")));
+            System.out.print("+");
+        }
+        System.out.println();
+        //colums
+        for(int i=0;i<conlumNames.size();i++){
+            System.out.print("| ");
+            System.out.print(conlumNames.get(i));
+            System.out.print(String.join("", Collections.nCopies(maxLengths[i]-conlumNames.get(i).length(), " ")));
+            System.out.print(" |");
+        }
+        System.out.println();
+    }
+    public void printRows(){
+        int limit=this.rows.size();
+        if(limit>rows.size()) return;
+        initMaxSizeArray();
+        for(int i=0;i<limit;i++){
+            for(int j=0;j<conlumNames.size();j++){
+                if(rows.get(i).vals.get(j).length()>maxLengths[j]) maxLengths[j]=rows.get(i).vals.get(j).length();
+            }
+        }
 
+        //rows
+        for(int i=0;i< limit;i++){
+            for(int j=0;j<conlumNames.size();j++){
+                System.out.print("| ");
+                System.out.print(rows.get(i).vals.get(j));
+                System.out.print(String.join("", Collections.nCopies(maxLengths[j]-rows.get(i).vals.get(j).length(), " ")));
+                System.out.print(" |");
+            }
+            System.out.println();
+        }
+
+    }
+    public void printBottomLine(){
+        int limit=this.rows.size();
+        if(limit>rows.size()) return;
+
+        //bottom
+        System.out.print("+");
+        for(int i=0;i<conlumNames.size();i++){
+            System.out.print(String.join("", Collections.nCopies(maxLengths[i]+2, "-")));
+            System.out.print("+");
+        }
+        System.out.println();
+    }
     class RelationViewItem{
         List<String> vals = new ArrayList<>();
         public RelationViewItem(String... vals){

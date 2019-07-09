@@ -2,91 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/physics/BplusTree.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/physics/BplusTreeNode.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/physics/Test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/physics/BplusTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/physics/BplusTreeNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dbms/physics/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/META-INF/javaDBMS.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/course.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/course.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/course.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/course.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/course.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/course.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/stuCourse.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/stuCourse.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/student.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/student.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/student.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/student.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/TableBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/TableBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/Automaton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/Automaton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonTools.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/AutomatonTools.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/INodeFunc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/INodeFunc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/ITransMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/ITransMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/InfCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/InfCollection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/InputItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/InputItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLAutomaton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLAutomaton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionInf$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionInf$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionInf.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionInf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TransitionType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TranstionFunc$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TranstionFunc$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TranstionFunc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/TranstionFunc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/exception/AutomatonNodeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/exception/AutomatonNodeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ColumNameTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ColumNameTrans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/CreateMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/CreateMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DBNameTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DBNameTrans.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DeleteMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DeleteMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DropMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DropMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ExpressionTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ExpressionTrans.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/IndexCreateMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/IndexCreateMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/InsertMethod$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/InsertMethod$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/InsertMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/InsertMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/KeyWordTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/KeyWordTrans.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/OtherTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/OtherTrans.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/SelectMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/SelectMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ShowMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/ShowMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/TBNameTrans.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/TBNameTrans.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/UpdateMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/UpdateMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/UseMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/UseMethod.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationSItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationSItem.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableBuffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableBuffer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TablePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TablePage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/BufferSizeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/BufferSizeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/ConlumNameNotFound.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/ConlumNameNotFound.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/RelationCompareTypeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/exceptions/RelationCompareTypeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/BaseDBMSObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/BaseDBMSObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/BaseIntergrityConstraint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/BaseIntergrityConstraint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/DataType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/DataType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/DatabaseDBMSObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/DatabaseDBMSObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/ElementObj$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/ElementObj$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/ElementObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/ElementObj.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/IDBSObject.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/IDBSObject.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/Relation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/Relation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableDBMSObj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableDBMSObj.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableStructure.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableStructure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableStructureItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/TableStructureItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/IIntergrityConstraint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/IIntergrityConstraint.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/IntergrityConstraint.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/IntergrityConstraint.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/KeyConstrain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/KeyConstrain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/NoNULLConstain.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/logic/intergrityconstrain/NoNULLConstain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView$RelationViewItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView$RelationViewItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/filesystem/PropertiesFileTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/filesystem/PropertiesFileTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/ClientListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/ClientListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientInEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientInEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientLeaveEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientLeaveEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientMessageIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ClientMessageIn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/INonArugumentEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/INonArugumentEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/IOneArugumentEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/IOneArugumentEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/IThreeArugumentEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/IThreeArugumentEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ITwoArugumentEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ITwoArugumentEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ServerMessageIn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ServerMessageIn.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TableBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/Automaton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/Automaton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/RelationRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/RelationRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/view/RelationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/view/RelationView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/event/ClientMessageIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/event/ClientMessageIn.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -101,28 +62,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
+        <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
+            <state relative-caret-position="121">
+              <caret line="65" column="18" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="65" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1219#1552#1" />
+                <element signature="e#1092#2098#1" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
+            <state relative-caret-position="150">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5">
+              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -131,23 +97,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/automaton/methods/MethodTools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1174#4942#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            <state relative-caret-position="775">
+              <caret line="200" column="49" selection-start-line="200" selection-start-column="49" selection-end-line="200" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,10 +109,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+            <state relative-caret-position="235">
+              <caret line="83" column="53" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,10 +121,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/CreateMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+            <state relative-caret-position="355">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,10 +133,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/TableBuffer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-570">
-              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            <state relative-caret-position="330">
+              <caret line="11" column="104" lean-forward="true" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -192,26 +145,17 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonTools.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/view/RelationView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+            <state relative-caret-position="181">
+              <caret line="171" selection-start-line="171" selection-end-line="171" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#replace#0;class#TableWriter#0" />
-                <element signature="method#delete#0;class#TableWriter#0" />
+                <element signature="method#addRow#0;class#RelationView#0" />
+                <element signature="method#addConlum#0;class#RelationView#0" />
+                <element signature="method#deleteConlum#0;class#RelationView#0" />
+                <element signature="method#deleteConlum#1;class#RelationView#0" />
+                <element signature="method#getConlumIndex#0;class#RelationView#0" />
               </folding>
             </state>
           </provider>
@@ -241,17 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/network/event/ServerMessageIn.java" />
-        <option value="$PROJECT_DIR$/src/network/SocketServer.java" />
-        <option value="$PROJECT_DIR$/src/network/ClientListener.java" />
-        <option value="$PROJECT_DIR$/src/network/SocketClient.java" />
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/dbms/RelationRow.java" />
-        <option value="$PROJECT_DIR$/src/automaton/automaton.java" />
-        <option value="$PROJECT_DIR$/src/automaton/transitionInf.java" />
-        <option value="$PROJECT_DIR$/src/automaton/TransitionInf.java" />
-        <option value="$PROJECT_DIR$/src/automaton/TransitionType.java" />
-        <option value="$PROJECT_DIR$/src/automaton/ITransMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/showMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/keyWordTrans.java" />
         <option value="$PROJECT_DIR$/src/automaton/AutomatonNode.java" />
@@ -269,33 +202,44 @@
         <option value="$PROJECT_DIR$/src/automaton/methods/OtherTrans.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/UseMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/ShowMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/Automaton.java" />
         <option value="$PROJECT_DIR$/src/automaton/InfCollection.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/SQLSession.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/Relation.java" />
-        <option value="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" />
-        <option value="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java" />
         <option value="$PROJECT_DIR$/src/filesystem/PropertiesFileTool.java" />
-        <option value="$PROJECT_DIR$/src/dbms/view/RelationView.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/ElementObj.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/ExpressionTrans.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/TranstionFunc.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/AutomatonTools.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" />
-        <option value="$PROJECT_DIR$/src/TableBuilder.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" />
+        <option value="$PROJECT_DIR$/config.properties" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/automaton/Automaton.java" />
+        <option value="$PROJECT_DIR$/src/automaton/TranstionFunc.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" />
+        <option value="$PROJECT_DIR$/src/TableBuilder.java" />
+        <option value="$PROJECT_DIR$/src/network/event/ClientMessageIn.java" />
+        <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
+        <option value="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" />
+        <option value="$PROJECT_DIR$/src/dbms/TableReader.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
+        <option value="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" />
+        <option value="$PROJECT_DIR$/src/dbms/RelationRow.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" />
+        <option value="$PROJECT_DIR$/src/dbms/TableBuffer.java" />
+        <option value="$PROJECT_DIR$/src/network/event/INonArugumentEvent.java" />
+        <option value="$PROJECT_DIR$/src/dbms/view/RelationView.java" />
+        <option value="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-34" />
     <option name="y" value="44" />
     <option name="width" value="1932" />
@@ -321,11 +265,6 @@
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="DB" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="out" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -337,6 +276,13 @@
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -349,56 +295,7 @@
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="automaton" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="automaton" type="462c0819:PsiDirectoryNode" />
-              <item name="methods" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dbms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="intergrityconstrain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="filesystem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
@@ -406,26 +303,39 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../a3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/DB/studentDB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="I:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\akb\Desktop\java\javaDBMS\DB\studentDB" />
+      <recent name="C:\Users\akb\Desktop\java\javaDBMS\DB\test" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -439,20 +349,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TableBuilder">
-    <configuration name="AutomatonBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="automaton.AutomatonBuilder" />
-      <module name="javaDBMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="automaton.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.SQLSession">
     <configuration name="AutomatonTools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="automaton.AutomatonTools" />
       <module name="javaDBMS" />
@@ -466,12 +363,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesFileTool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="filesystem.PropertiesFileTool" />
+    <configuration name="MethodTools" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="automaton.methods.MethodTools" />
       <module name="javaDBMS" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="filesystem.*" />
+          <option name="PATTERN" value="automaton.methods.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -501,20 +398,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="javaDBMS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.AutomatonBuilder" />
       <item itemvalue="Application.AutomatonTools" />
-      <item itemvalue="Application.PropertiesFileTool" />
       <item itemvalue="Application.SQLSession" />
       <item itemvalue="Application.TableBuilder" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.MethodTools" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TableBuilder" />
         <item itemvalue="Application.SQLSession" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.TableBuilder" />
+        <item itemvalue="Application.MethodTools" />
         <item itemvalue="Application.AutomatonTools" />
-        <item itemvalue="Application.AutomatonBuilder" />
-        <item itemvalue="Application.PropertiesFileTool" />
       </list>
     </recent_temporary>
   </component>
@@ -552,17 +456,18 @@
       <workItem from="1562339920205" duration="31000" />
       <workItem from="1562387883348" duration="2149000" />
       <workItem from="1562390092009" duration="20111000" />
+      <workItem from="1562466907670" duration="36731000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163713000" />
+    <option name="totallyTimeSpent" value="200444000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86504066" visible="true" weight="0.16684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86504066" visible="true" weight="0.1684435" />
       <window_info id="Structure" order="1" sideWeight="0.13495935" side_tool="true" weight="0.15884861" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -571,7 +476,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4637053" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34669557" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -628,144 +533,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/network/event/ClientMessageIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SocketServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="60" column="38" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#close#0;class#SocketServer#0" />
-            <element signature="method#sendMessageToClient#0;class#SocketServer#0" />
-            <element signature="method#main#0;class#SocketServer#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#readRecord#0;class#TableReader#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/TransFuncsBuilder.java" />
-    <entry file="file://$PROJECT_DIR$/src/automaton/exception/AutomatonNodeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/InputItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="e#233#234#0" expanded="true" />
-            <element signature="e#262#263#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DBSession.java" />
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/ObjNameTrans.java" />
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/ColumNameTrans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/KeyWordTrans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="2" lean-forward="true" selection-start-line="6" selection-start-column="2" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/OtherTrans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/TransitionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/TransitionInf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UseMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/TBNameTrans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/INodeFunc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="62" selection-start-line="3" selection-start-column="62" selection-end-line="3" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/ITransMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -818,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -852,40 +612,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/view/RelationView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1107">
-          <caret line="131" column="9" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="22" column="30" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/logic/ElementObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -935,30 +661,247 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/CreateMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="37" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
+        <state relative-caret-position="330">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="668">
+          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="98" column="18" selection-start-line="98" selection-start-column="18" selection-end-line="98" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="59" column="14" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SocketServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/ClientLeaveEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/ClientInEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/ClientMessageIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/IOneArugumentEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/IThreeArugumentEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/ClientListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SocketClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/ITwoArugumentEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/event/ServerMessageIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="26" column="112" lean-forward="true" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="112" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#549#642#1" />
+            <element signature="e#830#971#1" />
+            <element signature="e#1153#2268#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/TableStructure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="37" column="18" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="70" lean-forward="true" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1024">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#appendRelations#0;class#TableWriter#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+            <element signature="e#986#987#0" expanded="true" />
+            <element signature="e#1232#1233#0" expanded="true" />
+            <element signature="e#1278#1279#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="9" column="37" lean-forward="true" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="-5">
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonTools.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/MethodTools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="44" column="14" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+        <state relative-caret-position="775">
+          <caret line="200" column="49" selection-start-line="200" selection-start-column="49" selection-end-line="200" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="83" column="53" selection-start-line="83" selection-start-column="43" selection-end-line="83" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/logic/ElementObj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-882">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="28" column="94" selection-start-line="28" selection-start-column="94" selection-end-line="28" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -967,98 +910,75 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        <state relative-caret-position="355">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
+    <entry file="file://$PROJECT_DIR$/src/network/event/INonArugumentEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="3" column="35" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableBuffer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
-          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#replace#0;class#TableWriter#0" />
-            <element signature="method#delete#0;class#TableWriter#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="58" selection-start-line="29" selection-start-column="58" selection-end-line="29" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1174#4942#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+          <caret line="11" column="104" lean-forward="true" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/view/RelationView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+        <state relative-caret-position="181">
+          <caret line="171" selection-start-line="171" selection-end-line="171" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#addRow#0;class#RelationView#0" />
+            <element signature="method#addConlum#0;class#RelationView#0" />
+            <element signature="method#deleteConlum#0;class#RelationView#0" />
+            <element signature="method#deleteConlum#1;class#RelationView#0" />
+            <element signature="method#getConlumIndex#0;class#RelationView#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="315">
+          <caret line="28" column="68" selection-start-line="28" selection-start-column="68" selection-end-line="28" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#541#542#0" expanded="true" />
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#1821#3033#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="65" column="18" lean-forward="true" selection-start-line="48" selection-start-column="6" selection-end-line="65" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1219#1552#1" />
+            <element signature="e#1092#2098#1" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="71" column="65" selection-start-line="71" selection-start-column="65" selection-end-line="71" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/CreateMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="68" column="29" selection-start-line="68" selection-start-column="29" selection-end-line="68" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="150">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1079,6 +999,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1090,6 +1011,7 @@
       </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>scala-sdk-2.11.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1118,7 +1040,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

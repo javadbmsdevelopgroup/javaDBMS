@@ -1,5 +1,6 @@
 package dbms;
 
+import dbms.logic.DataType;
 import dbms.logic.ElementObj;
 import dbms.logic.intergrityconstrain.IntergrityConstraint;
 import dbms.logic.TableStructure;
@@ -31,6 +32,14 @@ public class RelationRow implements Comparable<RelationRow>{
         str+="]";
         return str;
 
+    }
+    public DataType getConlumType(String conlumName){
+        for(int i=0;i<tbs.dts.size();i++){
+            if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){
+                return sis.get(i).elementObj.dataType;
+            }
+        }
+        return null;
     }
     //获取某列的值
     public Object getVal(String conlumName){
@@ -67,16 +76,13 @@ public class RelationRow implements Comparable<RelationRow>{
     //重载比较函数，用来比较两个元组
     @Override
     public int compareTo(RelationRow r){
-        //单个元素比较
-        if(this.sis.size()<r.sis.size()) return -1;
-        if(this.sis.size()>r.sis.size()) return 1;
-        for(int i=0;i<this.sis.size();i++){
-            if(this.sis.get(i).elementObj.dataType!=r.sis.get(i).elementObj.dataType) return -2;
-            if(this.sis.get(i).elementObj.compareTo(r.sis.get(i).elementObj)==0){
-                continue;
-            }else{
-                if(this.sis.get(i).elementObj.compareTo(r.sis.get(i).elementObj)<0) return -1;
-                else return 1;
+        if(tbs==null || !tbs.useIndex) return 0;
+        else{
+            String index=tbs.indexOn;
+            for(int i=0;i<tbs.dts.size();i++){
+                if(tbs.dts.get(i).conlumName.compareTo(index)==0){
+                    return this.sis.get(i).elementObj.compareTo(r.sis.get(i).elementObj);
+                }
             }
         }
         return 0;

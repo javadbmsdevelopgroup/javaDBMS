@@ -13,7 +13,7 @@ public class KeyConstrain implements IIntergrityConstraint{
     public boolean check(TableStructureItem tbs, RelationSItem ri, TableDBMSObj tableDBMSObj){
         if(ri.isNULL()) return false;   //主键不能为空
         //主键不能有重复值
-        if(!tableDBMSObj.useIndex){
+        if(!tableDBMSObj.tableStructure.useIndex){
             //不用索引的情况
             try{
                 TableReader tr=new TableReader(tableDBMSObj,10);

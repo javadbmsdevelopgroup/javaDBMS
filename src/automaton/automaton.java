@@ -45,19 +45,19 @@ public class Automaton{
 
     public AutomatonNode matchingGrammar(String input,Object... objects){
         this.transitionFuns.infCollection.cleanStacks();
-        System.out.println("obj count:"+objects.length);
+        //System.out.println("obj count:"+objects.length);
         if(startNode==null) return null;
         List<InputItem> is=AutomatonTools.getInstance().toInputList(input);
         System.out.println("目标句子:"+input);
-        for (InputItem inputItem:is){
+     /*   for (InputItem inputItem:is){
             System.out.println(inputItem);
         }
-
+*/
         AutomatonNode cur=startNode;
 
         //System.out.println("编码后的自动机:"+getCodedAutomataStr());
         for(InputItem i:is){
-            System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
+            //System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
             cur=transitionFuns.transition(automatonNodeMap.get(cur.nodeCode),i,objects);
             //System.out.println(cur.nodeCode);
             if(cur==null){

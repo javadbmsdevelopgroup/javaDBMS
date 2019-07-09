@@ -7,6 +7,9 @@ import java.util.List;
 
 ////////////////////表结构类.这是实际的结构类。。可以写到文件(.tbs)还可以从文件中反序列化读取
 public class TableStructure implements Serializable {
+    //索引
+    public boolean useIndex=false;     //是否使用索引
+    public String indexOn="";
 
     private int size=0;
     private TableDBMSObj tableDBMSObjBelongedTo=null;   //所属的表逻辑对象,可以为null.为null时，表示其是一个独立的表结构，暂不属于任何表
@@ -32,10 +35,18 @@ public class TableStructure implements Serializable {
         return s;
     }
 
+    public boolean isColumnExists(String name){
+        for (TableStructureItem tsi : dts){
+            if(tsi.conlumName.compareTo(name)==0) return true;
+        }
+        return false;
+    }
     //输出表结构到文件     也就是.tbs文件(存储表的结构)。同时会创建一个空的.table文件（存储实际的数据）
     public void writeToStructFile(String DBName,String tableName) throws IOException {
         File f=new File(DatabaseDBMSObj.rootPath+"\\"+DBName+"\\"+tableName+".tbs");
-        if(f.exists()) return;
+        if(f.exists() && f.isFile()) {
+            //要检测是否有锁
+             f.delete();}
         System.out.println("out: "+DatabaseDBMSObj.rootPath+"\\"+DBName+"\\"+tableName+".tbs");
         FileOutputStream fileOutputStream=new FileOutputStream(DatabaseDBMSObj.rootPath+"\\"+DBName+"\\"+tableName+".tbs");
         ObjectOutputStream oos=new ObjectOutputStream(fileOutputStream);

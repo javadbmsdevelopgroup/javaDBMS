@@ -7,8 +7,7 @@ public class TableDBMSObj extends BaseDBMSObject{
     public String tbName="";   //表名
     public DatabaseDBMSObj dbBelongedTo=null;    //所属的数据库
     public TableStructure tableStructure=null;   //表结构
-    //索引
-    public boolean useIndex=false;     //是否使用索引
+
 
 //构造函数，需要提供表名和一个数据库逻辑对象（表示该表所属的数据库）
     public TableDBMSObj(String name,DatabaseDBMSObj db) throws IOException,ClassNotFoundException{

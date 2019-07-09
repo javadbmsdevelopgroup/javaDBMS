@@ -1,5 +1,6 @@
 package dbms;
 
+import com.sun.org.apache.regexp.internal.RE;
 import dbms.exceptions.BufferSizeException;
 import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructureItem;
@@ -17,6 +18,24 @@ public class TableReader {
     int pageSize;  //页大小
 
     int kh=1;
+
+    public int getPageSize(){
+        return pageSize;
+    }
+    public void replaceRecord(int recordIndex,RelationRow newR){
+        int pageIndex=recordIndex/pageSize; //计算页号
+        int offset=recordIndex%pageSize;
+        if(tableBuffer.pageMap.containsKey(pageIndex)){
+            tableBuffer.pageMap.get(pageIndex).records[offset]=newR;
+        }
+    }
+    public void deletePage(int pageIndex){
+        if(!tableBuffer.isPageExist(pageIndex)){
+            return;
+        }else{
+            tableBuffer.deletePage(pageIndex);
+        }
+    }
     //构造需要 表逻辑对象 页大小
     public TableReader(TableDBMSObj tableDBMSObj,int pageSize) throws FileNotFoundException, BufferSizeException {
         this.pageSize=pageSize;
@@ -37,6 +56,7 @@ public class TableReader {
             RandomAccessFile randomAccessFile=null;
             try{
                 //打开表文件
+
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
             randomAccessFile.seek(s*p);
@@ -44,6 +64,7 @@ public class TableReader {
                 //尝试访问文件中不存在的记录
                 randomAccessFile.close();
                 return null;
+
             }
             //页对象
             TablePage tp=new TablePage(this.tableDBMSObj,pageSize,recordPosition/pageSize);
@@ -53,6 +74,7 @@ public class TableReader {
                     RelationRow record=new RelationRow(this.tableDBMSObj.tableStructure);
                     //读取每个属性值
                     for(TableStructureItem relationSItem:this.tableDBMSObj.tableStructure.dts){
+                        //System.out.println(relationSItem.conlumName+" "+relationSItem.type);
                         switch (relationSItem.type){
                             case STRING:
                                 byte[] bytes=new byte[relationSItem.size];
@@ -66,6 +88,7 @@ public class TableReader {
                     }
                     //加入页内
                     tp.records[i]=record;
+                    //System.out.println(record);
                 }
                 else{
                     tp.records[i]=null;
@@ -75,6 +98,7 @@ public class TableReader {
                 //加新页到缓冲区，置换算法、加载算法由缓冲区类完成
                 System.out.println("加入缓冲区");
                 tableBuffer.addPage(tp);
+                randomAccessFile.close();
             return tp.records[recordPosition%pageSize]; //返回指定行
 
             }catch (Exception e){
@@ -84,6 +108,7 @@ public class TableReader {
         }else{
             //页已存在缓冲，直接返回
             System.out.println("相应页在缓冲区,直接返回");
+
             return tableBuffer.getPage(recordPosition/pageSize).records[recordPosition % pageSize];
         }
 

@@ -17,6 +17,11 @@ public class TableBuffer {
         if(size<=0) throw new BufferSizeException("BufferSize small than 0");
         totleSize=size;
     }
+    public void deletePage(int pageindex){
+        if(pageMap.containsKey(pageindex)){
+            pageMap.remove(pageindex);
+        }
+    }
     //向缓冲区添加一页，如果缓冲区已满会执行页置换算法
     public boolean addPage(TablePage tablePage){
         if(totleSize-curSize<=0) {

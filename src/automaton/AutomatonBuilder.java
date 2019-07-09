@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AutomatonBuilder {
+    //缺少limit
     public static Automaton buildAutomaton(){
         AutomatonNode start=new AutomatonNode(0,false);  //起点
         List<AutomatonNode> automatonNodeList=new ArrayList<>();
@@ -228,7 +229,7 @@ public class AutomatonBuilder {
         TransitionInf delete_trans7=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"OR",new KeyWordTrans());
         TransitionInf delete_trans8=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"AND",new KeyWordTrans());
         TransitionInf delete_trans9=new TransitionInf(delete_node35,delete_node35, TransitionType.KEYWORD,")",new KeyWordTrans());
-        TransitionInf delete_trans10=new TransitionInf(delete_node35,delete_node36, TransitionType.KEYWORD,";",new KeyWordTrans());
+        TransitionInf delete_trans10=new TransitionInf(delete_node35,delete_node36, TransitionType.KEYWORD,";");
         automatonNodeList.add(delete_Node31);
         automatonNodeList.add(delete_node32);
         automatonNodeList.add(delete_node33);

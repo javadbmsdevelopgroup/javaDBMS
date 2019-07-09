@@ -69,9 +69,9 @@ public class TranstionFunc {
                 case KEYWORD:case MARK:
 
                     if(tmp_tif.t_content.compareTo(input.content.toUpperCase())==0){
-                        System.out.println("转移类型 "+"keyword/mark");
+                        //System.out.println("转移类型 "+"keyword/mark");
                         //System.out.println(tmp_tif.t_content.toUpperCase());
-                        System.out.println(cur.nodeCode+"->"+tifs.get(i).end.nodeCode);
+                        //System.out.println(cur.nodeCode+"->"+tifs.get(i).end.nodeCode);
                         cur=tmp_tif.end;
                         t_exe=true;
                         if(tmp_tif.transMethod!=null) tmp_tif.transMethod.trans(this.infCollection,tmp_tif.t_content);
@@ -95,8 +95,8 @@ public class TranstionFunc {
 
         if(!t_exe){
             if( allowany){
-                System.out.println("转移类型 "+"Object name");
-                System.out.println(String.valueOf(cur.nodeCode)+"->"+tf_OBJany.end.nodeCode);
+                //System.out.println("转移类型 "+"Object name");
+                //System.out.println(String.valueOf(cur.nodeCode)+"->"+tf_OBJany.end.nodeCode);
                 cur=tf_OBJany.end;
                 t_exe=true;
 
