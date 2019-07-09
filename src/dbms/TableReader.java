@@ -9,6 +9,7 @@ import javax.management.relation.Relation;
 import java.io.FileNotFoundException;
 import java.io.RandomAccessFile;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 ///////////////////////////////表读取器
 public class TableReader {
@@ -23,19 +24,35 @@ public class TableReader {
         return pageSize;
     }
     public void replaceRecord(int recordIndex,RelationRow newR){
+
         int pageIndex=recordIndex/pageSize; //计算页号
         int offset=recordIndex%pageSize;
         if(tableBuffer.pageMap.containsKey(pageIndex)){
+            //获取缓冲区写锁
+            Lock writeLock=CacheReadWriteLock.getInstance().getWriteLock(tableBuffer);
+            writeLock.lock();
             tableBuffer.pageMap.get(pageIndex).records[offset]=newR;
+            writeLock.unlock();
         }
     }
     public void deletePage(int pageIndex){
-        if(!tableBuffer.isPageExist(pageIndex)){
+        Lock readLock=CacheReadWriteLock.getInstance().getReadLock(tableBuffer);
+        readLock.lock();
+        boolean exists=tableBuffer.isPageExist(pageIndex);
+        readLock.unlock();
+        if(!exists){
             return;
         }else{
+            //获取缓冲区写锁
+            Lock writeLock=CacheReadWriteLock.getInstance().getWriteLock(tableBuffer);
+            writeLock.lock();
             tableBuffer.deletePage(pageIndex);
+            writeLock.unlock();
         }
     }
+
+
+
     //构造需要 表逻辑对象 页大小
     public TableReader(TableDBMSObj tableDBMSObj,int pageSize) throws FileNotFoundException, BufferSizeException {
         this.pageSize=pageSize;
@@ -47,6 +64,9 @@ public class TableReader {
 
     //读取第i行记录所在的块 (从0开始算)
     public RelationRow readRecord(int recordPosition){
+        //锁
+        Lock tableReadLock=null;
+
         System.out.println("尝试读取第"+recordPosition+"条记录");
         if(tableBuffer.isPageExist(recordPosition/pageSize)==false){
             System.out.println("相应页不在缓冲区,尝试加入");
@@ -55,17 +75,18 @@ public class TableReader {
             int s=tableDBMSObj.tableStructure.getSize();
             RandomAccessFile randomAccessFile=null;
             try{
-                //打开表文件
-
+                //打开表文件,加读锁
+                tableReadLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
             randomAccessFile.seek(s*p);
             if(recordPosition*tableDBMSObj.tableStructure.getSize()>randomAccessFile.length()){
+                tableReadLock.unlock();   //释放读锁
                 //尝试访问文件中不存在的记录
                 randomAccessFile.close();
                 return null;
-
             }
+
             //页对象
             TablePage tp=new TablePage(this.tableDBMSObj,pageSize,recordPosition/pageSize);
             //读取一页
@@ -99,9 +120,11 @@ public class TableReader {
                 System.out.println("加入缓冲区");
                 tableBuffer.addPage(tp);
                 randomAccessFile.close();
+                tableReadLock.unlock();  //释放读锁
             return tp.records[recordPosition%pageSize]; //返回指定行
 
             }catch (Exception e){
+                tableReadLock.unlock();
                 e.printStackTrace();
                 return null;
             }

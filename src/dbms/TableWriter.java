@@ -7,16 +7,25 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+
 /////////////////////////////////////////表的写入工具
 public class TableWriter {
     //在末尾添加
     public void appendRelations(List<RelationRow> relationItems, TableDBMSObj tableDBMSObj) throws IOException {
+        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        writeLock.lock();//上写锁
+
         //不用索引的情况
         if(!tableDBMSObj.tableStructure.useIndex){
             //检查完整性约束
             for(int i=0;i<relationItems.size();i++){
-                if(!relationItems.get(i).checkIntegrity()) return;
+                if(!relationItems.get(i).checkIntegrity()) {
+                    writeLock.unlock();
+                    return;
+                }
             }
+
             RandomAccessFile randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+
                     tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName+".table","rw");
             randomAccessFile.seek(randomAccessFile.length());  //移到文件末尾
@@ -49,14 +58,20 @@ public class TableWriter {
 
                 }
             }
+            writeLock.unlock();
             randomAccessFile.close();
         }
     }
+
     //替换掉某条记录
     public boolean replace(int recordNum,RelationRow relationRow, TableDBMSObj tableDBMSObj) throws IOException{
         String path=tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+
                 tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName;
         int size=tableDBMSObj.tableStructure.getSize();
+
+        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        writeLock.lock();//上写锁
+
         //不用索引的情况
         if(!tableDBMSObj.tableStructure.useIndex){
             //检查完整性约束
@@ -92,9 +107,11 @@ public class TableWriter {
                     //}
 
                 }
+                writeLock.unlock();
             randomAccessFile.close();
                 return true;
             }
+        writeLock.unlock();
         return false;
         }
         //删除掉某条记录
@@ -108,12 +125,13 @@ public class TableWriter {
 
         }
     }
-    private void releaseLocker(){
 
-    }
-    //确认一个删除操作
+
 
     public boolean delete(int recordNum, TableDBMSObj tableDBMSObj) throws IOException{
+        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        writeLock.lock();//上写锁
+
         String path=tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+
                 tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName;
         //不用索引的情况
@@ -122,7 +140,10 @@ public class TableWriter {
 
             RandomAccessFile randomAccessFile=new RandomAccessFile(path+".table","rw");
             int size=tableDBMSObj.tableStructure.getSize();
-            if(recordNum*size>randomAccessFile.length()) return false;
+            if(recordNum*size>randomAccessFile.length()) {
+                writeLock.unlock();
+                return false;
+            }
 
             byte bs[]=new byte[size];
             RandomAccessFile tmpFile=new RandomAccessFile(path+".tmp","rw");
@@ -149,8 +170,10 @@ public class TableWriter {
             System.out.println("删除:"+f.delete());
             f=new File(path+".tmp");
             f.renameTo(new File(path+".table"));
+            writeLock.unlock();
             return true;
         }
+        writeLock.unlock();
         return false;
     }
 }

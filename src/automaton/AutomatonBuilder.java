@@ -9,6 +9,7 @@ import java.util.List;
 
 public class AutomatonBuilder {
     //缺少limit
+
     public static Automaton buildAutomaton(){
         AutomatonNode start=new AutomatonNode(0,false);  //起点
         List<AutomatonNode> automatonNodeList=new ArrayList<>();
