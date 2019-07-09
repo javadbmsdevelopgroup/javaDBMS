@@ -22,7 +22,8 @@ public class SelectMethod implements INodeFunc {
         //select * from course
         String tableName=infCollection.tableNames.pop();
         SQLSession sqlSession=(SQLSession)objs[0];
-
+        int limit=-1;
+        String orderBy="";
         if(!MethodTools.checkTableandDatabase(sqlSession,tableName)) return null;
         List<String> columnNames=new ArrayList<>();
         while(!infCollection.columNames.empty()){
@@ -38,10 +39,24 @@ public class SelectMethod implements INodeFunc {
             if(infCollection.logicExpressions.empty()){
                 infCollection.logicExpressions.push("1=1");
             }
+
+            if(infCollection.others.size()==1){
+                String val=infCollection.others.pop();
+                try{
+                    limit=Integer.parseInt(val);
+                }catch (Exception e){
+                    orderBy=val;
+                }
+            }else if(infCollection.others.size()>1){
+                try{
+                    limit=Integer.parseInt(infCollection.others.pop());
+                    orderBy=infCollection.others.pop();
+                }catch (Exception e){ }
+            }
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
-                while(r!=null){
+                while(r!=null && ( (limit<0) || (limit>0 && pos<limit))){
                     //update course set 课程名称=java where 课程编号=1901;
                     TableWriter tableWriter=new TableWriter();
 

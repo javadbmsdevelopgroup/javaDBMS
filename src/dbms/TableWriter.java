@@ -14,6 +14,7 @@ public class TableWriter {
     //在末尾添加
     public void appendRelations(List<RelationRow> relationItems, TableDBMSObj tableDBMSObj) throws IOException {
         Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        Lock readLock;
         writeLock.lock();//上写锁
 
         //不用索引的情况
@@ -21,7 +22,10 @@ public class TableWriter {
             //检查完整性约束
             for(int i=0;i<relationItems.size();i++){
                 if(!relationItems.get(i).checkIntegrity()) {
+                    readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                    readLock.lock();
                     writeLock.unlock();
+                    readLock.unlock();
                     return;
                 }
             }
@@ -58,7 +62,13 @@ public class TableWriter {
 
                 }
             }
+            int recordNum=((int)randomAccessFile.length()/tableDBMSObj.tableStructure.getSize())-1;
+            CacheSignManage.setDirtyBit(tableDBMSObj.tbName,recordNum);
+            //写锁释放前先加读锁。防止其他线程
+            readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+            readLock.lock();
             writeLock.unlock();
+            readLock.unlock();
             randomAccessFile.close();
         }
     }
@@ -70,12 +80,19 @@ public class TableWriter {
         int size=tableDBMSObj.tableStructure.getSize();
 
         Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        Lock readLock;
         writeLock.lock();//上写锁
 
         //不用索引的情况
         if(!tableDBMSObj.tableStructure.useIndex){
             //检查完整性约束
-            if(!relationRow.checkIntegrity()) return false;
+            if(!relationRow.checkIntegrity()) {
+                readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                readLock.lock();
+                writeLock.unlock();
+                readLock.unlock();
+                return false;
+            }
 
             RandomAccessFile randomAccessFile=new RandomAccessFile(path+".table","rw");
             randomAccessFile.seek(size*recordNum);  //移到文件指定位置
@@ -107,11 +124,18 @@ public class TableWriter {
                     //}
 
                 }
+            CacheSignManage.setDirtyBit(tableDBMSObj.tbName,recordNum);
+            readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+            readLock.lock();
                 writeLock.unlock();
+                readLock.unlock();
             randomAccessFile.close();
                 return true;
             }
+        readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+        readLock.lock();
         writeLock.unlock();
+        readLock.unlock();
         return false;
         }
         //删除掉某条记录
@@ -130,6 +154,7 @@ public class TableWriter {
 
     public boolean delete(int recordNum, TableDBMSObj tableDBMSObj) throws IOException{
         Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        Lock readLock;
         writeLock.lock();//上写锁
 
         String path=tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+
@@ -141,7 +166,10 @@ public class TableWriter {
             RandomAccessFile randomAccessFile=new RandomAccessFile(path+".table","rw");
             int size=tableDBMSObj.tableStructure.getSize();
             if(recordNum*size>randomAccessFile.length()) {
+                readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                readLock.lock();
                 writeLock.unlock();
+                readLock.unlock();
                 return false;
             }
 
@@ -170,10 +198,17 @@ public class TableWriter {
             System.out.println("删除:"+f.delete());
             f=new File(path+".tmp");
             f.renameTo(new File(path+".table"));
+            CacheSignManage.setDirtyBit(tableDBMSObj.tbName,recordNum);
+            readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+            readLock.lock();
             writeLock.unlock();
+            readLock.unlock();
             return true;
         }
+        readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+        readLock.lock();
         writeLock.unlock();
+        readLock.unlock();
         return false;
     }
 }

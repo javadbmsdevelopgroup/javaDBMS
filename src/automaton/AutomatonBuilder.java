@@ -301,7 +301,8 @@ public class AutomatonBuilder {
         AutomatonNode select_node50=new AutomatonNode(50,false);
         AutomatonNode select_node51=new AutomatonNode(51,false);
         AutomatonNode select_node52=new AutomatonNode(52,true,new SelectMethod());
-
+        AutomatonNode select_node59=new AutomatonNode(59,false);
+        AutomatonNode select_node60=new AutomatonNode(60,false);
         ////edges
         TransitionInf select_trans1=new TransitionInf(start,select_node44,TransitionType.KEYWORD,"SELECT");
         TransitionInf select_trans2=new TransitionInf(select_node44,select_node45,TransitionType.OBJNAME,"",new ColumNameTrans());
@@ -314,12 +315,20 @@ public class AutomatonBuilder {
         TransitionInf select_trans9=new TransitionInf(select_node49,select_node48,TransitionType.KEYWORD,"OR",new ExpressionTrans());
         TransitionInf select_trans10=new TransitionInf(select_node49,select_node48,TransitionType.KEYWORD,"AND",new ExpressionTrans());
         TransitionInf select_trans11=new TransitionInf(select_node49,select_node49,TransitionType.KEYWORD,")",new ExpressionTrans());
+
         TransitionInf select_trans12=new TransitionInf(select_node49,select_node52,TransitionType.KEYWORD,";");
         TransitionInf select_trans13=new TransitionInf(select_node49,select_node50,TransitionType.KEYWORD,"ORDER");
         TransitionInf select_trans14=new TransitionInf(select_node50,select_node50,TransitionType.KEYWORD,"BY");
         TransitionInf select_trans15=new TransitionInf(select_node50,select_node51,TransitionType.OBJNAME,"",new OtherTrans());
+
         TransitionInf select_trans16=new TransitionInf(select_node51,select_node52,TransitionType.KEYWORD,";");
         TransitionInf select_trans17=new TransitionInf(select_node47,select_node52,TransitionType.KEYWORD,";");
+        TransitionInf select_trans18=new TransitionInf(select_node47,select_node59,TransitionType.KEYWORD,"LIMIT");
+        TransitionInf select_trans19=new TransitionInf(select_node59,select_node60,TransitionType.OBJNAME,"",new OtherTrans());
+        TransitionInf select_trans20=new TransitionInf(select_node60,select_node52,TransitionType.KEYWORD,";");
+        TransitionInf select_trans21=new TransitionInf(select_node51,select_node59,TransitionType.KEYWORD,"LIMIT");
+        TransitionInf select_trans22=new TransitionInf(select_node49,select_node59,TransitionType.KEYWORD,"LIMIT");
+
         automatonNodeList.add(select_node44);
         automatonNodeList.add(select_node45);
         automatonNodeList.add(select_node46);
@@ -329,6 +338,8 @@ public class AutomatonBuilder {
         automatonNodeList.add(select_node50);
         automatonNodeList.add(select_node51);
         automatonNodeList.add(select_node52);
+        automatonNodeList.add(select_node59);
+        automatonNodeList.add(select_node60);
         transtionFunc.addAtransition(select_trans1);
         transtionFunc.addAtransition(select_trans2);
         transtionFunc.addAtransition(select_trans3);
@@ -346,7 +357,11 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(select_trans15);
         transtionFunc.addAtransition(select_trans16);
         transtionFunc.addAtransition(select_trans17);
-
+        transtionFunc.addAtransition(select_trans18);
+        transtionFunc.addAtransition(select_trans19);
+        transtionFunc.addAtransition(select_trans20);
+        transtionFunc.addAtransition(select_trans21);
+        transtionFunc.addAtransition(select_trans22);
         try{
             Automaton automaton=new Automaton(automatonNodeList,transtionFunc);
             System.out.println("自动机创建成功");

@@ -68,7 +68,8 @@ public class TableReader {
         Lock tableReadLock=null;
 
         System.out.println("尝试读取第"+recordPosition+"条记录");
-        if(tableBuffer.isPageExist(recordPosition/pageSize)==false){
+
+        if(CacheSignManage.getDirtyBit(tableDBMSObj.tbName,recordPosition) || tableBuffer.isPageExist(recordPosition/pageSize)==false){
             System.out.println("相应页不在缓冲区,尝试加入");
             //首先读取一页
             int p=recordPosition/pageSize;
@@ -77,6 +78,7 @@ public class TableReader {
             try{
                 //打开表文件,加读锁
                 tableReadLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                tableReadLock.lock();
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
             randomAccessFile.seek(s*p);
@@ -121,6 +123,7 @@ public class TableReader {
                 tableBuffer.addPage(tp);
                 randomAccessFile.close();
                 tableReadLock.unlock();  //释放读锁
+                CacheSignManage.cleanDirtyBit(tableDBMSObj.tbName,recordPosition);
             return tp.records[recordPosition%pageSize]; //返回指定行
 
             }catch (Exception e){
