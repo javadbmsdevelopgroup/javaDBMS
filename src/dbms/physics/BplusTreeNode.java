@@ -1,9 +1,11 @@
 package dbms.physics;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BplusTreeNode <K extends Comparable<K>>{
+//更改了  2019/7/7 14：20
+public class BplusTreeNode <K extends Comparable<K>> implements Serializable {
     //是否为叶子节点
     protected boolean isLeaf;
     //是否为根节点
@@ -151,7 +153,11 @@ public class BplusTreeNode <K extends Comparable<K>>{
             return;
         }
         if(key.compareTo(keys.get(0)) < 0)
+        {
+            //更改了  2019/7/7 14：20
+            keys.set(0, key);
             children.get(0).insertOrUpdate(key, value, tree);
+        }
         else {
             int low = 0;
             int high = keys.size() - 1;
@@ -379,7 +385,8 @@ public class BplusTreeNode <K extends Comparable<K>>{
                 mid = (low + high)/2;
                 comm = keys.get(mid).compareTo(key);
                 if(comm == 0)
-                    return children.get(0).remove(key, tree);
+                    return children.get(mid).remove(key, tree);
+                    //更改了  2019/7/7 14：20
                 else if (comm < 0)
                     low = mid + 1;
                 else

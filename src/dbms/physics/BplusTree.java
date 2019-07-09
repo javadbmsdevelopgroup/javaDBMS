@@ -1,6 +1,9 @@
 package dbms.physics;
 
-public class BplusTree<K extends Comparable<K>> {
+import java.io.Serializable;
+
+//更改了  2019/7/7 14：20
+public class BplusTree<K extends Comparable<K>> implements Serializable {
     //
     protected BplusTreeNode<K> root;
     //

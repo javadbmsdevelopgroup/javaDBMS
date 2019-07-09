@@ -35,6 +35,14 @@ public class TableStructure implements Serializable {
         return s;
     }
 
+    public DataType getDataType(String columnName){
+        for(TableStructureItem tableStructureItem:dts){
+            if(tableStructureItem.conlumName.compareTo(columnName)==0){
+                return tableStructureItem.type;
+            }
+        }
+        return null;
+    }
     public boolean isColumnExists(String name){
         for (TableStructureItem tsi : dts){
             if(tsi.conlumName.compareTo(name)==0) return true;

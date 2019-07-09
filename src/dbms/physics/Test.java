@@ -2,7 +2,7 @@ package dbms.physics;
 
 public class Test {
 
-    public static void main(String[] args){
+   /* public static void main(String[] args){
         boolean random = false;
         int order = 10;
         int size = 1000000;
@@ -57,5 +57,5 @@ public class Test {
             System.out.println("花费时间：" + end);
             System.out.println(count);
         }
-    }
+    }*/
 }
