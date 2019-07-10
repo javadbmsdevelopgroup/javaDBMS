@@ -3,11 +3,15 @@ package automaton.methods;
 import automaton.InfCollection;
 import automaton.SQLSession;
 import com.sun.corba.se.spi.ior.ObjectKey;
+import dbms.IndexCache;
 import dbms.RelationRow;
+import dbms.logic.DataType;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
+import dbms.physics.BplusTree;
 
 import javax.rmi.ssl.SslRMIClientSocketFactory;
+import javax.xml.crypto.Data;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -53,7 +57,15 @@ public class MethodTools {
                             case INT32:
                                 return val.equals(Integer.parseInt(r));
                             case STRING:
-                                return val.equals(r);
+                                String recordStrVal=(String)val;
+                                String realRecordStrVal="";
+                                for(int i=0;i<recordStrVal.length();i++){
+                                    char c=recordStrVal.charAt(i);
+                                    if(c!='\u0000'){
+                                        realRecordStrVal+=c;
+                                    }else break;
+                                }
+                                return ((String)realRecordStrVal).compareTo(r)==0;
                         }
                     }
                     break;
@@ -259,6 +271,51 @@ public class MethodTools {
         return true;
     }
 
+
+    public static int getRecordPosThroughIndex(Stack<String> expressionStack,TableDBMSObj tableDBMSObj){
+        //select * from student where 学号=100;
+        String conlumn="";
+        String val="";
+        boolean left=true;
+        if(expressionStack.empty()) return -2;  //索引查询错误
+        String tmpExpression=expressionStack.pop();
+        for(int i=0;i<tmpExpression.length();i++){
+            if(tmpExpression.charAt(i)!='='){
+                if(left){
+                    conlumn+=tmpExpression.charAt(i);
+                }else{
+                    val+=tmpExpression.charAt(i);
+                }
+            }else{
+                left=false;
+            }
+        }
+        if(!tableDBMSObj.tableStructure.isColumnExists(conlumn) || conlumn.compareTo(tableDBMSObj.tableStructure.indexOn)!=0) {
+            System.out.println("列名不是索引");
+            return -2; //查询值不是索引
+        }
+
+        DataType dataType=tableDBMSObj.tableStructure.getDataType(conlumn);
+
+
+        BplusTree indexBtree=IndexCache.getInstance().getIndex(tableDBMSObj);
+
+
+        if(indexBtree==null) {
+            return -2;  //载入索引失败
+        }
+
+        Object pos=null;
+        switch (dataType){
+            case STRING:
+                pos=indexBtree.get(val);
+            case INT32:
+                pos=indexBtree.get(Integer.parseInt(val));
+        }
+
+
+        if(pos==null) return -1; else return (int)pos;
+    }
     public static void main(String[] args){
         Stack<String> test=new Stack<>();
        /* test.push("(");

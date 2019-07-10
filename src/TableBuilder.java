@@ -1,7 +1,7 @@
 import automaton.AutomatonBuilder;
 import automaton.SQLAutomaton;
 import automaton.SQLSession;
-
+import java.util.Random;
 import dbms.RelationRow;
 import dbms.TableReader;
 import dbms.TableWriter;
@@ -15,7 +15,55 @@ import java.util.List;
 
 
 public class TableBuilder {
+    public static String[] lastName;
+    public static String[] myClass;
+    public static void initLastName() {
+        String ss = "李 王 张 刘 陈 杨 黄 赵 周 吴 徐 孙" +
+                " 朱 马 胡 郭 林 何 高 梁 郑 罗 宋 谢 唐 韩 曹" +
+                " 许 邓 萧 冯 曾 程 蔡 彭 潘 袁 于 董 余 苏 叶 吕 魏 蒋 田 杜 丁" +
+                " 沈 姜 范 江 傅 钟 卢 汪 戴 崔 任 陆 廖 姚 方" +
+                " 金 邱 夏 谭 韦 贾 邹 石 熊 孟 秦 阎 薛 侯 雷 白 龙 段 郝 孔 " +
+                "邵 史 毛 常 万 顾 赖 武 康 贺 严 尹 钱 施 牛 洪 龚 汤 陶 黎 温 " +
+                "莫 易 樊 乔 文 安 殷 颜 庄 章 鲁 倪 庞 邢 俞 翟 蓝 聂 齐 向 申 葛 岳";
+        lastName = ss.split(" ");
+//        for(int i = 0; i < lastName.length; i++)
+//            System.out.println(lastName[i]);
+//        System.out.println(lastName.length);
+        myClass = new String[100];
+        for(int i = 0; i < 100; i++){
+            myClass[i] = Integer.toString(i + 1700);
+        }
+
+    }
+
+
+    public static String randomGetStudent(int i) {
+        int num = 17000000;
+        String xuehao = Integer.toString(num + i);
+        Random random = new Random();
+        String last = lastName[random.nextInt(127)];
+        last += new String(new char[] { (char) (new Random().nextInt(20902) + 19968) });
+        //20902
+        if(random.nextInt(2) == 1)
+            last += new String(new char[] { (char) (new Random().nextInt(20902) + 19968) });
+        StringBuilder all = new StringBuilder();
+        all.append("insert into student (学号,姓名,班级,性别) values (");
+        all.append(xuehao);
+        all.append(",");
+        all.append(last);
+        all.append(",");
+        all.append(myClass[random.nextInt(100)]);
+        all.append(",");
+        if(random.nextInt(2) == 1)
+            all.append("M");
+        else
+            all.append("F");
+        all.append(")");
+        return all.toString();
+    }
+
     public static void generateData(){
+        initLastName();
         SQLSession sqlSession=new SQLSession();   //SQL会话
         SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);   //自动机
 
@@ -25,8 +73,8 @@ public class TableBuilder {
         sqlAutomaton.matchingGrammar("create database test");
         sqlAutomaton.matchingGrammar("use test");
         sqlAutomaton.matchingGrammar("create table student (学号 int primary key ,姓名 string(12) not null ,班级 int,性别 string(1))");
-        sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 int not null ,选课时间 String(30) not null)");
-        sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(30) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
+        //sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 int not null ,选课时间 String(30) not null)");
+        //sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(30) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
         //sqlAutomaton.matchingGrammar("insert into student values (1110000,www,333,M)");
 
 

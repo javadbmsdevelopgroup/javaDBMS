@@ -3,9 +3,18 @@ package automaton.methods;
 import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
+import dbms.RelationRow;
+import dbms.TableReader;
+import dbms.logic.DataType;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructure;
+import dbms.physics.BplusTree;
+import filesystem.PropertiesFileTool;
+import javafx.scene.control.Tab;
+
+import java.io.*;
+import java.nio.ByteBuffer;
 
 public class IndexCreateMethod implements INodeFunc {
     @Override
@@ -29,9 +38,10 @@ public class IndexCreateMethod implements INodeFunc {
             //要等锁
             //补充lock
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,databaseDBMSObj);
-            if(createIndex(indexOn,tableDBMSObj)){
+            if(createIndex(indexOn,sqlSession.curUseDatabase,tableDBMSObj)){
                 //索引创建成功,重新写入文件
                 TableStructure tableStructure=tableDBMSObj.tableStructure;
+
                 tableStructure.useIndex=true;
                 tableStructure.indexOn=indexOn;
                 tableStructure.writeToStructFile(sqlSession.curUseDatabase,tableName);
@@ -49,8 +59,55 @@ public class IndexCreateMethod implements INodeFunc {
         return null;
     }
 
-    private boolean createIndex(String columnName, TableDBMSObj tableDBMSObj){
+    private boolean createIndex(String columnName, String dbName,TableDBMSObj tableDBMSObj){
         if(!tableDBMSObj.tableStructure.isColumnExists(columnName)) return false;
+        //创建索引
+        try {
+            TableReader reader = new TableReader(tableDBMSObj, 30);
+            int pos = 0;
+            RelationRow record = reader.readRecord(pos);
+            DataType dataType = tableDBMSObj.tableStructure.getDataType(columnName);
+
+
+            String path=DatabaseDBMSObj.rootPath+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName+".lh";
+            FileOutputStream fos=new FileOutputStream(path);
+            DataOutputStream dos=new DataOutputStream(fos);
+            BufferedOutputStream bos=new BufferedOutputStream(dos);
+
+
+
+
+            //为每条记录创建索引
+            while (record != null) {
+                byte[] pos_bs=ByteBuffer.allocate(4).putInt(pos).array();
+                switch (dataType){
+                    case INT32:
+                        int key_int=(Integer)record.getVal(columnName);
+                        byte[] key_bs= ByteBuffer.allocate(4).putInt(key_int).array();
+                        bos.write(key_bs,0,4);
+                        bos.write(pos_bs,0,4);
+                        break;
+                    case STRING:
+                        String key_str=(String)record.getVal(columnName);
+                        byte[] str_bs=key_str.getBytes();
+                        bos.write(str_bs,0,str_bs.length);
+                        bos.write(pos_bs,0,4);
+                        break;
+                }
+
+                pos++;
+                record = reader.readRecord(pos);
+            }
+
+            bos.close();
+            dos.close();
+            fos.close();
+
+            System.out.println("索引建立完成");
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         return false;
     }
 }

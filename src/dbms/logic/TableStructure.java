@@ -25,13 +25,21 @@ public class TableStructure implements Serializable {
     public TableDBMSObj getTableDBMSObjBelongedTo(){
         return tableDBMSObjBelongedTo;
     }
+    public int getConlumSize(String name){
+        for (TableStructureItem tsi : dts){
+            if(tsi.conlumName.compareTo(name)==0){
+                return tsi.size;
+            }
+        }
+        return -1;
+    }
     //获取一条记录的大小
     public int getSize(){
         int s=0;
         for (TableStructureItem tsi : dts){
             s+=tsi.size;
         }
-        System.out.println("record size="+s);
+        //System.out.println("record size="+s);
         return s;
     }
 

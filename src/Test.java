@@ -20,6 +20,15 @@ public class Test {
 
     }
     public static void main(String[] args){
+        if(true){
+            try {
+                PropertiesFileTool.getInstance().writeConfig("PageSize", "30");
+                PropertiesFileTool.getInstance().writeConfig("IndexSize","10000");
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return;
+        }
         try {
             TableDBMSObj tableDBMSObj=new TableDBMSObj("student",new DatabaseDBMSObj("test",DatabaseDBMSObj.rootPath));
             TableReader tableReader = new TableReader(tableDBMSObj,30);

@@ -4,11 +4,16 @@ import com.sun.org.apache.regexp.internal.RE;
 import dbms.exceptions.BufferSizeException;
 import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructureItem;
+import dbms.physics.BplusTree;
 
 import javax.management.relation.Relation;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.ObjectInputStream;
 import java.io.RandomAccessFile;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
 
 ///////////////////////////////表读取器
@@ -17,8 +22,11 @@ public class TableReader {
     public TableDBMSObj tableDBMSObj=null;   //表逻辑对象
     TableBuffer tableBuffer;        //缓冲
     int pageSize;  //页大小
-
+    BplusTree indexCache=null;
     int kh=1;
+
+
+
 
     public int getPageSize(){
         return pageSize;
@@ -58,7 +66,9 @@ public class TableReader {
         this.pageSize=pageSize;
         this.tableDBMSObj=tableDBMSObj;
         this.tableBuffer = new TableBuffer(pageSize);
+        //IndexCache.loadIndex(tableDBMSObj);
     }
+
 
 
 
@@ -67,21 +77,23 @@ public class TableReader {
         //锁
         Lock tableReadLock=null;
 
-        System.out.println("尝试读取第"+recordPosition+"条记录");
+        //System.out.println("尝试读取第"+recordPosition+"条记录");
 
         if(CacheSignManage.getDirtyBit(tableDBMSObj.tbName,recordPosition) || tableBuffer.isPageExist(recordPosition/pageSize)==false){
-            System.out.println("相应页不在缓冲区,尝试加入");
+            //System.out.println("相应页不在缓冲区,尝试加入");
             //首先读取一页
             int p=recordPosition/pageSize;
             int s=tableDBMSObj.tableStructure.getSize();
             RandomAccessFile randomAccessFile=null;
+
             try{
                 //打开表文件,加读锁
                 tableReadLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
                 tableReadLock.lock();
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
-            randomAccessFile.seek(s*p);
+            //System.out.println("s="+s+",p="+p+"page size="+pageSize);
+            randomAccessFile.seek(s*p*pageSize);
             if(recordPosition*tableDBMSObj.tableStructure.getSize()>randomAccessFile.length()){
                 tableReadLock.unlock();   //释放读锁
                 //尝试访问文件中不存在的记录
@@ -119,7 +131,7 @@ public class TableReader {
             }
                 //先执行页的置换算法或加载算法
                 //加新页到缓冲区，置换算法、加载算法由缓冲区类完成
-                System.out.println("加入缓冲区");
+                //System.out.println("加入缓冲区");
                 tableBuffer.addPage(tp);
                 randomAccessFile.close();
                 tableReadLock.unlock();  //释放读锁
@@ -133,7 +145,7 @@ public class TableReader {
             }
         }else{
             //页已存在缓冲，直接返回
-            System.out.println("相应页在缓冲区,直接返回");
+            //System.out.println("相应页在缓冲区,直接返回");
 
             return tableBuffer.getPage(recordPosition/pageSize).records[recordPosition % pageSize];
         }
