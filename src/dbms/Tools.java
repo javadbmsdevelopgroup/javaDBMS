@@ -71,7 +71,7 @@ public class Tools {
                         fis.close();
                         bos.close();
                         fos.close();
-                        
+
                         if(tableDBMSObj.tableStructure.useIndex){
                             //重建索引
                             SQLSession sqlSession=new SQLSession();
@@ -90,6 +90,7 @@ public class Tools {
         }
         writeLock.unlock();
         readLock.unlock();
+
     }
     private Tools(){
     }

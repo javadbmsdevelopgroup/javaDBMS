@@ -22,6 +22,9 @@ public class TableBuffer {
         totleSize=size;
     }
 
+    public void clean(){
+        pageMap.clear();
+    }
     public void deletePage(int pageindex){
         if(pageMap.containsKey(pageindex)){
             pageMap.remove(pageindex);

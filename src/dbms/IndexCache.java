@@ -17,6 +17,9 @@ public class IndexCache {
     public boolean changed=false;
     private IndexCache(){}
 
+    public void init(){
+        indexCache.clear();
+    }
     private static Map<String,BplusTree> indexCache=new HashMap<>();
     public static IndexCache getInstance(){
         if(instance==null) instance=new IndexCache();

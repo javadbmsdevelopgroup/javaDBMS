@@ -27,6 +27,9 @@ public class TableReader {
 
 
 
+    public void cleanBuffer(){
+        tableBuffer.clean();
+    }
     public boolean resetBufferRecord(int recordPos,RelationRow r){
         int pageNum=recordPos/this.pageSize;
         if(!tableBuffer.pageMap.containsKey(pageNum)) return false;

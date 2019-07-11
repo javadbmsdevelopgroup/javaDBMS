@@ -19,6 +19,15 @@ public class CacheManage {
     }
 
 
+    public static void initCache(){
+
+        for(String tbdbName:readerMap.keySet()){
+            readerMap.get(tbdbName).cleanBuffer();
+        }
+        readerMap.clear();
+        indexCache.init();
+    }
+
 
     public static void loadAllindex(){
         String root=PropertiesFileTool.getInstance().readConfig("DBRoot");
