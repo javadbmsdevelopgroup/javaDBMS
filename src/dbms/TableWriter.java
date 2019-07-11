@@ -14,17 +14,17 @@ import java.util.Map;
 public class TableWriter {
     //在末尾添加
     public void appendRelations(List<RelationRow> relationItems, TableDBMSObj tableDBMSObj) throws IOException {
-        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+        /*Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
         Lock readLock;
-        writeLock.lock();//上写锁
+        writeLock.lock();//上写锁*/
 
             //检查完整性约束
             for(int i=0;i<relationItems.size();i++){
                 if(!relationItems.get(i).checkIntegrity()) {
-                    readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                   /* readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
                     readLock.lock();
                     writeLock.unlock();
-                    readLock.unlock();
+                    readLock.unlock();*/
                     return;
                 }
             }
@@ -92,10 +92,10 @@ public class TableWriter {
             randomAccessFile.close();
 
             //写锁释放前先加读锁。防止其他线程
-            readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+          /*  readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
             readLock.lock();
             writeLock.unlock();
-            readLock.unlock();
+            readLock.unlock();*/
 
 
     }
@@ -106,17 +106,17 @@ public class TableWriter {
                 tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName;
         int size=tableDBMSObj.tableStructure.getSize();
 
-        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
+    /*    Lock writeLock=TableReadWriteLock.getInstance().getWriteLock(tableDBMSObj.tbName);
         Lock readLock;
-        writeLock.lock();//上写锁
+        writeLock.lock();//上写锁*/
 
         //不用索引的情况
             //检查完整性约束
             if(!relationRow.checkIntegrity()) {
-                readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+                /*readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
                 readLock.lock();
                 writeLock.unlock();
-                readLock.unlock();
+                readLock.unlock();*/
                 return false;
             }
 //delete from course where 课程编号=17002;
@@ -155,11 +155,11 @@ public class TableWriter {
 
             CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableDBMSObj.tbName,relationRow,recordNum);
             randomAccessFile.close();
-            readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
+            /*readLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
             readLock.lock();
                 writeLock.unlock();
                 readLock.unlock();
-
+*/
 
 
 

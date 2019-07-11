@@ -5,16 +5,45 @@ import dbms.logic.TableDBMSObj;
 import dbms.physics.BplusTree;
 import filesystem.PropertiesFileTool;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
 public class CacheManage {
     private static  CacheManage instance=null;
-    private Map<String, TableReader> readerMap=new HashMap<>();
-    private IndexCache indexCache=IndexCache.getInstance();
+    private static Map<String, TableReader> readerMap=new HashMap<>();
+    private static IndexCache indexCache=IndexCache.getInstance();
     public static CacheManage getInstance(){
         if(instance==null) instance=new CacheManage();
         return instance;
+    }
+
+
+
+    public static void loadAllindex(){
+        String root=PropertiesFileTool.getInstance().readConfig("DBRoot");
+        File dbF=new File(root);
+        if(!dbF.exists() || !dbF.isDirectory()) return;
+        File[] dbs=dbF.listFiles();
+        for(File f:dbs){
+            if(!f.isDirectory()) continue;
+            File[] tbs=f.listFiles();
+            String dbname=f.getName();
+
+            for(File tbf:tbs){
+                if(tbf.getName().indexOf(".lh")>=0){
+                    System.out.println("Load Index:"+dbname+"\\"+tbf.getName());
+                    try {
+                        indexCache.loadIndex(new TableDBMSObj(tbf.getName().substring(0, (int) (tbf.getName().length() - 3))
+                                        ,new DatabaseDBMSObj(dbname, DatabaseDBMSObj.rootPath)  )
+                                );
+                    }catch (Exception e){
+                        System.out.println("索引缓存失败");
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }
     }
     public TableReader getTableReader(String dbName,String tbName){
         String keyStr=dbName+"."+tbName;

@@ -4,6 +4,7 @@ import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
 import dbms.RelationRow;
+import dbms.TableReadWriteLock;
 import dbms.TableWriter;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
@@ -14,10 +15,14 @@ import filesystem.PropertiesFileTool;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 public class InsertMethod implements INodeFunc {
+
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
+        Lock readLock;
+        Lock writeLock;
         SQLSession sqlSession = (SQLSession) objs[0];
         //判断是否已选择一个数据库
         if(sqlSession.curUseDatabase.compareTo("")==0){
@@ -82,7 +87,15 @@ public class InsertMethod implements INodeFunc {
                 }
                 List<RelationRow> relationRows=new ArrayList<>();
                 relationRows.add(relationRow);
+                writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
+                writeLock.lock();
+
                 tableWriter.appendRelations(relationRows,tableDBMSObj);
+
+                readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
+                readLock.lock();
+                writeLock.unlock();
+                readLock.unlock();
                 System.out.println("Insert successful.");
                 return null;
             }

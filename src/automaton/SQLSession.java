@@ -1,6 +1,10 @@
 package automaton;
 
+import dbms.CacheManage;
+import dbms.TableReadWriteLock;
+
 import java.util.Scanner;
+import java.util.concurrent.locks.Lock;
 
 //sql会话              这是主要进行数据库操作的地方
 public class SQLSession {
@@ -12,6 +16,9 @@ public class SQLSession {
         SQLSession sqlSession=new SQLSession();
         SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
         Scanner sc=new Scanner(System.in);
+        CacheManage.loadAllindex();
+
+
         System.out.println("SQL会话创建成功");
         while (true){
             System.out.print("YuiSQL> ");

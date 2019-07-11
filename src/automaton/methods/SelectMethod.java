@@ -4,10 +4,7 @@ import automaton.INodeFunc;
 import automaton.ITransMethod;
 import automaton.InfCollection;
 import automaton.SQLSession;
-import dbms.IndexCache;
-import dbms.RelationRow;
-import dbms.TableReader;
-import dbms.TableWriter;
+import dbms.*;
 import dbms.logic.DataType;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
@@ -16,10 +13,13 @@ import dbms.view.ViewLogicMapping;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
+import java.util.concurrent.locks.Lock;
 
 public class SelectMethod implements INodeFunc {
     ViewLogicMapping viewLogicMapping;
     TableReader reader;
+    Lock readLock=null;
+    Lock writeLock=null;
     @Override
     public Object doWork(InfCollection infCollection,Object... objs){
         //select * from course
@@ -59,7 +59,9 @@ public class SelectMethod implements INodeFunc {
                     orderBy=infCollection.others.pop();
                 }catch (Exception e){ }
             }
-
+            //上锁
+            readLock= TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.dbBelongedTo.dbName+"."+tableName);
+            readLock.lock();
             if(!tableDBMSObj.tableStructure.useIndex){
                 sequentialQuery(limit,(Stack<String>) infCollection.logicExpressions.clone()); //无索引下顺序查询
             }else{
@@ -76,9 +78,11 @@ public class SelectMethod implements INodeFunc {
                     System.out.println("未查询到记录");
                 }
             }
+            readLock.unlock();
             viewLogicMapping.flush();
             viewLogicMapping.showBottomLine();
         }catch (Exception e){
+            if(readLock!=null ) readLock.unlock();
             e.printStackTrace();
         }
 
@@ -88,6 +92,7 @@ public class SelectMethod implements INodeFunc {
     }
 
     public void sequentialQuery(int limit,Stack<String> logicExpressionStack){
+
         if(reader==null || viewLogicMapping==null) return;
         int pos=0;
         RelationRow r=reader.readRecord(pos);

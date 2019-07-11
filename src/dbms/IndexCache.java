@@ -38,7 +38,6 @@ public class IndexCache {
         String strKey=tableDBMSObj.dbBelongedTo.dbName+"."+tableDBMSObj.tbName;
         if(indexCache.containsKey(strKey)) return true;
         String path= DatabaseDBMSObj.rootPath+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"+tableDBMSObj.tbName+".lh";
-        System.out.println(path);
         try{
             FileInputStream fis=new FileInputStream(path);
             DataInputStream dis=new DataInputStream(fis);

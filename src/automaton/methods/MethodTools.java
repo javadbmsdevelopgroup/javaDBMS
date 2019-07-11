@@ -272,6 +272,73 @@ public class MethodTools {
     }
 
 
+    public static int calcVal(String expression,RelationRow r) throws Exception{
+        Stack<Integer> operands=new Stack<>();
+        Stack<String> opereator=new Stack<>();
+        String cur="";
+        for(int i=0;i<expression.length();i++) {
+            char c = expression.charAt(i);
+            switch (c) {
+                case '+':
+                case '-':
+                    if (cur.compareTo("") == 0) {
+                        throw new Exception("表达式错误");
+                    }
+                    Integer val = null;
+                    try {
+                        val = Integer.parseInt(cur);
+                    } catch (Exception e) {
+                    }
+
+                    if (val == null) {
+                        if (r.getConlumType(cur) == null || r.getConlumType(cur) != DataType.INT32)
+                            throw new Exception("类型错误");
+                        val = (Integer) r.getVal(cur);
+                    }
+                    cur = "";
+                    operands.push(val);
+                    opereator.push("" + c);
+
+                    break;
+
+                default:
+                    cur = cur + c;
+            }
+        }
+
+            if (cur.compareTo("") != 0) {
+                Integer val = null;
+                try {
+                    val = Integer.parseInt(cur);
+                } catch (Exception e) {
+                }
+
+                if (val == null) {
+                    if (r.getConlumType(cur) == null || r.getConlumType(cur) != DataType.INT32)
+                        throw new Exception("类型错误");
+                    val = (Integer) r.getVal(cur);
+                }
+                cur = "";
+                operands.push(val);
+            }
+
+            while (!operands.empty()){
+                int result;
+                int left;
+                int right;
+                String op=opereator.pop();
+                right=operands.pop();
+                left=operands.pop();
+                if(op.compareTo("+")==0){
+                    result=left+right;
+                    operands.push(result);
+                }else if(op.compareTo("-")==0){
+                    result=left-right;
+                    operands.push(result);
+                }
+            }
+            return operands.pop();
+    }
     public static int getRecordPosThroughIndex(Stack<String> expressionStack,TableDBMSObj tableDBMSObj){
         //select * from student where 学号=100;
         String conlumn="";
