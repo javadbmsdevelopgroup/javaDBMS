@@ -13,6 +13,7 @@ import java.util.List;
 public class RelationRow implements Comparable<RelationRow>{
 
     TableStructure tbs=null;   //对应的表结构
+    boolean deleted=false;
    // TableDBMSObj tbBelongedTo=null;
     List<RelationSItem > sis=new ArrayList<>();   //元组中的每项
     public RelationRow(TableStructure structure){
@@ -29,7 +30,7 @@ public class RelationRow implements Comparable<RelationRow>{
         for(RelationSItem ris:sis){
             str+=ris.elementObj.val.toString()+" , ";
         }
-        str+="]";
+        str+="] "+(deleted?1:0);
         return str;
 
     }

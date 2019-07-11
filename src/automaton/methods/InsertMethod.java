@@ -42,14 +42,12 @@ public class InsertMethod implements INodeFunc {
             TableDBMSObj tableDBMSObj = new TableDBMSObj(tableName,new DatabaseDBMSObj(sqlSession.curUseDatabase, DatabaseDBMSObj.rootPath));
 //insert into student values(111,222)
         //检验参数对应性
-            for (TableStructureItem tableStructureItem:tableDBMSObj.tableStructure.dts){
-                System.out.println(tableStructureItem.conlumName+" "+tableStructureItem.type);
-            }
+
             if(infCollection.columNames.size()==0){  //直接用values的情况 (必须插入全部值)
                 for (int t=0;t< tableDBMSObj.tableStructure.dts.size();t++){
                     TableStructureItem tableStructureItem=tableDBMSObj.tableStructure.dts.get(tableDBMSObj.tableStructure.dts.size()-1-t);
                     infCollection.columNames.push(tableStructureItem.conlumName);
-                    System.out.println("push "+tableStructureItem.conlumName);
+                    //System.out.println("push "+tableStructureItem.conlumName);
                 }
             }
 
@@ -69,7 +67,6 @@ public class InsertMethod implements INodeFunc {
                     String cName=infCollection.columNames.pop();
                     switch (tableStructure.dts.get(i).type){
                         case INT32:
-                            System.out.println(cName);
                             if(!relationRow.setVal(cName,Integer.parseInt(val))){
                                 System.out.println("Insert Error.(Column name '"+cName+"'not exist)");
                                 return null;
@@ -81,7 +78,6 @@ public class InsertMethod implements INodeFunc {
                                 return null;
                             }
                             break;
-
                     }
                 }
                 List<RelationRow> relationRows=new ArrayList<>();

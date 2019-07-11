@@ -73,8 +73,8 @@ public class TableBuilder {
         sqlAutomaton.matchingGrammar("create database test");
         sqlAutomaton.matchingGrammar("use test");
         sqlAutomaton.matchingGrammar("create table student (学号 int primary key ,姓名 string(12) not null ,班级 int,性别 string(1))");
-        //sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 int not null ,选课时间 String(30) not null)");
-        //sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(30) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
+        sqlAutomaton.matchingGrammar("create table stuCourse(学号 int not null ,课程编号 int not null ,选课时间 String(30) not null)");
+        sqlAutomaton.matchingGrammar("create table course (课程编号 int primary key ,课程名称 string(30) not null ,课程容量 int,余剩容量 int ,已选人数 int)");
         //sqlAutomaton.matchingGrammar("insert into student values (1110000,www,333,M)");
 
 
@@ -87,6 +87,13 @@ public class TableBuilder {
          *   RelationRow r= tableReader.readRecord(i);
         * */
 
+
+       /* for(int i=0;i<1000000;i++){
+            sqlAutomaton.matchingGrammar(randomGetStudent(i));
+        }*/
+        sqlAutomaton.matchingGrammar("insert into course values (17001,JAVA从入门到放弃,100,100,0)");
+        sqlAutomaton.matchingGrammar("insert into course values (17002,MySQL从删库到跑路,100,100,0)");
+        sqlAutomaton.matchingGrammar("insert into course values (17003,JDK的安装与卸载,100,100,0)");
 
         ////Fill code here
         //学生数据要求百万条  选课数据没说  课程3门(要求的)

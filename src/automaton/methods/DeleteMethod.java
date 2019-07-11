@@ -3,12 +3,15 @@ package automaton.methods;
 import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
+import dbms.CacheManage;
 import dbms.RelationRow;
 import dbms.TableReader;
 import dbms.TableWriter;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.Relation;
 import dbms.logic.TableDBMSObj;
+import dbms.physics.BplusTree;
+import filesystem.PropertiesFileTool;
 
 import java.util.Stack;
 
@@ -19,20 +22,15 @@ public class DeleteMethod implements INodeFunc {
         System.out.println("delete method");
         SQLSession sqlSession=(SQLSession)objs[0];
         String tableName=infCollection.tableNames.pop();
-        //检查是否使用了某个数据库
-        if(sqlSession.curUseDatabase.compareTo("")==0){
-            System.out.println("No selected Database.");
-            return null;
-        }
-        DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath);
-        //检查数据库中表是否存在
-        if(!databaseDBMSObj.isTableExist(tableName)){
-            System.out.println("Table '"+tableName+"' no exist in database "+sqlSession.curUseDatabase);
-            return null;
-        }
+
+        if(!MethodTools.checkTableandDatabase(sqlSession,tableName)) return null;
+
         try{
+            DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath);
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,databaseDBMSObj);
-            TableReader reader=new TableReader(tableDBMSObj,30);
+            TableReader reader= CacheManage.getInstance().getTableReader(sqlSession.curUseDatabase,tableName);
+
+
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
@@ -43,9 +41,7 @@ public class DeleteMethod implements INodeFunc {
                     //System.out.println(pos+" "+r+" "+MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r));
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
                         System.out.println("Try delete:"+r);
-                        System.out.println(tableWriter.delete(pos,tableDBMSObj));
-                        reader.deletePage(pos/reader.getPageSize());
-                        pos--;
+                        System.out.println("删除:"+tableWriter.delete(pos,tableDBMSObj));
                     }
                     pos++;
                     r=reader.readRecord(pos);
@@ -53,6 +49,10 @@ public class DeleteMethod implements INodeFunc {
                 }
             }else{
                 //运用索引的情况下进行删除
+                BplusTree bplusTree= CacheManage.getInstance().getIndex(tableDBMSObj);
+                int pos=MethodTools.getRecordPosThroughIndex((Stack<String>)infCollection.logicExpressions.clone(),tableDBMSObj);
+                TableWriter tableWriter=new TableWriter();
+                tableWriter.delete(pos,tableDBMSObj);
             }
 
 

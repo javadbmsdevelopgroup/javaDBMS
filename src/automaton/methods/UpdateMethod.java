@@ -29,8 +29,9 @@ public class UpdateMethod implements INodeFunc {
             String setExpression=infCollection.others.pop();
             String conlumName="";
             String val="";
+            boolean l=true;
             for(int i=0;i<setExpression.length();i++){
-                boolean l=true;
+
                 if(setExpression.charAt(i)!='=')
                 {
                     if(l)
@@ -42,6 +43,7 @@ public class UpdateMethod implements INodeFunc {
                     continue;
                 }
             }
+
             if(!tableDBMSObj.tableStructure.isColumnExists(conlumName)){
                 System.out.println("Column name '"+conlumName+"' not exists.");
                 return null;

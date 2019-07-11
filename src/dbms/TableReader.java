@@ -27,7 +27,13 @@ public class TableReader {
 
 
 
+    public boolean resetBufferRecord(int recordPos,RelationRow r){
+        int pageNum=recordPos/this.pageSize;
+        if(!tableBuffer.pageMap.containsKey(pageNum)) return false;
+        tableBuffer.pageMap.get(pageNum).records[recordPos%pageSize]=r;
 
+        return true;
+    }
     public int getPageSize(){
         return pageSize;
     }
@@ -79,7 +85,7 @@ public class TableReader {
 
         //System.out.println("尝试读取第"+recordPosition+"条记录");
 
-        if(CacheSignManage.getDirtyBit(tableDBMSObj.tbName,recordPosition) || tableBuffer.isPageExist(recordPosition/pageSize)==false){
+        if(tableBuffer.isPageExist(recordPosition/pageSize)==false){
             //System.out.println("相应页不在缓冲区,尝试加入");
             //首先读取一页
             int p=recordPosition/pageSize;
@@ -93,7 +99,7 @@ public class TableReader {
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
             //System.out.println("s="+s+",p="+p+"page size="+pageSize);
-            randomAccessFile.seek(s*p*pageSize);
+            randomAccessFile.seek((s+1)*p*pageSize); //调到指定位置
             if(recordPosition*tableDBMSObj.tableStructure.getSize()>randomAccessFile.length()){
                 tableReadLock.unlock();   //释放读锁
                 //尝试访问文件中不存在的记录
@@ -107,23 +113,30 @@ public class TableReader {
             for(int i=0;i<pageSize;i++){
                 if(randomAccessFile.getFilePointer()<randomAccessFile.length()){
                     RelationRow record=new RelationRow(this.tableDBMSObj.tableStructure);
-                    //读取每个属性值
-                    for(TableStructureItem relationSItem:this.tableDBMSObj.tableStructure.dts){
-                        //System.out.println(relationSItem.conlumName+" "+relationSItem.type);
-                        switch (relationSItem.type){
-                            case STRING:
-                                byte[] bytes=new byte[relationSItem.size];
-                                randomAccessFile.read(bytes);
-                                record.setVal(relationSItem.conlumName,new String(bytes));
-                                break;
-                            case INT32:
-                                record.setVal(relationSItem.conlumName,randomAccessFile.readInt());
-                                break;
+                    byte deleted=randomAccessFile.readByte();
+                    if(deleted==0){
+                        //读取每个属性值
+                        for(TableStructureItem relationSItem:this.tableDBMSObj.tableStructure.dts){
+                            switch (relationSItem.type){
+                                case STRING:
+                                    byte[] bytes=new byte[relationSItem.size];
+                                    randomAccessFile.read(bytes);
+                                    record.setVal(relationSItem.conlumName,new String(bytes));
+                                    break;
+                                case INT32:
+                                    record.setVal(relationSItem.conlumName,randomAccessFile.readInt());
+                                    break;
+                            }
                         }
+                        //加入页内
+                        tp.records[i]=record;
+                        //System.out.println(record);
+                    }else{
+                        record.deleted=true;
+                        tp.records[i]=record;
+                        randomAccessFile.skipBytes(s); //跳过一条记录
                     }
-                    //加入页内
-                    tp.records[i]=record;
-                    //System.out.println(record);
+
                 }
                 else{
                     tp.records[i]=null;
@@ -135,7 +148,10 @@ public class TableReader {
                 tableBuffer.addPage(tp);
                 randomAccessFile.close();
                 tableReadLock.unlock();  //释放读锁
-                CacheSignManage.cleanDirtyBit(tableDBMSObj.tbName,recordPosition);
+
+                //CacheSignManage.cleanDirtyBit(tableDBMSObj.tbName,recordPosition);
+
+
             return tp.records[recordPosition%pageSize]; //返回指定行
 
             }catch (Exception e){
@@ -146,8 +162,8 @@ public class TableReader {
         }else{
             //页已存在缓冲，直接返回
             //System.out.println("相应页在缓冲区,直接返回");
-
-            return tableBuffer.getPage(recordPosition/pageSize).records[recordPosition % pageSize];
+            RelationRow r=tableBuffer.getPage(recordPosition/pageSize).records[recordPosition % pageSize];
+            return r;
         }
 
     }

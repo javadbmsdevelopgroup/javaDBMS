@@ -43,6 +43,9 @@ public class SelectMethod implements INodeFunc {
                 infCollection.logicExpressions.push("1=1");
             }
 
+
+
+
             if(infCollection.others.size()==1){
                 String val=infCollection.others.pop();
                 try{
