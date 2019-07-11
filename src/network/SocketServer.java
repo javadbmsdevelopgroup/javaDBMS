@@ -35,6 +35,8 @@ public class SocketServer {
     }                  //设置客户端进入事件
 
 
+
+
     public void beginRec(Socket client){
         ClientListener cl=new ClientListener(client,this);     //创建一个客户端监听器
         clientListener.add(cl);

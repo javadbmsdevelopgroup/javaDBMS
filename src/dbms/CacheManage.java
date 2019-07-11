@@ -45,6 +45,7 @@ public class CacheManage {
             }
         }
     }
+
     public TableReader getTableReader(String dbName,String tbName){
         String keyStr=dbName+"."+tbName;
         if(readerMap.containsKey(keyStr)){
