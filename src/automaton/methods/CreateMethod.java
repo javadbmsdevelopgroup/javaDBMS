@@ -21,18 +21,22 @@ public class CreateMethod implements INodeFunc {
             DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(infCollection.dbNames.pop(), PropertiesFileTool.getInstance().readConfig("DBRoot"));
             if(databaseDBMSObj.create()){
                 System.out.println("Database '"+databaseDBMSObj.dbName+"' create successful");
+                return 1;
             }else{
                 System.out.println("Database '"+databaseDBMSObj.dbName+"' create fail");
+                return -1;
             }
+
         }else{
             //Table
             SQLSession sqlSession=(SQLSession)objs[0];
             if(sqlSession.curUseDatabase.compareTo("")==0){
                 System.out.println("No selected database");
-                return null;
+                return -2;
             }
             String tbName=infCollection.tableNames.pop();
-           // System.out.println("Try to create table ["+infCollection.tableNames.size()+","+tbName+"]");
+
+
             TableStructure newTableStructure = new TableStructure(null);
             while (!infCollection.keyWords.empty()){
                 String cname=infCollection.columNames.pop();
@@ -45,7 +49,7 @@ public class CreateMethod implements INodeFunc {
                             (type.toUpperCase().compareTo("INT")==0? 4:Integer.parseInt(infCollection.others.pop())),
                             false,false,newTableStructure,cname
                             ));
-                    System.out.println("false false "+cname+" "+type);
+                    //System.out.println("false false "+cname+" "+type);
                 }else{
                     boolean isNotNULL=false;
                     boolean isKey=false;
@@ -60,7 +64,7 @@ public class CreateMethod implements INodeFunc {
                             (type.toUpperCase().compareTo("INT")==0? 4:Integer.parseInt(infCollection.others.pop())),
                             isKey,isNotNULL,newTableStructure,cname
                     ));
-                    System.out.println(isKey+" "+isNotNULL+" "+cname+" "+type);
+                    //System.out.println(isKey+" "+isNotNULL+" "+cname+" "+type);
 
                 }
 
@@ -70,10 +74,12 @@ public class CreateMethod implements INodeFunc {
             try {
                 newTableStructure.writeToStructFile(((SQLSession) objs[0]).curUseDatabase, tbName);
                 System.out.println("Create table '"+tbName+"' in database '"+((SQLSession) objs[0]).curUseDatabase+"' successful");
+                return 2;
             }catch (IOException e){
                 e.printStackTrace();
+                return -2;
             }
         }
-        return null;
+
     }
 }

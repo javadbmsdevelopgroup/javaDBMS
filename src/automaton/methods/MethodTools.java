@@ -322,7 +322,7 @@ public class MethodTools {
                 operands.push(val);
             }
 
-            while (!operands.empty()){
+            while (!opereator.empty()){
                 int result;
                 int left;
                 int right;

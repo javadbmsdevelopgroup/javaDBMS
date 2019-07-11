@@ -11,6 +11,10 @@ public class ViewLogicMapping {
     private TableDBMSObj tableDBMSObj;
     public int viewBufferSize=100;
     String[] columnNames;
+
+    public RelationView getRelationView(){
+        return relationView;
+    }
     //提供的参数: 视图的缓冲大小（超出后会自动输出并清空）,列名
     public ViewLogicMapping(int viewBufferSize,String[] columnNames,TableDBMSObj tableDBMSObj) throws Exception{
         this.viewBufferSize=viewBufferSize;

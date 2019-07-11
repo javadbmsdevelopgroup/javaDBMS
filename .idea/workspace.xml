@@ -2,25 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/SQLSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/CacheManage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/CacheManage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/CacheSignManage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/Tools.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/student.table" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/InfCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/InfCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/SQLSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/SQLSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/CacheManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/CacheManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/CacheSignManage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/IndexCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/IndexCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TableReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TableWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,14 +44,45 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="418">
+              <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="18" column="36" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="36" />
+              <folding>
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#639#640#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="37">
+              <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonNode.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -66,18 +92,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="313">
               <caret line="96" column="31" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="90" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,13 +112,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="725">
-              <caret line="83" column="111" selection-start-line="83" selection-start-column="111" selection-end-line="83" selection-end-column="111" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="168">
+              <caret line="105" column="55" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -112,50 +123,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
+            <state relative-caret-position="96">
+              <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/MethodTools.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="339" column="34" selection-start-line="339" selection-start-column="34" selection-end-line="339" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#printStack#0;class#MethodTools#0" />
-                <element signature="method#checkTableandDatabase#0;class#MethodTools#0" />
-                <element signature="method#getRecordPosThroughIndex#0;class#MethodTools#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/view/RelationView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="305">
-              <caret line="205" selection-start-line="205" selection-end-line="205" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#RelationView#0;class#RelationView#0" />
-                <element signature="method#initMaxSizeArray#0;class#RelationView#0" />
-                <element signature="method#addRow#0;class#RelationView#0" />
-                <element signature="method#addConlum#0;class#RelationView#0" />
-                <element signature="method#deleteConlum#0;class#RelationView#0" />
-                <element signature="method#deleteConlum#1;class#RelationView#0" />
-                <element signature="method#getConlumIndex#0;class#RelationView#0" />
-                <element signature="method#printRelationView#0;class#RelationView#0" />
-                <element signature="method#printRelationView#1;class#RelationView#0" />
-                <element signature="method#printHeadLine#0;class#RelationView#0" />
-                <element signature="method#printRows#0;class#RelationView#0" />
-                <element signature="method#printBottomLine#0;class#RelationView#0" />
-                <element signature="class#RelationViewItem#0;class#RelationView#0" />
               </folding>
             </state>
           </provider>
@@ -180,6 +151,7 @@
       <find>record size</find>
       <find>reader</find>
       <find>lock</find>
+      <find>dowork</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -188,22 +160,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/automaton/methods/UseMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/ShowMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/InfCollection.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/DatabaseDBMSObj.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/Relation.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/TableStructureItem.java" />
         <option value="$PROJECT_DIR$/src/filesystem/PropertiesFileTool.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/ElementObj.java" />
         <option value="$PROJECT_DIR$/src/automaton/AutomatonTools.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/TranstionFunc.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/TableDBMSObj.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" />
         <option value="$PROJECT_DIR$/src/network/event/ClientMessageIn.java" />
-        <option value="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" />
         <option value="$PROJECT_DIR$/src/network/event/INonArugumentEvent.java" />
         <option value="$PROJECT_DIR$/src/dbms/ReadWriteLock.java" />
         <option value="$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java" />
@@ -215,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/dbms/TableReadWriteLock.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
         <option value="$PROJECT_DIR$/src/dbms/physics/Test.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/ColumNameTrans.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/DBNameTrans.java" />
@@ -230,15 +195,22 @@
         <option value="$PROJECT_DIR$/src/dbms/view/RelationView.java" />
         <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
         <option value="$PROJECT_DIR$/src/dbms/CacheManage.java" />
-        <option value="$PROJECT_DIR$/src/automaton/SQLSession.java" />
         <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableReader.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" />
+        <option value="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
+        <option value="$PROJECT_DIR$/src/automaton/AutomatonNode.java" />
+        <option value="$PROJECT_DIR$/src/automaton/InfCollection.java" />
+        <option value="$PROJECT_DIR$/src/automaton/TranstionFunc.java" />
+        <option value="$PROJECT_DIR$/src/automaton/SQLSession.java" />
       </list>
     </option>
   </component>
@@ -488,18 +460,18 @@
       <workItem from="1562466907670" duration="48279000" />
       <workItem from="1562668110331" duration="3482000" />
       <workItem from="1562680580019" duration="7149000" />
-      <workItem from="1562721725261" duration="48007000" />
+      <workItem from="1562721725261" duration="50829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270630000" />
+    <option name="totallyTimeSpent" value="273452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86504066" visible="true" weight="0.17324094" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.86504066" visible="true" weight="0.17324094" />
       <window_info id="Structure" order="1" sideWeight="0.13495935" side_tool="true" weight="0.15884861" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -508,7 +480,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.26002166" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3575298" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.503792" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -565,62 +537,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/network/event/IThreeArugumentEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/ClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SocketClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/event/ITwoArugumentEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/event/ServerMessageIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#942#943#0" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1232#1233#0" expanded="true" />
-            <element signature="e#1278#1279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/logic/ElementObj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-882">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/network/event/INonArugumentEvent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -736,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/CreateMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/methods/DBNameTrans.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -795,13 +701,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/util/Stack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -823,27 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#doWork#0;class#IndexCreateMethod#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -901,53 +779,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="45" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#828#1405#1" />
-            <element signature="e#2901#2902#0" expanded="true" />
-            <element signature="e#2957#2958#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="96" column="31" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-962">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="23" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -965,6 +800,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/MethodTools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8792">
+          <caret line="324" column="29" selection-start-line="324" selection-start-column="29" selection-end-line="324" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#printStack#0;class#MethodTools#0" />
+            <element signature="method#checkTableandDatabase#0;class#MethodTools#0" />
+            <element signature="method#getRecordPosThroughIndex#0;class#MethodTools#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/CreateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="82" selection-start-line="82" selection-end-line="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="80" column="8" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DropMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="910">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#createIndex#0;class#IndexCreateMethod#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="23" column="8" selection-start-line="23" selection-start-column="8" selection-end-line="45" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#828#1405#1" />
+            <element signature="e#2901#2902#0" expanded="true" />
+            <element signature="e#2957#2958#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="96" column="31" selection-start-line="96" selection-start-column="27" selection-end-line="96" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="117" column="9" selection-start-line="117" selection-start-column="9" selection-end-line="117" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2830#3546#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-630">
@@ -975,45 +937,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/InsertMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/InfCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="89" column="16" selection-start-line="89" selection-start-column="16" selection-end-line="90" selection-end-column="33" />
+        <state relative-caret-position="450">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/TransitionInf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-542">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/Automaton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="83" column="111" selection-start-line="83" selection-start-column="111" selection-end-line="83" selection-end-column="111" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="37">
+          <caret line="45" column="11" lean-forward="true" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="84" column="50" selection-start-line="84" selection-start-column="50" selection-end-line="84" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="7" column="21" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/MethodTools.java">
+    <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="339" column="34" selection-start-line="339" selection-start-column="34" selection-end-line="339" selection-end-column="34" />
+        <state relative-caret-position="168">
+          <caret line="105" column="55" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/SQLSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#printStack#0;class#MethodTools#0" />
-            <element signature="method#checkTableandDatabase#0;class#MethodTools#0" />
-            <element signature="method#getRecordPosThroughIndex#0;class#MethodTools#0" />
           </folding>
         </state>
       </provider>

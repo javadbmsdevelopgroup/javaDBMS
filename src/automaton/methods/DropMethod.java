@@ -21,22 +21,26 @@ public class DropMethod implements INodeFunc {
                 if(dbFile.delete()){
                     if(sqlSession.curUseDatabase.compareTo(objName)==0) sqlSession.curUseDatabase="";
                     System.out.println("Drop database '"+objName+"' successful.");
+                    return 1;
                 }else{
                     System.out.println("Drop database '"+objName+"' fail.");
+                    return -1;
                 }
-                break;
             case "TABLE":
                 if(sqlSession.curUseDatabase.compareTo("")==0){
                     System.out.println("No selected database");
-                    return null;
+                    return -1;
                 }else{
                     File tableFile1 = new File(root+"\\"+sqlSession.curUseDatabase+"\\"+objName+".tbs");
                     File tableFile2 = new File(root+"\\"+sqlSession.curUseDatabase+"\\"+objName+".table");
                     if(tableFile1.delete() && tableFile2.delete()){
                         System.out.println("Drop table '"+objName+"' successful.");
+                        return 1;
                     }else{
                         System.out.println("Drop table '"+objName+"' fail.");
+                        return -1;
                     }
+
                 }
         }
         System.out.println(objType +" "+objName);

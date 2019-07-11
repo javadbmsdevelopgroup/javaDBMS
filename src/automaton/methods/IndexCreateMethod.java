@@ -26,13 +26,13 @@ public class IndexCreateMethod implements INodeFunc {
         //检查是否使用了某个数据库
         if(sqlSession.curUseDatabase.compareTo("")==0){
             System.out.println("No selected Database.");
-            return null;
+            return -1;
         }
         DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath);
         //检查数据库中表是否存在
         if(!databaseDBMSObj.isTableExist(tableName)){
             System.out.println("Table '"+tableName+"' no exist in database "+sqlSession.curUseDatabase);
-            return null;
+            return -1;
         }
         try {
             //要等锁
@@ -46,17 +46,18 @@ public class IndexCreateMethod implements INodeFunc {
                 tableStructure.indexOn=indexOn;
                 tableStructure.writeToStructFile(sqlSession.curUseDatabase,tableName);
                 System.out.println("Create index on table "+tableName+" ("+indexOn+") success");
+                return 1;
             }else{
                 System.out.println("Create index fail");
+                return -2;
             }
         }catch (Exception e){
             e.printStackTrace();
-            return null;
+            return -3;
         }
 
 
 
-        return null;
     }
 
     private boolean createIndex(String columnName, String dbName,TableDBMSObj tableDBMSObj){

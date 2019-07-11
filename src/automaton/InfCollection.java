@@ -10,6 +10,7 @@ public class InfCollection {
     public Stack<String> columNames=new Stack<>();  //列名栈
     public Stack<String> keyWords=new Stack<>(); //关键词栈
     public Stack<String> others=new Stack<>();
+    public Object resultObj=null;
     public void cleanStacks(){
         tableNames.clear();
         dbNames.clear();
@@ -17,5 +18,6 @@ public class InfCollection {
         columNames.clear();
         keyWords.clear();
         others.clear();
+        resultObj=null;
     }
 }

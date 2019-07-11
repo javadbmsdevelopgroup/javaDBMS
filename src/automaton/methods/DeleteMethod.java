@@ -22,7 +22,7 @@ public class DeleteMethod implements INodeFunc {
         String tableName=infCollection.tableNames.pop();
         Lock readLock;
         Lock writeLock;
-        if(!MethodTools.checkTableandDatabase(sqlSession,tableName)) return null;
+        if(!MethodTools.checkTableandDatabase(sqlSession,tableName)) return -1;
 
         try{
             DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath);
@@ -56,6 +56,7 @@ public class DeleteMethod implements INodeFunc {
                 //释放锁
                 writeLock.unlock();
                 readLock.unlock();
+                return 1;
             }else{
                 //运用索引的情况下进行删除
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
@@ -71,12 +72,12 @@ public class DeleteMethod implements INodeFunc {
 
                 writeLock.unlock();
                 readLock.unlock();
+                return 1;
             }
 
 
 
-        }catch (Exception e){return null;}
+        }catch (Exception e){return -2;}
 
-        return null;
     }
 }

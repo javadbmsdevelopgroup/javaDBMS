@@ -6,6 +6,7 @@ public class AutomatonNode {
     public int nodeCode=-1;
     public boolean owariNode=false;
     public INodeFunc nodeMethod=null;
+    public Object exeResult=null;
 
     public AutomatonNode(int nodeCode,boolean owariNode){
         this.nodeCode=nodeCode;

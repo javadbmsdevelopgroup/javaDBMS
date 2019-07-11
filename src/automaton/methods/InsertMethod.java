@@ -27,18 +27,18 @@ public class InsertMethod implements INodeFunc {
         //判断是否已选择一个数据库
         if(sqlSession.curUseDatabase.compareTo("")==0){
             System.out.println("No selected database.");
-            return null;
+            return -1;
         }
         //判断数据库是否存在同时里面是否存在该表
         DatabaseDBMSObj databaseDBMSObj = new DatabaseDBMSObj(sqlSession.curUseDatabase,PropertiesFileTool.getInstance().readConfig("DBRoot"));
         if(!databaseDBMSObj.isExist()){
             System.out.println("Current database not found.");
-            return null;
+            return -2;
         }
         String tableName=infCollection.tableNames.pop();
         if(!databaseDBMSObj.isTableExist(tableName)){
             System.out.println("Table '"+tableName+"' not found.");
-            return null;
+            return -3;
         }
 
 
@@ -60,7 +60,7 @@ public class InsertMethod implements INodeFunc {
             //检测参数个数是否匹配
             if(infCollection.columNames.size() != infCollection.others.size()){
                 System.out.println("Values not match the table column's count");
-                return null;
+                return -4;
             }else{
                 //write
                 TableWriter tableWriter = new TableWriter();
@@ -74,13 +74,13 @@ public class InsertMethod implements INodeFunc {
                         case INT32:
                             if(!relationRow.setVal(cName,Integer.parseInt(val))){
                                 System.out.println("Insert Error.(Column name '"+cName+"'not exist)");
-                                return null;
+                                return -5;
                             }
                             break;
                         case STRING:
                             if(!relationRow.setVal(cName,val)){
                                 System.out.println("Insert Error.(Column name '"+cName+"' not exist)");
-                                return null;
+                                return -5;
                             }
                             break;
                     }
@@ -97,13 +97,14 @@ public class InsertMethod implements INodeFunc {
                 writeLock.unlock();
                 readLock.unlock();
                 System.out.println("Insert successful.");
-                return null;
+                return 1;
             }
         }catch (Exception e){
             System.out.println("Insert Fails:Data type not match");
             e.printStackTrace();
+            return -6;
         }
 
-        return null;
+
     }
 }

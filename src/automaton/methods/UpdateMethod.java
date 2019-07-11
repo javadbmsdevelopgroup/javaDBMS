@@ -4,10 +4,7 @@ import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
-import dbms.RelationRow;
-import dbms.TableReadWriteLock;
-import dbms.TableReader;
-import dbms.TableWriter;
+import dbms.*;
 import dbms.logic.DataType;
 import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
@@ -34,6 +31,7 @@ public class UpdateMethod implements INodeFunc {
             String setExpression=infCollection.others.pop();
             String conlumName="";
             String val="";
+            int count=0;
             boolean l=true;
             for(int i=0;i<setExpression.length();i++){
 
@@ -51,7 +49,7 @@ public class UpdateMethod implements INodeFunc {
 
             if(!tableDBMSObj.tableStructure.isColumnExists(conlumName)){
                 System.out.println("Column name '"+conlumName+"' not exists.");
-                return null;
+                return -1;
             }
             writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
             writeLock.lock();
@@ -67,9 +65,31 @@ public class UpdateMethod implements INodeFunc {
                     //System.out.println(r+""+MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r));
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
                         System.out.println("Try update: "+r);
-                        r.setVal(conlumName,r.getConlumType(conlumName)== DataType.STRING?val:Integer.parseInt(val));
-                        tableWriter.replace(pos,r,tableDBMSObj);
-                        reader.replaceRecord(pos,r);
+                        switch (r.getConlumType(conlumName)){
+                            case INT32:
+                                try{
+                                    r.setVal(conlumName,Integer.parseInt(val));
+                                }catch (Exception e){
+                                    try{
+                                        //update course set 课程编号=课程编号+1 where 课程编号=17003;
+                                        r.setVal(conlumName,MethodTools.calcVal(val,r));
+                                    }catch (Exception e2){
+                                        e2.printStackTrace();
+                                        return null;
+                                    }
+                                }
+                                break;
+                            case STRING:
+                                r.setVal(conlumName,val);
+                                break;
+                        }
+
+                        if(tableWriter.replace(pos,r,tableDBMSObj)){
+                            count++;
+                        }
+
+                        //reader.replaceRecord(pos,r);
+                        CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
                     }
                     pos++;
                     r=reader.readRecord(pos);
@@ -84,17 +104,17 @@ public class UpdateMethod implements INodeFunc {
                     r.setVal(conlumName,r.getConlumType(conlumName)== DataType.STRING?val:Integer.parseInt(val));
                     tableWriter.replace(pos,r,tableDBMSObj);
                 }
+                count++;
             }
 
             writeLock.unlock();
             readLock.unlock();
-
+            return count;
         }catch (Exception e){
             if(writeLock!=null) writeLock.unlock();
             if(readLock!=null) readLock.unlock();
             e.printStackTrace();
-            return null;
+            return -1;
         }
-        return null;
     }
 }

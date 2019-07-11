@@ -2,6 +2,7 @@ package automaton;
 
 import dbms.CacheManage;
 import dbms.TableReadWriteLock;
+import dbms.view.RelationView;
 
 import java.util.Scanner;
 import java.util.concurrent.locks.Lock;
@@ -24,8 +25,10 @@ public class SQLSession {
             System.out.print("YuiSQL> ");
             String sql=sc.nextLine();
             if(sql.compareTo("\\q")==0) return;
-            sqlAutomaton.matchingGrammar(sql);
-
+            Object obj=sqlAutomaton.matchingGrammar(sql).exeResult;
+            if(obj instanceof RelationView){
+                ((RelationView)((RelationView) obj)).printRelationView();
+            }
         }
 
 

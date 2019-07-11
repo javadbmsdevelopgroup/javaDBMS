@@ -75,7 +75,8 @@ public class TranstionFunc {
                         cur=tmp_tif.end;
                         t_exe=true;
                         if(tmp_tif.transMethod!=null) tmp_tif.transMethod.trans(this.infCollection,tmp_tif.t_content);
-                        if(cur.owariNode && cur.nodeMethod!=null) cur.nodeMethod.doWork(this.infCollection,objects);
+                        if(cur.owariNode && cur.nodeMethod!=null)
+                            cur.exeResult=cur.nodeMethod.doWork(this.infCollection,objects);
                         //System.out.println("转移完毕");
                         break;
                     }
@@ -101,7 +102,8 @@ public class TranstionFunc {
                 t_exe=true;
 
                 if(tf_OBJany.transMethod!=null) tf_OBJany.transMethod.trans(this.infCollection,input.content);
-                if(cur.owariNode) cur.nodeMethod.doWork(this.infCollection,objects);
+                if(cur.owariNode)
+                    cur.exeResult=cur.nodeMethod.doWork(this.infCollection,objects);
             }else{return null;}
 
 
