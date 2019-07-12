@@ -263,7 +263,9 @@ public class AutomatonBuilder {
         TransitionInf update_trans1=new TransitionInf(start,update_node37,TransitionType.KEYWORD,"UPDATE");
         TransitionInf update_trans2=new TransitionInf(update_node37,update_node38,TransitionType.OBJNAME,"",new TBNameTrans());
         TransitionInf update_trans3=new TransitionInf(update_node38,update_node39,TransitionType.KEYWORD,"SET");
+
         TransitionInf update_trans4=new TransitionInf(update_node39,update_node40,TransitionType.OBJNAME,"",new OtherTrans());
+        TransitionInf update_trans45=new TransitionInf(update_node40,update_node39,TransitionType.KEYWORD,",");
         TransitionInf update_trans5=new TransitionInf(update_node40,update_node41,TransitionType.KEYWORD,"WHERE");
         TransitionInf update_trans6=new TransitionInf(update_node41,update_node41,TransitionType.KEYWORD,"(",new KeyWordTrans());
         TransitionInf update_trans7=new TransitionInf(update_node41,update_node42,TransitionType.OBJNAME,"",new ExpressionTrans());
@@ -283,6 +285,7 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(update_trans2);
         transtionFunc.addAtransition(update_trans3);
         transtionFunc.addAtransition(update_trans4);
+        transtionFunc.addAtransition(update_trans45);
         transtionFunc.addAtransition(update_trans5);
         transtionFunc.addAtransition(update_trans6);
         transtionFunc.addAtransition(update_trans7);
@@ -363,6 +366,33 @@ public class AutomatonBuilder {
         transtionFunc.addAtransition(select_trans21);
         transtionFunc.addAtransition(select_trans22);
         transtionFunc.addAtransition(select_trans23);
+
+        //add
+        AutomatonNode add_Node61=new AutomatonNode(61,false);
+        AutomatonNode add_Node615=new AutomatonNode(615,false);
+        AutomatonNode add_Node62=new AutomatonNode(62,false);
+        AutomatonNode add_Node63=new AutomatonNode(63,true,new AddMethod());
+        AutomatonNode add_Node64=new AutomatonNode(64,false);
+        AutomatonNode add_Node65=new AutomatonNode(65,false);
+
+        TransitionInf add_trans1=new TransitionInf(start,add_Node61,TransitionType.KEYWORD,"ADD");
+        TransitionInf add_trans12=new TransitionInf(add_Node61,add_Node615,TransitionType.OBJNAME,"",new TBNameTrans());
+        TransitionInf add_trans2=new TransitionInf(add_Node61,add_Node62,TransitionType.KEYWORD,"CONSTRAN");
+        TransitionInf add_trans3=new TransitionInf(add_Node62,add_Node64,TransitionType.KEYWORD,"POSITIVE",new KeyWordTrans());
+        TransitionInf add_trans4=new TransitionInf(add_Node64,add_Node65,TransitionType.KEYWORD,"ON");
+        TransitionInf add_trans5=new TransitionInf(add_Node65,add_Node63,TransitionType.OBJNAME,"",new ColumNameTrans());
+        automatonNodeList.add(add_Node61);
+        automatonNodeList.add(add_Node615);
+        automatonNodeList.add(add_Node62);
+        automatonNodeList.add(add_Node63);
+        automatonNodeList.add(add_Node64);
+        automatonNodeList.add(add_Node65);
+        transtionFunc.addAtransition(add_trans1);
+        transtionFunc.addAtransition(add_trans12);
+        transtionFunc.addAtransition(add_trans2);
+        transtionFunc.addAtransition(add_trans3);
+        transtionFunc.addAtransition(add_trans4);
+        transtionFunc.addAtransition(add_trans5);
         try{
             Automaton automaton=new Automaton(automatonNodeList,transtionFunc);
             System.out.println("自动机创建成功");

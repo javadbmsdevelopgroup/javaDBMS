@@ -30,6 +30,14 @@ public class RelationView implements Serializable {
             maxLengths[i]=conlumNames.get(i).length();
         }
     }
+    public List<String> getConlumNames(){
+        return conlumNames;
+    }
+
+    public List<RelationViewItem> getRows() {
+        return rows;
+    }
+
     //添加一行
     public void addRow(String... items){
         if(items.length!= this.conlumNames.size()) return ;
@@ -198,6 +206,9 @@ public class RelationView implements Serializable {
     }
     public String getVal(int row,String conlumName){
         return rows.get(row).vals.get(getConlumIndex(conlumName));
+    }
+    public void setVal(int row,String conlumName,String val){
+        rows.get(row).vals.set(getConlumIndex(conlumName),val);
     }
     public int getRowCount(){
         return rows.size();

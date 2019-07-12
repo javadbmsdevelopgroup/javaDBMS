@@ -85,6 +85,7 @@ public class SelectCourseProtocol implements IOStrategy{
             }
 
         }catch (Exception e){
+            if(e.getMessage()==null) e.printStackTrace();
             if(!(e.getMessage().compareTo("Connection reset")==0)){
                 e.printStackTrace();
             }else{

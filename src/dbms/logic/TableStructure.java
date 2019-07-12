@@ -1,5 +1,8 @@
 package dbms.logic;
 
+import dbms.logic.intergrityconstrain.IIntergrityConstraint;
+import dbms.logic.intergrityconstrain.IntergrityConstraint;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +21,20 @@ public class TableStructure implements Serializable {
         dts.add(a);
     }  //添加一个属性项
 
+    public boolean addConstain(String cname, IIntergrityConstraint icMethod){
+        for (TableStructureItem tsi : dts){
+            if(tsi.conlumName.compareTo(cname)==0){
+                tsi.addIntergrityConstaint(icMethod);
+            }
+            try {
+                this.writeToStructFile(tableDBMSObjBelongedTo.dbBelongedTo.dbName, this.tableDBMSObjBelongedTo.tbName);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+            return true;
+        }
+        return false;
+    }
     //构造函数。提供一个表逻辑对象。让他从属一个表。也可以设置为null.表示这个表结构暂时不属于任何表(这在创建新表时非常有用)
     public TableStructure(TableDBMSObj tableDBMSObj){
         this.tableDBMSObjBelongedTo=tableDBMSObj;

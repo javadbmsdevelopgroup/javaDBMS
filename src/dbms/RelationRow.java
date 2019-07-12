@@ -18,6 +18,7 @@ public class RelationRow implements Comparable<RelationRow>{
 
     List<RelationSItem > sis=new ArrayList<>();   //元组中的每项
 
+
     public boolean isDeleted() {
         return deleted;
     }
