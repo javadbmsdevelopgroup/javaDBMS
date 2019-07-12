@@ -2,9 +2,10 @@ package automaton;
 
 import automaton.exception.AutomatonNodeException;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SQLAutomaton extends Automaton{
+public class SQLAutomaton extends Automaton implements Serializable {
     SQLSession sqlSession=null;
     public SQLAutomaton(List<AutomatonNode> automatonNodes, TranstionFunc ts,SQLSession sqlSession) throws AutomatonNodeException {
         super(automatonNodes,ts);

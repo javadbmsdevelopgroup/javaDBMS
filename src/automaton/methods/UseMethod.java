@@ -8,8 +8,9 @@ import filesystem.PropertiesFileTool;
 
 import javax.swing.plaf.synth.SynthSpinnerUI;
 import java.io.IOException;
+import java.io.Serializable;
 
-public class UseMethod implements INodeFunc {
+public class UseMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         String dbName = (infCollection.dbNames.pop());
@@ -18,13 +19,15 @@ public class UseMethod implements INodeFunc {
 
         if(!DatabaseDBMSObj.isExist(dbName)){
             System.out.println("Unknow database '"+dbName+"'");
-        }else{
-            if(objs.length==0){
+            return -1;
+        }else {
+            if (objs.length == 0) {
                 System.out.println("Fatal: SQLSession Error");
+                return -1;
             }
-            ((SQLSession)objs[0]).curUseDatabase=dbName;
-            System.out.println("Database changed to '"+dbName+"'");
+            ((SQLSession) objs[0]).curUseDatabase = dbName;
+            System.out.println("Database changed to '" + dbName + "'");
+            return 1;
         }
-        return null;
     }
 }

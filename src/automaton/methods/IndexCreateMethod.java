@@ -16,7 +16,7 @@ import javafx.scene.control.Tab;
 import java.io.*;
 import java.nio.ByteBuffer;
 
-public class IndexCreateMethod implements INodeFunc {
+public class IndexCreateMethod implements INodeFunc,Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         SQLSession sqlSession=(SQLSession)objs[0];

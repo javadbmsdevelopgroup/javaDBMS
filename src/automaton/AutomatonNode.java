@@ -1,8 +1,9 @@
 package automaton;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class AutomatonNode {
+public class AutomatonNode implements Serializable {
     public int nodeCode=-1;
     public boolean owariNode=false;
     public INodeFunc nodeMethod=null;

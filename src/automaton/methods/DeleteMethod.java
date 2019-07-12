@@ -10,10 +10,11 @@ import dbms.logic.TableDBMSObj;
 import dbms.physics.BplusTree;
 import filesystem.PropertiesFileTool;
 
+import java.io.Serializable;
 import java.util.Stack;
 import java.util.concurrent.locks.Lock;
 
-public class DeleteMethod implements INodeFunc {
+public class DeleteMethod implements INodeFunc, Serializable {
     //delete from course where 课程编号=1901;
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){

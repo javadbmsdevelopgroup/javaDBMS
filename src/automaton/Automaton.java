@@ -3,12 +3,13 @@ package automaton;
 
 import automaton.exception.AutomatonNodeException;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 //有限自动机类
-public class Automaton{
+public class Automaton implements Serializable {
     Map<Integer,AutomatonNode> automatonNodeMap=new HashMap<>();
     TranstionFunc transitionFuns=new TranstionFunc();  //转移函数
     AutomatonNode startNode=null;

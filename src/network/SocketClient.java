@@ -1,12 +1,14 @@
 package network;
 import network.event.ClientMessageIn;
-import network.event.IOneArugumentEvent;
-import network.event.ITwoArugumentEvent;
 
 import java.net.*;
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 
+import network.event.ISocketEvent;
 
 /**
  * @author Michael Huang
@@ -17,16 +19,15 @@ import java.util.Scanner;
 
 //////////////一个封装的类，将客户端socket封装起来了
 public class SocketClient {
+
     Socket s = null;   //服务器的socket
-    DataOutputStream dos = null;
-    DataInputStream dis = null;
+    ObjectInputStream ois=null;
+    ObjectOutputStream oos=null;
     String ip;
     int port;
     private boolean bConnected = false;
-    private ITwoArugumentEvent messageIn=null;
+    private ISocketEvent messageIn=null;
     Thread tRecv;
-
-
 
 
     public SocketClient(){
@@ -40,38 +41,30 @@ public class SocketClient {
         this.s=s;
 
         //System.out.println("Create SC by "+s.getLocalSocketAddress());
-        if(s==null) throw  new NullPointerException();
         try{
-
-        dos=new DataOutputStream(s.getOutputStream());
-        dis=new DataInputStream(s.getInputStream());
-        beginRec();
-        }
+        oos=new ObjectOutputStream(s.getOutputStream());}
         catch (Exception e){
-
+            e.printStackTrace();
         }
+        if(s==null) throw  new NullPointerException();
+
     }
-    public void setMessageInEvent(ITwoArugumentEvent event){
+    public void setMessageInEvent(ISocketEvent event){
         this.messageIn=event;
     }
 
 
-    //....好像是将某消息发送给客户端的函数。。。我也忘了。。可以试试。。。SocketClient和SocketServer里有main函数。。可以用来测试
-    public boolean send(String str){
+    //...从客户端发消息给服务器的函数。。
+    public boolean send(Object obj){
 
         if(s==null) return false;
         try{
-            PrintWriter pw=new PrintWriter(new OutputStreamWriter(s.getOutputStream()));
+            if(oos==null) oos=new ObjectOutputStream(s.getOutputStream());
+            System.out.println("In client: send obj:"+s.getLocalSocketAddress()+"->"+s.getRemoteSocketAddress());
+            System.out.println("尝试发送"+obj.toString()+" to "+s.getLocalSocketAddress());
+            oos.writeObject(obj);
+            oos.flush();
 
-            System.out.println("In client: send:"+s.getLocalSocketAddress()+"->"+s.getRemoteSocketAddress());
-            System.out.println("尝试发送"+str+" to "+s.getLocalSocketAddress());
-            pw.write(str+"\r\n");
-
-            pw.flush();
-            //pw.flush();
-            //dos=new DataOutputStream(s.getOutputStream());
-            //boolean a=true;
-            //dos.writeUTF(str);
 
         }catch (IOException ioe){
             ioe.printStackTrace();
@@ -93,10 +86,18 @@ public class SocketClient {
                 while (bConnected) {
                     //连接成功
                     System.out.println("Listen:"+s.getLocalSocketAddress()+":"+s.getRemoteSocketAddress());
-                    String str = dis.readUTF();
+                    //监听对象消息
+
+
+
+                    if(ois==null){
+                        ois=new ObjectInputStream(s.getInputStream());
+                    }
+
+                    Object obj=ois.readObject();
                     if(messageIn!=null){
                         System.out.println("Msg Arrive:"+s.getLocalSocketAddress()+":"+s.getRemoteSocketAddress());
-                        messageIn.doEvent(str,this);     //信息到达时间处理
+                        messageIn.processEvent(obj,this);     //客户端的信息到达事件处理
                     }
                     //taContent.setText(taContent.getText() + str + '\n');
                 }
@@ -109,6 +110,8 @@ public class SocketClient {
             } catch (IOException e) {
                 //recving=false;
                 e.printStackTrace();
+            }catch (ClassNotFoundException e){
+                e.printStackTrace();
             }
 
         });
@@ -119,8 +122,7 @@ public class SocketClient {
         s = new Socket(ip, port);
 
         System.out.println("Create SC by "+s.getLocalSocketAddress());
-        dos = new DataOutputStream(s.getOutputStream());
-        dis = new DataInputStream(s.getInputStream());
+
         this.ip=ip;
         this.port=port;
         System.out.println("Connect Successful.");
@@ -134,8 +136,7 @@ public class SocketClient {
 
     public void disconnect() {
         try {
-            dos.close();
-            dis.close();
+
             s.close();
         } catch (IOException e) {
             e.printStackTrace();

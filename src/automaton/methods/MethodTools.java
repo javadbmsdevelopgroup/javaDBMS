@@ -340,7 +340,7 @@ public class MethodTools {
             return operands.pop();
     }
     public static int getRecordPosThroughIndex(Stack<String> expressionStack,TableDBMSObj tableDBMSObj){
-        //select * from student where 学号=100;
+        //select 学号,姓名 from student where 学号=17000000;
         String conlumn="";
         String val="";
         boolean left=true;
@@ -358,7 +358,8 @@ public class MethodTools {
             }
         }
         if(!tableDBMSObj.tableStructure.isColumnExists(conlumn) || conlumn.compareTo(tableDBMSObj.tableStructure.indexOn)!=0) {
-            System.out.println("列名不是索引");
+
+            System.out.println("列名"+conlumn+"不是索引 "+tableDBMSObj.tableStructure.indexOn);
             return -2; //查询值不是索引
         }
 
@@ -366,8 +367,7 @@ public class MethodTools {
 
 
         BplusTree indexBtree=IndexCache.getInstance().getIndex(tableDBMSObj);
-
-
+        //System.out.println(indexBtree.getHeight());
         if(indexBtree==null) {
             return -2;  //载入索引失败
         }
@@ -376,8 +376,11 @@ public class MethodTools {
         switch (dataType){
             case STRING:
                 pos=indexBtree.get(val);
+                break;
             case INT32:
                 pos=indexBtree.get(Integer.parseInt(val));
+                //System.out.println(pos);
+                break;
         }
 
 

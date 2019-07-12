@@ -10,8 +10,9 @@ import dbms.logic.TableStructureItem;
 import filesystem.PropertiesFileTool;
 
 import java.io.IOException;
+import java.io.Serializable;
 
-public class CreateMethod implements INodeFunc {
+public class CreateMethod implements INodeFunc, Serializable {
     //create table student (stuCode int primary key ,name string(50) not null ,classNum int)
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){

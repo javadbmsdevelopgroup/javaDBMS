@@ -1,6 +1,8 @@
 package automaton;
 
-public class InputItem{
+import java.io.Serializable;
+
+public class InputItem implements Serializable {
     String content;
     TransitionType inputtype;
     //nlp.WordType wt;

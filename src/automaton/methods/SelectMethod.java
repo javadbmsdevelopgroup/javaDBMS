@@ -11,12 +11,13 @@ import dbms.logic.TableDBMSObj;
 import dbms.view.RelationView;
 import dbms.view.ViewLogicMapping;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 import java.util.concurrent.locks.Lock;
 
-public class SelectMethod implements INodeFunc {
+public class SelectMethod implements INodeFunc, Serializable {
     ViewLogicMapping viewLogicMapping;
     TableReader reader;
     Lock readLock=null;
@@ -33,6 +34,7 @@ public class SelectMethod implements INodeFunc {
         while(!infCollection.columNames.empty()){
             columnNames.add(infCollection.columNames.pop());
         }
+        //select 学号,姓名 from student limit 10;
         String[] colums=new String[columnNames.size()];
         columnNames.toArray(colums);
         try{
@@ -69,14 +71,17 @@ public class SelectMethod implements INodeFunc {
 
                 int pos= MethodTools.getRecordPosThroughIndex((Stack<String>)infCollection.logicExpressions.clone(),tableDBMSObj);
                 if(pos>=0){
+                    //System.out.println(pos);
                     RelationRow r=reader.readRecord(pos);
+                    System.out.println(r);
                     viewLogicMapping.addRelation(r);
+                    return viewLogicMapping.getRelationView();
                 }else if(pos==-2){
                     System.out.println("索引查询出现错误");
                     return sequentialQuery(limit,(Stack<String>) infCollection.logicExpressions.clone());
                 }else{
                     System.out.println("未查询到记录");
-                    return viewLogicMapping;
+                    return viewLogicMapping.getRelationView();
                 }
             }
            /* readLock.unlock();
@@ -85,12 +90,12 @@ public class SelectMethod implements INodeFunc {
         }catch (Exception e){
             if(readLock!=null ) readLock.unlock();
             e.printStackTrace();
-            return viewLogicMapping;
+            return viewLogicMapping.getRelationView();
         }
 
 
 
-        return null;
+
     }
 
     public RelationView sequentialQuery(int limit, Stack<String> logicExpressionStack){

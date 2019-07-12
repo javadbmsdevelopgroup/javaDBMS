@@ -10,10 +10,11 @@ import filesystem.PropertiesFileTool;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowMethod implements INodeFunc {
+public class ShowMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection,Object... objs){
         System.out.println("到达show终态.");

@@ -10,15 +10,22 @@ import java.net.SocketException;
 
 //////////////////////////////客户端的监听器,用来客户端监听来自服务器的消息的
 public class ClientListener {
-    public Socket client;
+    public SocketClient client;
     public SocketServer server;
+    //ObjectOutputStream oos;
+    ObjectInputStream ois;
     private boolean connect=false;
     Thread tRecv=null;
-    public ClientListener(Socket c,SocketServer serverBelonged){
+    public ClientListener(SocketClient c,SocketServer serverBelonged){
         client=c;
         server=serverBelonged;
-
-        System.out.println("Listener Create:"+c.getLocalSocketAddress()+":"+c.getRemoteSocketAddress());
+        try {
+            //oos = new ObjectOutputStream(c.s.getOutputStream());
+            ois = new ObjectInputStream(c.s.getInputStream());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        System.out.println("Listener Create:"+c.s.getLocalSocketAddress()+":"+c.s.getRemoteSocketAddress());
     }
 
     public void beginRecv(){
@@ -30,27 +37,26 @@ public class ClientListener {
         connect = true;
         ///////////////END
 
-        //创建新的接受线程.接受来自服务器的消息
+        //创建新的接受线程.接受来自客户端的消息
         tRecv=new Thread(
                 ()->{ try {
                 while (connect) {
-                    /////////////////接受来自服务器的消息
-                    System.out.println("listen " +client.getLocalSocketAddress()+":"+client.getRemoteSocketAddress());
-                    BufferedReader br=new BufferedReader(new InputStreamReader(client.getInputStream()));
-                    //String str = dis.readUTF();
-                    String str = null;
-                    String msg="";
-                    msg=br.readLine();
-                    System.out.println("Msg: "+msg);
+                    System.out.println("listen " +client.s.getLocalSocketAddress()+":"+client.s.getRemoteSocketAddress());
+
+
+                    //ObjectInputStream ois=new ObjectInputStream(client.s.getInputStream());
+
+                    Object msg="";
+                    msg=ois.readObject();
+                    System.out.println("收到来自客户端的OBJMsg: "+msg.toString());
                     if(server.getServerMessageIn()!=null){
-                        server.getServerMessageIn().doEvent("aaaaa",server);      //信息到达处理
+                        server.getServerMessageIn().processEvent(msg,client,server);      //信息到达处理
                     }
-                    //taContent.setText(taContent.getText() + str + '\n');
                 }
             } catch (Exception e) {
                 e.printStackTrace();
                 System.out.println("Listener Stop");
-                server.notifyDeleteClient(client,this);
+                server.notifyDeleteClient(client.s,this);
                 connect=false;
             }
         });

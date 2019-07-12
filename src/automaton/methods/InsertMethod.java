@@ -13,11 +13,12 @@ import dbms.logic.TableStructureItem;
 import filesystem.PropertiesFileTool;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
 
-public class InsertMethod implements INodeFunc {
+public class InsertMethod implements INodeFunc, Serializable {
 
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){

@@ -10,11 +10,12 @@ import dbms.logic.DatabaseDBMSObj;
 import dbms.logic.TableDBMSObj;
 
 import javax.annotation.processing.SupportedSourceVersion;
+import java.io.Serializable;
 import java.util.Stack;
 import java.util.WeakHashMap;
 import java.util.concurrent.locks.Lock;
 
-public class UpdateMethod implements INodeFunc {
+public class UpdateMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         Lock readLock=null;

@@ -1,11 +1,12 @@
 package automaton;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 //转移函数
-public class TranstionFunc {
+public class TranstionFunc implements Serializable {
     List<TransitionInf> tifs=new ArrayList<>();   //转移函数信息集合,对应状态机上的一条边
     InfCollection infCollection;
     Automaton belongedAutomaton=null;

@@ -6,8 +6,9 @@ import automaton.SQLSession;
 import filesystem.PropertiesFileTool;
 
 import java.io.File;
+import java.io.Serializable;
 
-public class DropMethod implements INodeFunc {
+public class DropMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         String objType = infCollection.keyWords.pop().toUpperCase();

@@ -1,5 +1,7 @@
 package automaton;
 
-public enum TransitionType{
+import java.io.Serializable;
+
+public enum TransitionType implements Serializable {
     KEYWORD,OBJNAME,MARK;
 }

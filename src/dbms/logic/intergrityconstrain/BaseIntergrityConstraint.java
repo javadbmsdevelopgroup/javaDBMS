@@ -1,4 +1,4 @@
-package dbms.logic;
+package dbms.logic.intergrityconstrain;
 
 import dbms.RelationSItem;
 

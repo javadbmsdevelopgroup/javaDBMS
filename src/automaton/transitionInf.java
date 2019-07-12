@@ -1,9 +1,10 @@
 package automaton;
 
+import java.io.Serializable;
 import java.util.Collections;
 
 //一条转移信息
-public class TransitionInf {
+public class TransitionInf implements Serializable {
     AutomatonNode from; //from which state
     AutomatonNode end; //end in which state
 

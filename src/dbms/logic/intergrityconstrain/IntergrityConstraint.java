@@ -1,7 +1,6 @@
 package dbms.logic.intergrityconstrain;
 
 import dbms.RelationSItem;
-import dbms.logic.BaseIntergrityConstraint;
 import dbms.logic.TableDBMSObj;
 import dbms.logic.TableStructureItem;
 

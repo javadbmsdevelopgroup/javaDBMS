@@ -1,5 +1,7 @@
 package dbms;
 
+import automaton.AutomatonBuilder;
+import automaton.SQLAutomaton;
 import automaton.SQLSession;
 import automaton.methods.IndexCreateMethod;
 import dbms.logic.DatabaseDBMSObj;
@@ -76,7 +78,10 @@ public class Tools {
                             //重建索引
                             SQLSession sqlSession=new SQLSession();
                             sqlSession.curUseDatabase=dbname;
-                            sqlSession.sqlAutomaton.matchingGrammar("create index on "+tbName+" ("+tableDBMSObj.tableStructure.indexOn+")",sqlSession);
+                            (new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession)).matchingGrammar(
+                                    "create index on "+tbName+" ("+tableDBMSObj.tableStructure.indexOn+")",sqlSession
+                            );
+
                         }
 
 
