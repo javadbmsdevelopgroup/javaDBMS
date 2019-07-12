@@ -4,6 +4,7 @@ import automaton.SQLSession;
 
 import java.io.*;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.concurrent.SynchronousQueue;
 
 public class NwClient {
@@ -25,26 +26,27 @@ public class NwClient {
         }
     }
     //transmit a sql command and a object to Server and get result
-    public Object[] getResult(String sqlCommand, Object sql){
+    public Object[] getResult(String sqlCommand, Object sql)  {
         try {
+
             oos.writeInt(1);
             oos.flush();
             oos.writeObject(sqlCommand);
             oos.flush();
             oos.writeObject(sql);
             oos.flush();
-            sql=ois.readObject();
-            System.out.println("+"+((SQLSession)sql).curUseDatabase);
-            Object result=ois.readObject();
-            Object[] obj=new Object[2];
-            obj[0]=sql;
-            obj[1]=result;
+            sql = ois.readObject();
+            //System.out.println("+"+((SQLSession)sql).curUseDatabase);
+            Object result = ois.readObject();
+            Object[] obj = new Object[2];
+            obj[0] = sql;
+            obj[1] = result;
             return obj;
         }catch (Exception e){
             e.printStackTrace();
-            System.out.println("getResult is wrong!");
         }
         return null;
+
     }
     public void end(){
         try {

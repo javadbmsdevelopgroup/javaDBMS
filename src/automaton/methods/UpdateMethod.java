@@ -52,10 +52,10 @@ public class UpdateMethod implements INodeFunc, Serializable {
                 System.out.println("Column name '"+conlumName+"' not exists.");
                 return -1;
             }
+            System.out.println("update "+Thread.currentThread().getName()+" wait write lock");
             writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
             writeLock.lock();
-            readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
-            readLock.lock();
+            System.out.println("update "+Thread.currentThread().getName()+" get write lock");
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
@@ -76,6 +76,8 @@ public class UpdateMethod implements INodeFunc, Serializable {
                                         r.setVal(conlumName,MethodTools.calcVal(val,r));
                                     }catch (Exception e2){
                                         e2.printStackTrace();
+                                        if(writeLock!=null) writeLock.unlock();
+                                        if(readLock!=null) readLock.unlock();
                                         return null;
                                     }
                                 }
@@ -107,7 +109,11 @@ public class UpdateMethod implements INodeFunc, Serializable {
                 }
                 count++;
             }
-
+            System.out.println("update "+Thread.currentThread().getName()+" wait read lock");
+            readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
+            readLock.lock();
+            System.out.println("update "+Thread.currentThread().getName()+" get read lock");
+            System.out.println("update "+Thread.currentThread().getName()+" release lock");
             writeLock.unlock();
             readLock.unlock();
             return count;

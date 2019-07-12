@@ -16,7 +16,13 @@ public class SQLServer {
       int x = 0;
       while (true){
           System.out.println("input:");
-          x = scanner.nextInt();
+          try{
+              x = scanner.nextInt();
+          }
+          catch (Exception e){
+              scanner.nextLine();
+              continue;
+          }
           if(x == 1)
               ss.startServer();
           else if (x == 2)

@@ -62,9 +62,12 @@ public class SelectMethod implements INodeFunc, Serializable {
                 }catch (Exception e){ }
             }
             //上锁
+            System.out.println("select wait read lock");
             readLock= TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.dbBelongedTo.dbName+"."+tableName);
             readLock.lock();
+            System.out.println("select get read lock");
             if(!tableDBMSObj.tableStructure.useIndex){
+                readLock.unlock();
                 return sequentialQuery(limit,(Stack<String>) infCollection.logicExpressions.clone()); //无索引下顺序查询
             }else{
                 //用索引的情况下
@@ -74,12 +77,17 @@ public class SelectMethod implements INodeFunc, Serializable {
                     //System.out.println(pos);
                     RelationRow r=reader.readRecord(pos);
                     System.out.println(r);
-                    viewLogicMapping.addRelation(r);
+                    if(!r.isDeleted()){
+                        viewLogicMapping.addRelation(r);
+                    }
+                    readLock.unlock();
                     return viewLogicMapping.getRelationView();
                 }else if(pos==-2){
                     System.out.println("索引查询出现错误");
+                    readLock.unlock();
                     return sequentialQuery(limit,(Stack<String>) infCollection.logicExpressions.clone());
                 }else{
+                    readLock.unlock();
                     System.out.println("未查询到记录");
                     return viewLogicMapping.getRelationView();
                 }
@@ -108,7 +116,9 @@ public class SelectMethod implements INodeFunc, Serializable {
 
             if(MethodTools.checkLogicExpression((Stack<String>) logicExpressionStack.clone(),r)){
                 //System.out.println("get : "+r);
+                if(!r.isDeleted()){
                 viewLogicMapping.addRelation(r);
+                }
             }else{
                 //System.out.println("skip "+r);
             }

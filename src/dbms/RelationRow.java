@@ -15,7 +15,13 @@ public class RelationRow implements Comparable<RelationRow>{
     TableStructure tbs=null;   //对应的表结构
     boolean deleted=false;
    // TableDBMSObj tbBelongedTo=null;
+
     List<RelationSItem > sis=new ArrayList<>();   //元组中的每项
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
     public RelationRow(TableStructure structure){
         tbs=structure;
         for(TableStructureItem item:tbs.dts){

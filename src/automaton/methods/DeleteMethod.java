@@ -35,11 +35,10 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
                 //准备进行写写操作。需要上锁
+                System.out.println("Delete Wait write lock");
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
                 writeLock.lock();
-                readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
-                readLock.lock();
-
+                System.out.println("Delete get write lock");
                 while(r!=null){
                     //System.out.println(r);
                     //delete from course where 已选人数=0;
@@ -55,6 +54,8 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 }
 
                 //释放锁
+                readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
+                readLock.lock();
                 writeLock.unlock();
                 readLock.unlock();
                 return 1;
@@ -62,8 +63,7 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 //运用索引的情况下进行删除
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
                 writeLock.lock();
-                readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
-                readLock.lock();
+
 
 
                 BplusTree bplusTree= CacheManage.getInstance().getIndex(tableDBMSObj);
@@ -71,6 +71,8 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 TableWriter tableWriter=new TableWriter();
                 tableWriter.delete(pos,tableDBMSObj);
 
+                readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
+                readLock.lock();
                 writeLock.unlock();
                 readLock.unlock();
                 return 1;
@@ -78,7 +80,7 @@ public class DeleteMethod implements INodeFunc, Serializable {
 
 
 
-        }catch (Exception e){return -2;}
+        }catch (Exception e){e.printStackTrace();return -2;}
 
     }
 }

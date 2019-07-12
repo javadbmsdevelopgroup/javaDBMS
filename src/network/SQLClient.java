@@ -5,6 +5,7 @@ import automaton.SQLAutomaton;
 import automaton.SQLSession;
 import dbms.view.RelationView;
 
+import java.net.SocketException;
 import java.util.Scanner;
 
 public class SQLClient {
@@ -22,17 +23,26 @@ public class SQLClient {
                 cc.end();
                 System.exit(0);
             }
+
+
+
             Object[] re =  cc.getResult(com,sqlSession);
             if(re!=null){
                 SQLSession sqlSession1=(SQLSession) re[0];
                 Object result=re[1];
-                if(result==null) continue;
+                if(result==null) {
+                    System.out.println("执行错误");
+                    continue;
+                }
 
                 if(result instanceof RelationView){
                     ((RelationView)result).printRelationView();
+                }else{
+                    System.out.println(result.toString());
                 }
             }
-            //System.out.println(sqlSession.curUseDatabase);
+//update course set 课程编号=课程编号+10 where 课程名称=JDK的安装与卸载;
+//delete from course where 课程编号=17013;
 
 
         }

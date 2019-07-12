@@ -1,6 +1,7 @@
 package network;
 
 import automaton.AutomatonBuilder;
+import automaton.AutomatonNode;
 import automaton.SQLAutomaton;
 import automaton.SQLSession;
 
@@ -46,25 +47,40 @@ public class SQLProtocol implements SQLStrategy{
                         // to find the result;
                         //String result = "I am what you want, my baby";
                         automaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
-                        System.out.println(automaton);
-                        Object result=(automaton.matchingGrammar(sqlCommand)).exeResult;
+                        AutomatonNode automatonNode=(automaton.matchingGrammar(sqlCommand));
+                        //System.out.println(automatonNode);
+                        if(automatonNode!=null){
+                            Object result=automatonNode.exeResult;
+                            dos.writeObject(sqlSession);
+                            System.out.println(sqlSession.curUseDatabase);
+                            dos.flush();
+                            dos.writeObject(result);
+                            System.out.println(result);
+                            dos.flush();
+                            System.out.println(sqlSession.curUseDatabase);
+                        }else{
+                            dos.writeObject(sqlSession);
+                            dos.flush();
+                            dos.writeObject(null);
+                            dos.flush();
+                        }
+
                         //
                         //
-                        dos.writeObject(sqlSession);
-                        System.out.println(sqlSession.curUseDatabase);
-                        dos.flush();
-                        dos.writeObject(result);
-                        System.out.println(result);
-                        dos.flush();
-                        System.out.println(sqlSession.curUseDatabase);
+
 
 
                 }
             }
 
         }catch (Exception e){
-            e.printStackTrace();
-            System.out.println("client is disconnected");
+            if(!(e.getMessage().compareTo("Connection reset")==0)){
+                e.printStackTrace();
+            }else{
+                System.out.println("client "+socket.getRemoteSocketAddress()+"is disconnected");
+            }
+
+
             try {
                 socket.close();
             }catch (Exception ee){

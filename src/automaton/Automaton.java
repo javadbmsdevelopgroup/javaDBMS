@@ -53,7 +53,7 @@ public class Automaton implements Serializable {
         AutomatonNode cur=startNode;
 
         for(InputItem i:is){
-            //System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
+            System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
             cur=transitionFuns.transition(automatonNodeMap.get(cur.nodeCode),i,objects);
             //System.out.println(cur.nodeCode);
             if(cur==null){
