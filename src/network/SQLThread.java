@@ -5,8 +5,8 @@ import java.net.Socket;
 
 public class SQLThread extends Thread{
     private Socket socket;
-    private SQLStrategy sql;
-    public SQLThread(Socket socket, SQLStrategy sql){
+    private IOStrategy sql;
+    public SQLThread(Socket socket, IOStrategy sql){
         this.socket = socket;
         this.sql = sql;
     }

@@ -7,11 +7,11 @@ import java.util.List;
 public class NwServer {//building a server and create socket object for connecting
     //the constructor for this class
     private ServerSocket server = null;
-    private SQLStrategy sql = null;
+    private IOStrategy sql = null;
     public static List<Socket> sockets = null;
     public boolean kkey;
     private int flag ;
-    public NwServer(int port, SQLStrategy sql){
+    public NwServer(int port, IOStrategy sql){
         this.sql = sql;
         this.flag = 0;
         sockets = new LinkedList<Socket>();

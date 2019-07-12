@@ -9,7 +9,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
-public class SQLProtocol implements SQLStrategy{
+public class SQLProtocol implements IOStrategy{
     SQLAutomaton automaton;
     @Override
                          //client socket

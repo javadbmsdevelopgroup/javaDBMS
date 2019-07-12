@@ -12,6 +12,15 @@ public class NwClient {
     private ObjectInputStream ois = null;
 
     Socket socket = null;
+
+    public ObjectInputStream getOis() {
+        return ois;
+    }
+
+    public ObjectOutputStream getOos() {
+        return oos;
+    }
+
     public NwClient(String host, int port){
         try {
             socket = new Socket(host, port);

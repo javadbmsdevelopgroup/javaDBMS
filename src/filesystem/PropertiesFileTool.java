@@ -11,6 +11,8 @@ public class PropertiesFileTool {
         if(instance==null) instance=new PropertiesFileTool();
         return instance;
     }
+
+
     public void writeConfig(String key,String value) throws IOException {
         FileOutputStream fileOutputStream=new FileOutputStream("config.properties",true);
         Properties prop=new Properties();
@@ -37,4 +39,6 @@ public class PropertiesFileTool {
             ioe.printStackTrace();
         }
     }
+
+
 }

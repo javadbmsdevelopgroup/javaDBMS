@@ -196,6 +196,12 @@ public class RelationView implements Serializable {
         }
         System.out.println();
     }
+    public String getVal(int row,String conlumName){
+        return rows.get(row).vals.get(getConlumIndex(conlumName));
+    }
+    public int getRowCount(){
+        return rows.size();
+    }
     class RelationViewItem implements Serializable{
         List<String> vals = new ArrayList<>();
         public RelationViewItem(String... vals){

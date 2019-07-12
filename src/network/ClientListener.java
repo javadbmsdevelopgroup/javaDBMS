@@ -10,7 +10,7 @@ import java.net.SocketException;
 
 //////////////////////////////客户端的监听器,用来客户端监听来自服务器的消息的
 public class ClientListener {
-    public SocketClient client;
+    /*public SocketClient client;
     public SocketServer server;
     //ObjectOutputStream oos;
     ObjectInputStream ois;
@@ -61,7 +61,7 @@ public class ClientListener {
             }
         });
         tRecv.start();   //启动线程
-    }
+    }*/
 
 
 

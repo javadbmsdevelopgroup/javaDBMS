@@ -113,17 +113,16 @@ public class SelectMethod implements INodeFunc, Serializable {
         RelationRow r=reader.readRecord(pos);
         while(r!=null && ( (limit<0) || (limit>0 && pos<limit))){
             //update course set 课程名称=java where 课程编号=1901;
-
             if(MethodTools.checkLogicExpression((Stack<String>) logicExpressionStack.clone(),r)){
                 //System.out.println("get : "+r);
                 if(!r.isDeleted()){
+                    System.out.println(111);
                 viewLogicMapping.addRelation(r);
                 }
             }else{
                 //System.out.println("skip "+r);
             }
             pos++;
-            //if(pos%10000==0) System.out.println(pos);
             System.out.println(pos+":"+r);
             r=reader.readRecord(pos);
 

@@ -15,6 +15,12 @@ public class SQLSession implements Serializable {
 
 
 
+    public SQLSession(){
+
+    }
+    public SQLSession(String dbName){
+        this.curUseDatabase=dbName;
+    }
     /////////////SQL会话
     public static void main(String[] args){
         SQLSession sqlSession=new SQLSession();

@@ -11,6 +11,7 @@ public class ViewLogicMapping {
     private TableDBMSObj tableDBMSObj;
     public int viewBufferSize=100;
     String[] columnNames;
+    boolean autoFlush=false;
 
     public RelationView getRelationView(){
         return relationView;
@@ -45,7 +46,7 @@ public class ViewLogicMapping {
             row[i]=relationRow.getVal(columnNames[i]).toString();
         }
         relationView.addRow(row);
-        if(relationView.rows.size()==viewBufferSize) flush();
+        if(relationView.rows.size()==viewBufferSize) {if(autoFlush) flush();}
     }
     public void flush(){
         relationView.printRows();

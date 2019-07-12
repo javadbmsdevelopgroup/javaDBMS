@@ -8,10 +8,14 @@ import dbms.view.RelationView;
 import java.net.SocketException;
 import java.util.Scanner;
 
-public class SQLClient {
+public class SQLClient extends NwClient{
+
+    public SQLClient(String ip,int port){
+        super(ip,port);
+    }
 
     public static void main(String[] args){
-        ManagerClient cc = new ManagerClient("127.0.0.1", 2999);
+        SQLClient cc = new SQLClient("127.0.0.1", 2999);
         SQLSession sqlSession=new SQLSession();
 
         //sqlSession.sqlAutomaton=sqlAutomaton;
