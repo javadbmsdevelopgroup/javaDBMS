@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/Automaton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/Automaton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/INodeFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/INodeFunc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/ITransMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/ITransMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/InfCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/InfCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/InputItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/InputItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/SQLAutomaton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/SQLAutomaton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/SQLSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/SQLSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/TransitionInf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/TransitionInf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/TransitionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/TransitionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/TranstionFunc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/AddMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/AddMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/ColumNameTrans.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/ColumNameTrans.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/ShowMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/ShowMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/UseMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/UseMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/CacheManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/CacheManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/IndexCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/IndexCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/RelationRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/RelationRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/TableStructure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/PositiveConstrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/PositiveConstrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/view/RelationView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/view/RelationView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/view/ViewLogicMapping.java" afterDir="false" />
-    </list>
+    <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            <state relative-caret-position="2250">
+              <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -173,7 +137,7 @@
   <component name="MavenRunner">
     <option name="vmOptions" value="-Xss32m" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="954" />
     <option name="y" value="121" />
     <option name="width" value="1932" />
@@ -202,81 +166,6 @@
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="automaton" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="automaton" type="462c0819:PsiDirectoryNode" />
-              <item name="exception" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="intergrityconstrain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="logic" type="462c0819:PsiDirectoryNode" />
-              <item name="BaseDBMSObject.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="physics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="filesystem" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -440,16 +329,15 @@
       <workItem from="1562929578527" duration="9654000" />
       <workItem from="1562939999192" duration="6442000" />
       <workItem from="1563014769552" duration="2066000" />
-      <workItem from="1563017323573" duration="35641000" />
+      <workItem from="1563017323573" duration="36541000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="360898000" />
+    <option name="totallyTimeSpent" value="361798000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.86504066" visible="true" weight="0.18923241" />
       <window_info id="Structure" order="1" sideWeight="0.13495935" side_tool="true" weight="0.15884861" />
@@ -460,7 +348,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3846154" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3846154" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35211268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -929,8 +817,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="2250">
+          <caret line="75" column="28" lean-forward="true" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
