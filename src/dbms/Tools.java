@@ -63,7 +63,7 @@ public class Tools {
 
 
     //碎片整理
-    public void debrisCleanUp(){
+    public static void debrisCleanUp(){
         String root= DatabaseDBMSObj.rootPath;
         File dbF=new File(root);
         Lock readLock=null;

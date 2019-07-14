@@ -2,6 +2,7 @@ package network;
 
 
 import dbms.CacheManage;
+import dbms.Tools;
 import dbms.view.RelationView;
 
 import java.util.Scanner;
@@ -31,6 +32,8 @@ public class SQLServer {
                   break;
               case 2:
                   ss.endServer();
+                  //碎片整理
+                  Tools.debrisCleanUp();
                   break;
               case 4:
                   System.out.println("input \"databaseName.tableName\":");

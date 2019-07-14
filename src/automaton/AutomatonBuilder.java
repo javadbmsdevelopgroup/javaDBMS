@@ -227,8 +227,8 @@ public class AutomatonBuilder {
         TransitionInf delete_trans4=new TransitionInf(delete_node33,delete_node34, TransitionType.KEYWORD,"WHERE");
         TransitionInf delete_trans5=new TransitionInf(delete_node34,delete_node34, TransitionType.KEYWORD,"(",new KeyWordTrans());
         TransitionInf delete_trans6=new TransitionInf(delete_node34,delete_node35, TransitionType.OBJNAME,"",new ExpressionTrans());
-        TransitionInf delete_trans7=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"OR",new KeyWordTrans());
-        TransitionInf delete_trans8=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"AND",new KeyWordTrans());
+        TransitionInf delete_trans7=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"OR",new ExpressionTrans());
+        TransitionInf delete_trans8=new TransitionInf(delete_node35,delete_node34, TransitionType.KEYWORD,"AND",new ExpressionTrans());
         TransitionInf delete_trans9=new TransitionInf(delete_node35,delete_node35, TransitionType.KEYWORD,")",new KeyWordTrans());
         TransitionInf delete_trans10=new TransitionInf(delete_node35,delete_node36, TransitionType.KEYWORD,";");
         automatonNodeList.add(delete_Node31);

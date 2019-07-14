@@ -49,12 +49,9 @@ public class SQLProtocol implements IOStrategy{
                         if(automatonNode!=null){
                             Object result=automatonNode.exeResult;
                             dos.writeObject(sqlSession);
-                            System.out.println(sqlSession.curUseDatabase);
                             dos.flush();
                             dos.writeObject(result);
-                            System.out.println(result);
                             dos.flush();
-                            System.out.println(sqlSession.curUseDatabase);
                         }else{
                             dos.writeObject(sqlSession);
                             dos.flush();

@@ -18,7 +18,7 @@ public class SQLClient extends NwClient{
         SQLClient cc = new SQLClient("127.0.0.1", 2999);
         SQLSession sqlSession=new SQLSession();
 
-        //sqlSession.sqlAutomaton=sqlAutomaton;
+
         String com;
         while(true){
             Scanner sc=new Scanner(System.in);
@@ -45,17 +45,13 @@ public class SQLClient extends NwClient{
                     System.out.println(result.toString());
                 }
             }
-//update course set 课程编号=课程编号+10 where 课程名称=JDK的安装与卸载;
-//delete from course where 课程编号=17013;
+
 
 
         }
 
 
 
-        //cc.end();
-//        cc.serverEnd();
-//        NwClient c = new NwClient("127.0.0.1", 2999);
-//        c.end();
+
     }
 }

@@ -15,7 +15,6 @@ public class TableWriter {
     //在末尾添加
     public void appendRelations(List<RelationRow> relationItems, TableDBMSObj tableDBMSObj) throws IOException {
 
-
             //检查完整性约束
             for(int i=0;i<relationItems.size();i++){
                 if(!relationItems.get(i).checkIntegrity(tableDBMSObj.tableStructure)) {

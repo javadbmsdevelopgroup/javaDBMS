@@ -49,7 +49,7 @@ public class StudentClient extends NwClient{
             shakeHand();
             Scanner sc=new Scanner(System.in);
             while(true){
-                System.out.println("请输入操作指令: 0:退出 1.查看个人信息 2.查看课程信息 3.选课 4.已选课程");
+                System.out.println("请输入操作指令: 0:退出 1.查看个人信息 2.查看课程信息 3.选课 4.已选课程 5.退课");
                 try{
                     int com=sc.nextInt();
                     switch (com){
@@ -124,6 +124,17 @@ public class StudentClient extends NwClient{
                             RelationView stuCourseInf=getStuCourseInf();
                             stuCourseInf.printRelationView();
                             break;
+                        case 5:
+                            RelationView rv=getStuCourseInf();
+                            rv.printRelationView();
+                            System.out.println("请输入想要退课的课程编号:");
+                            int c=sc.nextInt();
+                            if(withdrawlCourse(c)>0){
+                                System.out.println("退课成功");
+                            }else {
+                                System.out.println("退课失败");
+                            }
+                            break;
                     }
                 }catch (Exception e2){
                     e2.printStackTrace();
@@ -138,6 +149,18 @@ public class StudentClient extends NwClient{
 
     public int getStuCode(){
         return stuCode;
+    }
+
+    public int withdrawlCourse(int course) throws Exception{
+
+        oos.writeInt(105);
+        oos.flush();
+        oos.writeInt(stuCode);
+        oos.flush();
+        oos.writeInt(course);
+        oos.flush();
+        int result=ois.readInt();
+        return result;
     }
 
     public int selectCourse(int courseCode) throws Exception{
@@ -196,5 +219,6 @@ public class StudentClient extends NwClient{
 
     public static void main(String[] args){
         StudentClient cc = new StudentClient(17000000,"127.0.0.1", 9239);  //连接上选课服务器
+        cc.startClient();
     }
 }

@@ -78,10 +78,7 @@ public class MethodTools {
                     break;
             }
         }
-        /* System.out.println(l);
-        System.out.println(r);
-        System.out.println(operator);
-        System.out.println();*/
+
         return false;
     }
     public static boolean checkLogicExpression(Stack<String> expressionStack, RelationRow rr){
@@ -100,11 +97,11 @@ public class MethodTools {
         }
         while(!inputStack.empty()){
             String cur=inputStack.pop();
-            //System.out.println(cur);
+
             switch (cur.toUpperCase()){
                 case "(":
                 charsStack.push(cur);
-                //System.out.println("push "+cur);
+
                 break;
                 case ")":
                     if(charsStack.empty()) break;
@@ -113,7 +110,7 @@ public class MethodTools {
                         String curPeek=charsStack.peek();
                         if(curPeek.compareTo("(")==0) {
                             charsStack.pop();
-                            System.out.println("pop (");
+
                             printStack(charsStack);
                             printStack(operandStack);
 
@@ -123,23 +120,23 @@ public class MethodTools {
                         String l="";
                         if(curPeek.compareTo("!")==0){
                             r=operandStack.pop();
-                            System.out.println("Operand pop "+r);
+
                         }else{
                             r=operandStack.pop();
-                            System.out.println("Operand pop "+r);
+
                             l=operandStack.pop();
-                            System.out.println("Operand pop "+l);
+
                         }
 
                         boolean b=MethodTools.calc(l,r,curPeek,rr);
-                        System.out.println("calc "+curPeek);
+
                         charsStack.pop();
 
                         operandStack.push(b?"TRUE":"FALSE");
                         printStack(charsStack);
                         printStack(operandStack);
                     }
-                   // System.out.println("finish )");
+
                     printStack(charsStack);
                     printStack(operandStack);
                     break;
@@ -150,24 +147,23 @@ public class MethodTools {
                         String l="";
                         if(curPeek.compareTo("!")==0){
                             r=operandStack.pop();
-                            System.out.println("Operand pop "+r);
+
                         }else{
                             r=operandStack.pop();
-                            System.out.println("Operand pop "+r);
+
                             l=operandStack.pop();
-                            System.out.println("Operand pop "+l);
+
                         }
 
                         boolean b=MethodTools.calc(l,r,curPeek,rr);
-                        System.out.println("calc "+curPeek);
+
                         charsStack.pop();
-                        System.out.println("push result '"+b+"' to operand");
+
                         operandStack.push(b?"TRUE":"FALSE");
                     }
-                   // System.out.println("push "+"OR"+" to opertator");
+
                     charsStack.push("OR");
-                    //printStack(charsStack);
-                    //printStack(operandStack);
+
                     break;
                 case "AND":
 
@@ -177,24 +173,23 @@ public class MethodTools {
                         String l="";
                         if(curPeek.compareTo("!")==0){
                             r=operandStack.pop();
-                           // System.out.println("Operand pop "+r);
+
                         }else{
                             r=operandStack.pop();
-                           // System.out.println("Operand pop "+r);
+
                             l=operandStack.pop();
-                            //System.out.println("Operand pop "+l);
+
                         }
 
                         boolean b=MethodTools.calc(l,r,curPeek,rr);
-                       // System.out.println("calc "+curPeek);
+
                         charsStack.pop();
-                       // System.out.println("push result '"+b+"' to operand");
+
                         operandStack.push(b?"TRUE":"FALSE");
                     }
-                    //System.out.println("push "+"AND"+" to opertator");
+
                     charsStack.push("AND");
-                    //printStack(charsStack);
-                    //printStack(operandStack);
+
                     break;
                 case "=":
                     break;
@@ -205,27 +200,26 @@ public class MethodTools {
                             if(cur.charAt(i)=='=' || cur.charAt(i)=='!'){
 
                                 if(s.compareTo("")!=0){
-                                    //System.out.println("push "+s+" to operand ");
+
                                     operandStack.push(s);
                                     s="";
                                 }
                                 if(!charsStack.empty() && prior.get( String.valueOf(cur.charAt(i)))>prior.get(charsStack.peek())){
-                                    //System.out.println("push "+cur.charAt(i)+" to opertator");
                                     charsStack.push(String.valueOf(cur.charAt(i)));
                                 }else{
                                     charsStack.push("=");
-                                    //System.out.println("push "+cur.charAt(i)+" to opertator");
+
                                 }
                             }else{
                                 s+=cur.charAt(i);
                             }
                         }
                         if(s.compareTo("")!=0){
-                            //System.out.println("push "+s+" to operand ");
+
                             operandStack.push(s);
                             s="";
                         }
-                        //System.out.println(11);
+
                         break;
                 case "<":
                     break;
@@ -234,30 +228,23 @@ public class MethodTools {
             }
 
         }
-        //printStack(charsStack);
-       // printStack(operandStack);
+
         while (!charsStack.empty()){
             String curPeek=charsStack.peek();
             String r="";
             String l="";
             if(curPeek.compareTo("!")==0){
                 r=operandStack.pop();
-                //System.out.println("Operand pop "+r);
             }else{
                 r=operandStack.pop();
-                //System.out.println("Operand pop "+r);
                 l=operandStack.pop();
-               // System.out.println("Operand pop "+l);
             }
 
             boolean b=MethodTools.calc(l,r,curPeek,rr);
-            //System.out.println("calc "+curPeek);
             charsStack.pop();
-            //System.out.println("push result '"+b+"' to operand");
             operandStack.push(b?"TRUE":"FALSE");
         }
-        //printStack(charsStack);
-        //printStack(operandStack);
+
         if(operandStack.size()>1) return false;
         if(operandStack.peek().toUpperCase().compareTo("TRUE")==0) return true; else return false;
 

@@ -117,6 +117,30 @@ public class SelectCourseProtocol implements IOStrategy{
                         dos.flush();
 
                         break;
+                    case 105: //退课
+                        System.out.println("收到退课请求");
+                        //获取学号
+                        stuCode=dis.readInt();
+                        //获取课程编号
+                        courseCode=dis.readInt();
+                        //操作
+                        //先删除选课记录
+                        int deleteResult=(Integer) SelectCourseServer.getResult("delete from stuCourse where 学号="
+                                +stuCode+" and 课程编号="+courseCode+";");
+                        System.out.println("删除"+deleteResult);
+                        if(deleteResult<=0){
+                            dos.writeInt(deleteResult);
+                            dos.flush();
+                            break;
+                        }else{
+                            updateResult=(Integer)SelectCourseServer.getResult("update course set 已选人数=已选人数-1,余剩容量=余剩容量+1 where 课程编号="+courseCode+";");
+                            if(updateResult>0){
+                                System.out.println("为:"+stuCode+"退课成功");
+                            }
+                            dos.writeInt(updateResult);
+                            dos.flush();
+                            break;
+                        }
                 }
             }
 

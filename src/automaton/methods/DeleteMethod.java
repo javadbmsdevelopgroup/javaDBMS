@@ -28,11 +28,11 @@ public class DeleteMethod implements INodeFunc, Serializable {
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,databaseDBMSObj);
             TableReader reader= CacheManage.getInstance().getTableReader(sqlSession.curUseDatabase,tableName);
 
-
+            int count=0;
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
-                //准备进行写写操作。需要上锁
+                //准备进行写操作。需要上锁
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
                 writeLock.lock();
 
@@ -40,7 +40,10 @@ public class DeleteMethod implements INodeFunc, Serializable {
                     TableWriter tableWriter=new TableWriter();
 
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
-                        System.out.println("Try delete:"+r+" "+tableWriter.delete(pos,tableDBMSObj));
+                        System.out.println("Try delete:"+r+" ");
+                        if(tableWriter.delete(pos,tableDBMSObj)){
+                            count++;
+                        }
                     }
                     pos++;
                     r=reader.readRecord(pos);
@@ -51,7 +54,7 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 readLock.lock();
                 writeLock.unlock();
                 readLock.unlock();
-                return 1;
+                return count;
             }else{
                 //运用索引的情况下进行删除
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
@@ -59,6 +62,7 @@ public class DeleteMethod implements INodeFunc, Serializable {
 
 
                 int pos=MethodTools.getRecordPosThroughIndex((Stack<String>)infCollection.logicExpressions.clone(),tableDBMSObj);
+                if(pos<0) return -1;
                 TableWriter tableWriter=new TableWriter();
                 tableWriter.delete(pos,tableDBMSObj);
 
