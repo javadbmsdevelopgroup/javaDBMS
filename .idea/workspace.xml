@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DB/studentDB/course.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/course.tbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/studentDB/stuCourse.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/stuCourse.table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/studentDB/stuCourse.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/stuCourse.tbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/studentDB/student.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/student.table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/studentDB/student.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/student.tbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/CacheManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/CacheManage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/IndexCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/IndexCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SQLServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SQLServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/stuCourse.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/stuCourse.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/TableWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/StudentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/StudentClient.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,22 +22,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/network/StudentClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="134" column="56" selection-start-line="134" selection-start-column="56" selection-end-line="134" selection-end-column="56" />
+            <state relative-caret-position="150">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="imports" expanded="true" />
                 <element signature="method#getStuCourseInf#0;class#StudentClient#0" />
                 <element signature="method#getCourseInf#0;class#StudentClient#0" />
                 <element signature="method#getPersonalInf#0;class#StudentClient#0" />
@@ -51,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/SelectCourseProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
+            <state relative-caret-position="39">
+              <caret line="129" selection-start-line="129" selection-end-line="129" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+            <state relative-caret-position="210">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,10 +61,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java">
+        <entry file="file://$PROJECT_DIR$/src/network/SQLProtocol.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="141">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -84,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="83" column="97" selection-start-line="83" selection-start-column="97" selection-end-line="83" selection-end-column="97" />
+            <state relative-caret-position="1334">
+              <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -121,17 +109,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="-157">
+              <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/network/SQLThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-295">
-              <caret line="82" column="36" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="36" />
+            <state relative-caret-position="270">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+              <folding>
+                <element signature="e#317#318#0" expanded="true" />
+                <element signature="e#352#353#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -212,17 +204,17 @@
         <option value="$PROJECT_DIR$/src/network/SQLClient.java" />
         <option value="$PROJECT_DIR$/src/network/NwClient.java" />
         <option value="$PROJECT_DIR$/src/network/SelectCourseServer.java" />
-        <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
         <option value="$PROJECT_DIR$/src/network/SQLProtocol.java" />
-        <option value="$PROJECT_DIR$/src/network/StudentClient.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
-        <option value="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" />
         <option value="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" />
-        <option value="$PROJECT_DIR$/src/network/SQLServer.java" />
-        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
         <option value="$PROJECT_DIR$/src/dbms/CacheManage.java" />
         <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
+        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
+        <option value="$PROJECT_DIR$/src/network/SQLServer.java" />
+        <option value="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" />
+        <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
+        <option value="$PROJECT_DIR$/src/network/StudentClient.java" />
       </list>
     </option>
   </component>
@@ -257,24 +249,6 @@
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="production" type="462c0819:PsiDirectoryNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,13 +262,34 @@
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="automaton" type="462c0819:PsiDirectoryNode" />
-              <item name="methods" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="dbms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dbms" type="462c0819:PsiDirectoryNode" />
+              <item name="exceptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dbms" type="462c0819:PsiDirectoryNode" />
+              <item name="logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dbms" type="462c0819:PsiDirectoryNode" />
+              <item name="physics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
@@ -307,7 +302,20 @@
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="filesystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="event" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -323,10 +331,10 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="I:/Program Files/nodejs/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -348,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SQLServer">
+  <component name="RunManager" selected="Application.SQLSession">
     <configuration name="SQLServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="network.SQLServer" />
       <module name="javaDBMS" />
@@ -417,10 +425,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SQLServer" />
         <item itemvalue="Application.SQLSession" />
         <item itemvalue="Application.StudentClient" />
         <item itemvalue="Application.SelectCourseServer" />
+        <item itemvalue="Application.SQLServer" />
         <item itemvalue="Application.TestMultiStuSelectCourses" />
       </list>
     </recent_temporary>
@@ -471,12 +479,12 @@
       <workItem from="1562929578527" duration="9654000" />
       <workItem from="1562939999192" duration="6442000" />
       <workItem from="1563014769552" duration="2066000" />
-      <workItem from="1563017323573" duration="22202000" />
+      <workItem from="1563017323573" duration="28943000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="347459000" />
+    <option name="totallyTimeSpent" value="354200000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -491,7 +499,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2611051" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1516793" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35211268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -563,10 +571,10 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/network/SQLServer.java</url>
-          <line>35</line>
+          <url>file://$PROJECT_DIR$/src/network/SelectCourseProtocol.java</url>
+          <line>127</line>
           <properties />
-          <option name="timeStamp" value="37" />
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -577,27 +585,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/automaton/TransitionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/TranstionFunc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="111" selection-start-line="111" selection-end-line="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/exceptions/BufferSizeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/exceptions/ConlumNameNotFound.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -839,13 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SQLProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/view/RelationView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-150">
@@ -863,47 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SQLClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-690">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="e#287#288#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/StudentClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="134" column="56" selection-start-line="134" selection-start-column="56" selection-end-line="134" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getStuCourseInf#0;class#StudentClient#0" />
-            <element signature="method#getCourseInf#0;class#StudentClient#0" />
-            <element signature="method#getPersonalInf#0;class#StudentClient#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SelectCourseProtocol.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="130" column="41" selection-start-line="130" selection-start-column="41" selection-end-line="130" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -918,16 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-270">
@@ -935,20 +864,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="83" column="97" selection-start-line="83" selection-start-column="97" selection-end-line="83" selection-end-column="97" />
+        <state relative-caret-position="304">
+          <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#getIndex#0;class#IndexCache#0" />
+            <element signature="method#loadIndex#0;class#IndexCache#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -962,13 +885,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
+    <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+        <state relative-caret-position="1334">
+          <caret line="109" column="34" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
           <folding>
-            <element signature="method#getIndex#0;class#IndexCache#0" />
-            <element signature="method#loadIndex#0;class#IndexCache#0" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/physics/BplusTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javaDBMS.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="e#317#318#0" expanded="true" />
+            <element signature="e#352#353#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SelectCourseProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLProtocol.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="144" column="1" lean-forward="true" selection-start-line="144" selection-start-column="1" selection-end-line="144" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="13" selection-start-line="12" selection-start-column="40" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#317#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/StudentClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="method#getStuCourseInf#0;class#StudentClient#0" />
+            <element signature="method#getCourseInf#0;class#StudentClient#0" />
+            <element signature="method#getPersonalInf#0;class#StudentClient#0" />
           </folding>
         </state>
       </provider>
@@ -1031,6 +1042,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

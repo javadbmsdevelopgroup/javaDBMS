@@ -136,7 +136,7 @@ public class TableWriter {
     public boolean delete(int recordNum, TableDBMSObj tableDBMSObj) throws IOException{
         TableReader reader=CacheManage.getInstance().getTableReader(tableDBMSObj.dbBelongedTo.dbName,tableDBMSObj.tbName);
         RelationRow r=reader.readRecord(recordNum);
-        if(r.deleted) return true;
+        if(r.deleted) return false;
         System.out.println("要删掉"+r);
         if(r==null) return false;
         r.deleted=true;

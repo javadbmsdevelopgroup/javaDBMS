@@ -3,14 +3,12 @@ package network;
 import automaton.SQLSession;
 import dbms.Tools;
 import dbms.view.RelationView;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Scanner;
-import java.util.WeakHashMap;
+
 
 public class StudentClient extends NwClient{
     int stuCode=-1;

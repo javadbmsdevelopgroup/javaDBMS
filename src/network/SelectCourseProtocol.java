@@ -127,6 +127,7 @@ public class SelectCourseProtocol implements IOStrategy{
                         //先删除选课记录
                         int deleteResult=(Integer) SelectCourseServer.getResult("delete from stuCourse where 学号="
                                 +stuCode+" and 课程编号="+courseCode+";");
+
                         System.out.println("删除"+deleteResult);
                         if(deleteResult<=0){
                             dos.writeInt(deleteResult);
