@@ -6,6 +6,7 @@ import dbms.logic.TableStructureItem;
 
 import java.io.Serializable;
 
+//非负约束（名起错了,NotNegative才对
 public class PositiveConstrain implements IIntergrityConstraint, Serializable {
     @Override
     public boolean check(TableStructureItem tbs, RelationSItem ri, TableDBMSObj tableDBMSObj){

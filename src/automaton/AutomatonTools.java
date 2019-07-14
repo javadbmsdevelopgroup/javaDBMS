@@ -3,13 +3,16 @@ package automaton;
 import java.util.ArrayList;
 import java.util.List;
 
+//自动机工具
 public class AutomatonTools {
+    //单例设计模式
     private static AutomatonTools instance=null;
     private AutomatonTools(){};
     public static AutomatonTools getInstance(){
         if(instance==null) instance=new AutomatonTools();
         return instance;
     }
+    //把一个句子转换成输入项集合
     public static List<InputItem> toInputList(String str){
         List<InputItem> iis=new ArrayList<>();
         String cur="";

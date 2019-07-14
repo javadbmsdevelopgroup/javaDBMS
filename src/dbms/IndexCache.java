@@ -14,6 +14,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+//索引缓存
 public class IndexCache {
     private static IndexCache instance=null;
 
@@ -40,6 +41,7 @@ public class IndexCache {
         }
     }
 
+    //加载一个表的索引
     public boolean loadIndex(TableDBMSObj tableDBMSObj){
         String strKey=tableDBMSObj.dbBelongedTo.dbName+"."+tableDBMSObj.tbName;
         if(indexCache.containsKey(strKey)) return true;
@@ -106,6 +108,8 @@ public class IndexCache {
 
 
     }
+
+    //判断缓存中一个表的索引是否相对于刚载入时有了变化
     public boolean isChanged(String dbName,String tbName){
         if(changedTables.contains(dbName+"."+tbName)){
             return true;
@@ -113,6 +117,8 @@ public class IndexCache {
             return false;
         }
     }
+
+    //重设索引中的一条记录
     public void resetRecord(RelationRow r,TableDBMSObj tableDBMSObj,int recordPos){
         BplusTree bplusTree=getIndex(tableDBMSObj);
         if(bplusTree==null) return;

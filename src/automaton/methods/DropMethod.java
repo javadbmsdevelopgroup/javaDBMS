@@ -8,6 +8,7 @@ import filesystem.PropertiesFileTool;
 import java.io.File;
 import java.io.Serializable;
 
+//删除数据库/表的方法
 public class DropMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){

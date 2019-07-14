@@ -10,7 +10,8 @@ import java.util.Map;
 
 ///////////////////////////////////视图层的关系显示
 /////目前存在的问题。当大量行存在时（比如上百万行），未解决如何显示比较好的问题。应该这里也要添加缓存。
-///后面应该需要建立起 TableReader(提供了缓存技术)和RelationView的关系,通过缓存慢慢打印view
+//////更新:已经实现缓冲技术。 见ViewLogicMapping类
+
 
 public class RelationView implements Serializable {
     List<String> conlumNames=new ArrayList<>();

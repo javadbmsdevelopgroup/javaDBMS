@@ -3,6 +3,7 @@ package automaton.methods;
 import automaton.INodeFunc;
 import automaton.InfCollection;
 import automaton.SQLSession;
+import dbms.CacheManage;
 import dbms.RelationRow;
 import dbms.TableReader;
 import dbms.logic.DataType;
@@ -16,6 +17,7 @@ import javafx.scene.control.Tab;
 import java.io.*;
 import java.nio.ByteBuffer;
 
+//创建索引
 public class IndexCreateMethod implements INodeFunc,Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
@@ -35,15 +37,14 @@ public class IndexCreateMethod implements INodeFunc,Serializable {
             return -1;
         }
         try {
-            //要等锁
-            //补充lock
+            //表逻辑对象
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,databaseDBMSObj);
             if(createIndex(indexOn,sqlSession.curUseDatabase,tableDBMSObj)){
-                //索引创建成功,重新写入文件
+                //索引创建成功,重新写入表结构到文件
                 TableStructure tableStructure=tableDBMSObj.tableStructure;
-
                 tableStructure.useIndex=true;
                 tableStructure.indexOn=indexOn;
+                //写入文件
                 tableStructure.writeToStructFile(sqlSession.curUseDatabase,tableName);
                 System.out.println("Create index on table "+tableName+" ("+indexOn+") success");
                 return 1;
@@ -64,7 +65,7 @@ public class IndexCreateMethod implements INodeFunc,Serializable {
         if(!tableDBMSObj.tableStructure.isColumnExists(columnName)) return false;
         //创建索引
         try {
-            TableReader reader = new TableReader(tableDBMSObj, 30);
+            TableReader reader = CacheManage.getInstance().getTableReader(dbName,tableDBMSObj.tbName);
             int pos = 0;
             RelationRow record = reader.readRecord(pos);
             DataType dataType = tableDBMSObj.tableStructure.getDataType(columnName);

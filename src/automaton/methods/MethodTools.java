@@ -16,7 +16,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+//这是一个工具类
 public class MethodTools {
+    //打印一个栈
     private static void printStack(Stack<String> objectStack){
         System.out.print("[");
         for(int i=0;i<objectStack.size();i++){
@@ -24,8 +26,8 @@ public class MethodTools {
         }
         System.out.println("]");
     }
+    //计算一个表达式。如  学号=学号+1  l:左操作数，必须是一个列名  r:右表达式 operator:比如=/And/or  rr:一行记录
     private static boolean calc(String l,String r,String operator,RelationRow rr){
-
         if(rr==null) return false;
         if(operator.compareTo("!")==0){
             if(r.toUpperCase().compareTo("TRUE")!=0 && r.toUpperCase().compareTo("FALSE")!=0){
@@ -81,8 +83,10 @@ public class MethodTools {
 
         return false;
     }
+    //检测逻辑表达式的值
     public static boolean checkLogicExpression(Stack<String> expressionStack, RelationRow rr){
         Map<String,Integer> prior=new HashMap<>();
+        //先存优先级
         prior.put(")",0);
         prior.put("(",1);
         prior.put("OR",2);
@@ -90,11 +94,13 @@ public class MethodTools {
         prior.put("!",4);
         prior.put("=",5);
         Stack<String> inputStack=new Stack<>();
-        Stack<String> charsStack=new Stack<>();
-        Stack<String> operandStack=new Stack<>();
+        Stack<String> charsStack=new Stack<>();  //符号栈
+        Stack<String> operandStack=new Stack<>();  //操作数栈
+        //把表达式栈的值取出来放到输入栈中
         while(!expressionStack.empty()){
             inputStack.push(expressionStack.pop());
         }
+        //处理输入栈
         while(!inputStack.empty()){
             String cur=inputStack.pop();
 
@@ -106,7 +112,6 @@ public class MethodTools {
                 case ")":
                     if(charsStack.empty()) break;
                     while(!charsStack.empty() && prior.get(")")<prior.get(charsStack.peek()) ){
-
                         String curPeek=charsStack.peek();
                         if(curPeek.compareTo("(")==0) {
                             charsStack.pop();
@@ -229,6 +234,7 @@ public class MethodTools {
 
         }
 
+        //开始计算
         while (!charsStack.empty()){
             String curPeek=charsStack.peek();
             String r="";
@@ -246,10 +252,12 @@ public class MethodTools {
         }
 
         if(operandStack.size()>1) return false;
+        //返回栈顶逻辑值
         if(operandStack.peek().toUpperCase().compareTo("TRUE")==0) return true; else return false;
 
     }
 
+    //检测是否存在某个数据库和某个表
     public static boolean checkTableandDatabase(SQLSession sqlSession, String tableName){
         //检查是否使用了某个数据库
         if(sqlSession.curUseDatabase.compareTo("")==0){
@@ -266,6 +274,7 @@ public class MethodTools {
     }
 
 
+    //计算表达式值
     public static int calcVal(String expression,RelationRow r) throws Exception{
         Stack<Integer> operands=new Stack<>();
         Stack<String> opereator=new Stack<>();
@@ -333,6 +342,8 @@ public class MethodTools {
             }
             return operands.pop();
     }
+
+    //通过索引寻找符合逻辑表达式的记录所在位置
     public static int getRecordPosThroughIndex(Stack<String> expressionStack,TableDBMSObj tableDBMSObj){
         //select 学号,姓名 from student where 学号=17000000;
         String conlumn="";

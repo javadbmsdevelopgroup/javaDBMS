@@ -17,7 +17,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.locks.Lock;
-
+//插入方法
 public class InsertMethod implements INodeFunc, Serializable {
 
     @Override
@@ -61,7 +61,7 @@ public class InsertMethod implements INodeFunc, Serializable {
                 System.out.println("Values not match the table column's count");
                 return -4;
             }else{
-                //write
+                //下面执行写入操作
                 TableWriter tableWriter = new TableWriter();
 
                 RelationRow relationRow = new RelationRow(tableStructure);

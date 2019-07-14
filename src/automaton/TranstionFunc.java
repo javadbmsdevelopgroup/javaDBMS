@@ -7,10 +7,10 @@ import java.util.List;
 
 //转移函数
 public class TranstionFunc implements Serializable {
-    List<TransitionInf> tifs=new ArrayList<>();   //转移函数信息集合,对应状态机上的一条边
-    InfCollection infCollection;
-    Automaton belongedAutomaton=null;
-    int stateCount=0;    //
+    List<TransitionInf> tifs=new ArrayList<>();   //转移函数信息集合,对应自动机上的所有边的集合
+    InfCollection infCollection;   //信息收集器
+    Automaton belongedAutomaton=null;  //所属的自动机(可以为null)
+
 
     public TranstionFunc(){
         infCollection=new InfCollection();
@@ -25,11 +25,12 @@ public class TranstionFunc implements Serializable {
     void addAtransition(AutomatonNode from, AutomatonNode end, TransitionType t, String input){  //添加一条状态转移信息   从那哪个状态到那个状态，转移类型，以及转移条件
         tifs.add(new TransitionInf(from,end,t,input));
     }
+    //添加一条迁移信息（边）
     void addAtransition(TransitionInf ti){  //添加一条状态转移信息
         tifs.add(ti);
     }   //同样是添加一条转移信息
 
-    //转移函数编码
+    //转移函数编码(不用考虑)
     public String getCodedStr(){
         String r="";
         for (TransitionInf ti:tifs){
@@ -40,7 +41,7 @@ public class TranstionFunc implements Serializable {
 
 
     //尝试对输入集合转移
-    //多个输入用空格隔开,返回最终状态 -1表示失败
+    //返回到达的结点 null表示失败
     AutomatonNode transition(AutomatonNode from,List<InputItem> input){
         AutomatonNode cur=from;
 

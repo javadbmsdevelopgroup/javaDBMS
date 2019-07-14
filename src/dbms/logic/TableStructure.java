@@ -23,7 +23,8 @@ public class TableStructure implements Serializable {
         dts.add(a);
     }  //添加一个属性项
 
- 
+
+    //添加一个完整性约束
     public boolean addConstain(String cname, IIntergrityConstraint icMethod,String tbName,String dbName){
         for (TableStructureItem tsi : dts){
             if(tsi.conlumName.compareTo(cname)==0){

@@ -13,8 +13,8 @@ import java.util.Map;
 //////////////////////////////////////缓存管理
 public class CacheManage {
     private static  CacheManage instance=null;             //使用单例模式
-    private static Map<String, TableReader> readerMap=new HashMap<>();
-    private static IndexCache indexCache=IndexCache.getInstance();
+    private static Map<String, TableReader> readerMap=new HashMap<>();   //管理着TableReader缓存（每个TableReader有一个缓冲区)
+    private static IndexCache indexCache=IndexCache.getInstance();    //管理着索引缓存
 
     private CacheManage(){}
     public static CacheManage getInstance(){
@@ -33,6 +33,7 @@ public class CacheManage {
     }
 
 
+    //缓存整个表
     public static boolean cacheWholeTable(String dbName,String tbName){
         if(!DatabaseDBMSObj.isExist(dbName)) {
             return false;
@@ -56,6 +57,8 @@ public class CacheManage {
         }
         return true;
     }
+
+    //缓存所有索引
     public static void loadAllindex(){
         String root=PropertiesFileTool.getInstance().readConfig("DBRoot");
         File dbF=new File(root);
@@ -82,6 +85,7 @@ public class CacheManage {
         }
     }
 
+    //获取tabeReader
     public TableReader getTableReader(String dbName,String tbName){
         String keyStr=dbName+"."+tbName;
         if(readerMap.containsKey(keyStr)){
@@ -109,6 +113,7 @@ public class CacheManage {
         }
     }
 
+    //同步缓存用的。 当真实表的数据有变动时，会调用这个函数。防止表数据和索引数据和缓存数据的不一致.
     public boolean resetRecordInCache(String dbName,String tbName,RelationRow r,int recordPos){
         String keyStr=dbName+"."+tbName;
         if(!readerMap.containsKey(keyStr)) return false;
@@ -123,6 +128,7 @@ public class CacheManage {
 
     }
 
+    //获取索引
     public BplusTree getIndex(TableDBMSObj tableDBMSObj){
         return indexCache.getIndex(tableDBMSObj);
     }

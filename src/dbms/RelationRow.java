@@ -10,8 +10,8 @@ import java.util.List;
 public class RelationRow implements Comparable<RelationRow>{
 
     TableStructure tbs=null;   //对应的表结构
-    boolean deleted=false;
-   // TableDBMSObj tbBelongedTo=null;
+    boolean deleted=false;   //删除标记
+
 
     List<RelationSItem > sis=new ArrayList<>();   //元组中的每项
 

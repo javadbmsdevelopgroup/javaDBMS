@@ -27,12 +27,12 @@ public class UpdateMethod implements INodeFunc, Serializable {
         try{
             DatabaseDBMSObj databaseDBMSObj=new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath);
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,databaseDBMSObj);
-            TableReader reader=new TableReader(tableDBMSObj,30);
+            TableReader reader=CacheManage.getInstance().getTableReader(sqlSession.curUseDatabase,tableName);
             //加入判断列名是否存在
 
             int count=0;
 
-       
+
             writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
             writeLock.lock();
 

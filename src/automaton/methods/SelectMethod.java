@@ -39,7 +39,7 @@ public class SelectMethod implements INodeFunc, Serializable {
         columnNames.toArray(colums);
         try{
             TableDBMSObj tableDBMSObj=new TableDBMSObj(tableName,new DatabaseDBMSObj(sqlSession.curUseDatabase,DatabaseDBMSObj.rootPath));
-            reader=new TableReader(tableDBMSObj,30);
+            reader=CacheManage.getInstance().getTableReader(sqlSession.curUseDatabase,tableName);
             viewLogicMapping=new ViewLogicMapping(200,colums,tableDBMSObj);
             viewLogicMapping.showHeadLine();
             if(infCollection.logicExpressions.empty()){

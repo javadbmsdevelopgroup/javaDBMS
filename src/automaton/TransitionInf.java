@@ -5,12 +5,14 @@ import java.util.Collections;
 
 //一条转移信息
 public class TransitionInf implements Serializable {
-    AutomatonNode from; //from which state
-    AutomatonNode end; //end in which state
-
-
+    //描述从哪迁移到哪
+    AutomatonNode from;
+    AutomatonNode end;
+    //迁移类型
     TransitionType type;
+    //迁移内容
     String t_content="";
+    //迁移成功时执行的函数
     public ITransMethod transMethod=null;
 
     //从某结点到某结点 转移类型 转移内容
@@ -31,6 +33,7 @@ public class TransitionInf implements Serializable {
 
 
 
+    //编码
     public String getEncodedStr() {
         if(from.nodeCode<=0 || end.nodeCode<=0) return "";
         StringBuilder coded=new StringBuilder("");

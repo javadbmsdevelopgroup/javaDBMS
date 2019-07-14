@@ -16,7 +16,7 @@ public class KeyConstrain implements IIntergrityConstraint{
         if(!tableDBMSObj.tableStructure.useIndex){
             //不用索引的情况
             try{
-                TableReader tr=new TableReader(tableDBMSObj,10);
+                TableReader tr=new TableReader(tableDBMSObj,30,30);
                 int recordNum=0;
                 RelationRow rw;
                 do {
@@ -26,7 +26,6 @@ public class KeyConstrain implements IIntergrityConstraint{
                     if(val==null) return false;
                     if(val.equals(ri.getVal())==true) return false; //发现重复值
                     recordNum++;
-
                 }while(true);
             }catch (Exception e){
                 e.printStackTrace();

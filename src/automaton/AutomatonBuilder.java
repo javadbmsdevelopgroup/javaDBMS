@@ -7,8 +7,10 @@ import dbms.logic.DataType;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//自动机制造器。。。写死的。根据画的自动机图编写的.
 public class AutomatonBuilder {
-    //缺少limit
+
 
     public static Automaton buildAutomaton(){
         AutomatonNode start=new AutomatonNode(0,false);  //起点

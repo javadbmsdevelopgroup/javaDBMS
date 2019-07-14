@@ -3,7 +3,7 @@ package automaton;
 import java.io.Serializable;
 import java.util.Stack;
 
-//信息集，用来在自动机迁移时收集信息
+//信息手机去，用来在自动机迁移时收集信息.里面有一堆栈
 public class InfCollection implements Serializable {
     public Stack<String> tableNames=new Stack<>();  //表名栈
     public Stack<String> dbNames=new Stack<>();    //数据库名栈

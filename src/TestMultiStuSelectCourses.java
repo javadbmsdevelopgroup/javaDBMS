@@ -7,7 +7,6 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;
 
 public class TestMultiStuSelectCourses {
-    //CyclicBarrier cyclicBarrier=new CyclicBarrier(200);
     Map<Integer,TestThread> scMap=new HashMap<>();
     static Random r=new Random();
     int[] lock=new int[0];

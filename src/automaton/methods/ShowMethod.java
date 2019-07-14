@@ -14,6 +14,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+//show函数。。。就是显示有哪些数据库。数据库里有那些表用的
 public class ShowMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection,Object... objs){

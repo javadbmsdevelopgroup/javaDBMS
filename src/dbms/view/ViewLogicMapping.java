@@ -13,9 +13,12 @@ public class ViewLogicMapping {
     String[] columnNames;
     boolean autoFlush=false;
 
+
     public RelationView getRelationView(){
         return relationView;
     }
+
+
     //提供的参数: 视图的缓冲大小（超出后会自动输出并清空）,列名
     public ViewLogicMapping(int viewBufferSize,String[] columnNames,TableDBMSObj tableDBMSObj) throws Exception{
         this.viewBufferSize=viewBufferSize;
@@ -48,6 +51,7 @@ public class ViewLogicMapping {
         relationView.addRow(row);
         if(relationView.rows.size()==viewBufferSize) {if(autoFlush) flush();}
     }
+    //输出缓冲区的内容。
     public void flush(){
         relationView.printRows();
         relationView.rows.clear();

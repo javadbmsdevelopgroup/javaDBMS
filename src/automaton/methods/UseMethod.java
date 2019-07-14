@@ -10,6 +10,7 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 import java.io.IOException;
 import java.io.Serializable;
 
+//use方法  选择一个数据库
 public class UseMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){

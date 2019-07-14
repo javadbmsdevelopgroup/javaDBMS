@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.Scanner;
 import java.util.concurrent.locks.Lock;
 
-//sql会话              这是主要进行数据库操作的地方
+//sql会话    就包含一个会话当前使用的数据库名。  主函数的功能是一个sql命令行.
 public class SQLSession implements Serializable {
     public String curUseDatabase="";
 
@@ -19,6 +19,7 @@ public class SQLSession implements Serializable {
     public SQLSession(String dbName){
         this.curUseDatabase=dbName;
     }
+
     /////////////SQL会话
     public static void main(String[] args){
         SQLSession sqlSession=new SQLSession();
