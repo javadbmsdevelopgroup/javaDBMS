@@ -27,7 +27,7 @@ public class SelectCourseServer{
     public static void main(String[] args){
         NwServer selectCourseServer=new NwServer(9239,new ThreadSupport(new SelectCourseProtocol()));
 
-        // SelectCourseServer selectCourseServer=new SelectCourseServer(9239);
+
         System.out.println("input 1 start, input 2 end, input 3 all-end");
         Scanner scanner = new Scanner(System.in);
         int x = 0;

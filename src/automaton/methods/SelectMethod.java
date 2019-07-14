@@ -24,7 +24,7 @@ public class SelectMethod implements INodeFunc, Serializable {
     Lock writeLock=null;
     @Override
     public Object doWork(InfCollection infCollection,Object... objs){
-        //select * from course
+
         String tableName=infCollection.tableNames.pop();
         SQLSession sqlSession=(SQLSession)objs[0];
         int limit=-1;
@@ -34,7 +34,7 @@ public class SelectMethod implements INodeFunc, Serializable {
         while(!infCollection.columNames.empty()){
             columnNames.add(infCollection.columNames.pop());
         }
-        //select 学号,姓名 from student limit 10;
+
         String[] colums=new String[columnNames.size()];
         columnNames.toArray(colums);
         try{
@@ -62,10 +62,9 @@ public class SelectMethod implements INodeFunc, Serializable {
                 }catch (Exception e){ }
             }
             //上锁
-            System.out.println("select wait read lock");
             readLock= TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.dbBelongedTo.dbName+"."+tableName);
             readLock.lock();
-            System.out.println("select get read lock");
+
             if(!tableDBMSObj.tableStructure.useIndex){
                 readLock.unlock();
                 return sequentialQuery(limit,(Stack<String>) infCollection.logicExpressions.clone()); //无索引下顺序查询
@@ -74,9 +73,7 @@ public class SelectMethod implements INodeFunc, Serializable {
 
                 int pos= MethodTools.getRecordPosThroughIndex((Stack<String>)infCollection.logicExpressions.clone(),tableDBMSObj);
                 if(pos>=0){
-                    //System.out.println(pos);
                     RelationRow r=reader.readRecord(pos);
-                    System.out.println(r);
                     if(!r.isDeleted()){
                         viewLogicMapping.addRelation(r);
                     }
@@ -92,9 +89,7 @@ public class SelectMethod implements INodeFunc, Serializable {
                     return viewLogicMapping.getRelationView();
                 }
             }
-           /* readLock.unlock();
-            viewLogicMapping.flush();
-            viewLogicMapping.showBottomLine();*/
+
         }catch (Exception e){
             if(readLock!=null ) readLock.unlock();
             e.printStackTrace();
@@ -112,18 +107,13 @@ public class SelectMethod implements INodeFunc, Serializable {
         int pos=0;
         RelationRow r=reader.readRecord(pos);
         while(r!=null && ( (limit<0) || (limit>0 && pos<limit))){
-            //update course set 课程名称=java where 课程编号=1901;
             if(MethodTools.checkLogicExpression((Stack<String>) logicExpressionStack.clone(),r)){
-                //System.out.println("get : "+r);
                 if(!r.isDeleted()){
-                    System.out.println(111);
-                viewLogicMapping.addRelation(r);
+                   viewLogicMapping.addRelation(r);
                 }
             }else{
-                //System.out.println("skip "+r);
             }
             pos++;
-            System.out.println(pos+":"+r);
             r=reader.readRecord(pos);
 
         }

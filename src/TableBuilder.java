@@ -26,9 +26,6 @@ public class TableBuilder {
                 "邵 史 毛 常 万 顾 赖 武 康 贺 严 尹 钱 施 牛 洪 龚 汤 陶 黎 温 " +
                 "莫 易 樊 乔 文 安 殷 颜 庄 章 鲁 倪 庞 邢 俞 翟 蓝 聂 齐 向 申 葛 岳";
         lastName = ss.split(" ");
-//        for(int i = 0; i < lastName.length; i++)
-//            System.out.println(lastName[i]);
-//        System.out.println(lastName.length);
         myClass = new String[100];
         for(int i = 0; i < 100; i++){
             myClass[i] = Integer.toString(i + 1700);
@@ -91,9 +88,9 @@ public class TableBuilder {
        /* for(int i=0;i<1000000;i++){
             sqlAutomaton.matchingGrammar(randomGetStudent(i));
         }*/
-        sqlAutomaton.matchingGrammar("insert into course values (17001,JAVA从入门到放弃,100,100,0)");
+        /*sqlAutomaton.matchingGrammar("insert into course values (17001,JAVA从入门到放弃,100,100,0)");
         sqlAutomaton.matchingGrammar("insert into course values (17002,MySQL从删库到跑路,100,100,0)");
-        sqlAutomaton.matchingGrammar("insert into course values (17003,JDK的安装与卸载,100,100,0)");
+        sqlAutomaton.matchingGrammar("insert into course values (17003,JDK的安装与卸载,100,100,0)");*/
 
         ////Fill code here
         //学生数据要求百万条  选课数据没说  课程3门(要求的)

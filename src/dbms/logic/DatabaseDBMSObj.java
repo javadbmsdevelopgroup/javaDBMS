@@ -22,12 +22,10 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
     //获取数据库下所有的表（逻辑对象，没有具体数据）
     public List<TableDBMSObj> listTables(){
         File dbf=new File(rootPath+"\\"+dbName);
-        //System.out.println(rootPath+"\\"+dbName);
         if(!dbf.exists() || !dbf.isDirectory()) return null;
         List<TableDBMSObj> tdos=new ArrayList<>();
         File[] ts=dbf.listFiles();
         for(File f:ts){
-            //System.out.print("111");
             if(f.getName().indexOf(".tbs")<0) continue;
             try{
             tdos.add(new TableDBMSObj(f.getName(),this));
@@ -90,7 +88,6 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
         File f=new File(rootPath+"\\"+dbName);
         if(f.exists() && f.isDirectory()) return false;
         else{
-            //System.out.println("Create Database");
             f.mkdir();
             if(f.exists()) return true; else return false;
 
@@ -112,7 +109,7 @@ public class DatabaseDBMSObj extends BaseDBMSObject{
         DatabaseDBMSObj db=new DatabaseDBMSObj("studentDB","C:\\Users\\akb\\Desktop\\java\\javaDBMS\\DB");
         if(db.create()){
             System.out.println("Create Successful");
-        };
+        }
         db.listTables();
     }
 

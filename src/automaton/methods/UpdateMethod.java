@@ -32,20 +32,21 @@ public class UpdateMethod implements INodeFunc, Serializable {
 
             int count=0;
 
-            System.out.println("update "+Thread.currentThread().getName()+" wait write lock");
+
             writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
             writeLock.lock();
-            System.out.println("update "+Thread.currentThread().getName()+" get write lock");
+
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
 
                 while(r!=null){
-                    //update course set 课程名称=java where 课程编号=1901;
                     TableWriter tableWriter=new TableWriter();
-               //update course set 已选人数=已选人数+1,余剩容量=余剩容量-1 where 课程编号=17002;
+
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
                         System.out.println("Try update: "+r);
+
+                        //开干每个表达式
                         while (!infCollection.others.empty()){
                             String setExpression=infCollection.others.pop();
                             System.out.println("pop"+setExpression);
@@ -91,15 +92,21 @@ public class UpdateMethod implements INodeFunc, Serializable {
                                     break;
                             }
 
+
+
+                        }
+
+                        //检查完整性
+                        if(!r.checkIntegrity(tableDBMSObj.tableStructure))
+                        {
+                            System.out.println("完整性约束检查失败");
+                        }else{
                             if(tableWriter.replace(pos,r,tableDBMSObj)){
                                 count++;
                             }
                         }
 
 
-
-
-                        //reader.replaceRecord(pos,r);
                         CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
                     }
                     pos++;
@@ -157,19 +164,27 @@ public class UpdateMethod implements INodeFunc, Serializable {
                         }
 
                         r.setVal(conlumName,r.getConlumType(conlumName)== DataType.STRING?val:Integer.parseInt(val));
-                        tableWriter.replace(pos,r,tableDBMSObj);
+
+
+                    }
+                    //检查完整性
+                    if(!r.checkIntegrity(tableDBMSObj.tableStructure))
+                    {
+                        System.out.println("完整性约束检查失败");
+                    }else{
+                        if(tableWriter.replace(pos,r,tableDBMSObj)){
+                            count++;
+                        }
                         CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
                     }
 
-
                 }
-                count++;
+
             }
-            System.out.println("update "+Thread.currentThread().getName()+" wait read lock");
+
             readLock=TableReadWriteLock.getInstance().getReadLock(databaseDBMSObj.dbName+"."+tableName);
             readLock.lock();
-            System.out.println("update "+Thread.currentThread().getName()+" get read lock");
-            System.out.println("update "+Thread.currentThread().getName()+" release lock");
+
             writeLock.unlock();
             readLock.unlock();
             return count;

@@ -109,18 +109,7 @@ public class TranstionFunc implements Serializable {
 
 
         }
-/*
-        if(!t_exe){
-            if(tf_strOany!=null){
-                System.out.println(String.valueOf(cur.nodeCode)+"->"+ tf_strOany.end.nodeCode);
-                cur=tf_strOany.end;
-            }else if(tf_WordTypeOany!=null){
-                System.out.println(String.valueOf(cur.nodeCode)+"->"+tf_WordTypeOany.end.nodeCode);
-                cur=tf_WordTypeOany.end;
-            }else
-                return null; //对于某个输入无法转移
-        }
-*/
+
         return cur;
     }
 }

@@ -1,10 +1,7 @@
 package dbms;
 
-import dbms.logic.DataType;
-import dbms.logic.ElementObj;
+import dbms.logic.*;
 import dbms.logic.intergrityconstrain.IntergrityConstraint;
-import dbms.logic.TableStructure;
-import dbms.logic.TableStructureItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,10 +68,12 @@ public class RelationRow implements Comparable<RelationRow>{
     }
 
     //检查完整性
-    public boolean checkIntegrity(){
-        for(int i=0;i<sis.size();i++){
+    public boolean checkIntegrity(TableStructure tbs){
+        this.tbs=tbs;
+        for(int i=0;i<sis.size();i++){ //对每列进行完整性约束检查
            for(IntergrityConstraint ic:tbs.dts.get(i).ics){
-               if(!ic.check(sis.get(i)))return false;
+               if(!ic.check(sis.get(i)))
+                   return false;
            }
         }
         return true;

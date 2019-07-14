@@ -35,8 +35,15 @@ public class MethodTools {
             }
         }else{
             switch (operator){
+                case "AND":
+                    if(l.toUpperCase().compareTo("TRUE")==0 && r.toUpperCase().compareTo("TRUE")==0) return true;
+                    return false;
+                case "OR":
+                    if(l.toUpperCase().compareTo("True")==0 || r.toUpperCase().compareTo("TRUE")==0) return true;
+                    return false;
                 case "=":
                     boolean isIntComp=false;
+
                     try{
                         int left= Integer.parseInt(l);
                         isIntComp=true;
@@ -367,7 +374,7 @@ public class MethodTools {
 
 
         BplusTree indexBtree=IndexCache.getInstance().getIndex(tableDBMSObj);
-        //System.out.println(indexBtree.getHeight());
+
         if(indexBtree==null) {
             return -2;  //载入索引失败
         }
@@ -379,36 +386,12 @@ public class MethodTools {
                 break;
             case INT32:
                 pos=indexBtree.get(Integer.parseInt(val));
-                //System.out.println(pos);
                 break;
         }
 
 
         if(pos==null) return -1; else return (int)pos;
     }
-    public static void main(String[] args){
-        Stack<String> test=new Stack<>();
-       /* test.push("(");
-        test.push("(");
-        test.push("A=2");
-        test.push("and");
-        test.push("(");
-        test.push("B!=3");
-        test.push("or");
-        test.push("C=2");
-        test.push(")");
-        test.push(")");
-        test.push("And");
-        test.push("1=1");
-        test.push(")");*/
-        test.push("学号=22");
-        test.push("and");
-        test.push("编号=24");
-        test.push("AND");
-        test.push("AA=24");
-        //  ((A=2 and (b!=3 or c=2)) and 1=1)
 
-        MethodTools.checkLogicExpression(test,null);
 
-    }
 }

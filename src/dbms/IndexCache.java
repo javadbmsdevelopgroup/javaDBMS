@@ -81,9 +81,9 @@ public class IndexCache {
                                 (key[1] & 0xFF) << 16 |
                                 (key[0] & 0xFF) << 24);
 
-                        //System.out.println(key[0]+" "+key[1]+" "+key[2]+" "+key[3]);
+
                         bpulsTree.insert(realKey,realPos);
-                        //System.out.println(keySize+"["+realKey+","+realPos+"]");
+
                         break;
                 }
                 k++;

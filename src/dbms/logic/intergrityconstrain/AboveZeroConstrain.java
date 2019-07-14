@@ -6,12 +6,12 @@ import dbms.logic.TableStructureItem;
 
 import java.io.Serializable;
 
-public class PositiveConstrain implements IIntergrityConstraint, Serializable {
+public class AboveZeroConstrain implements IIntergrityConstraint, Serializable {
     @Override
     public boolean check(TableStructureItem tbs, RelationSItem ri, TableDBMSObj tableDBMSObj){
         try{
-            int a=(Integer)ri.getVal();
-            if(a<0) return false;
+            int a=Integer.parseInt((String)ri.getVal());
+            if(a<=0) return false;
             return true;
         }catch (Exception e){
             return false;

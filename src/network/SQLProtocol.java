@@ -44,11 +44,8 @@ public class SQLProtocol implements IOStrategy{
                             sqlSession=(SQLSession)obj;
                         }
 
-                        // to find the result;
-                        //String result = "I am what you want, my baby";
                         automaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
                         AutomatonNode automatonNode=(automaton.matchingGrammar(sqlCommand));
-                        //System.out.println(automatonNode);
                         if(automatonNode!=null){
                             Object result=automatonNode.exeResult;
                             dos.writeObject(sqlSession);
@@ -65,8 +62,6 @@ public class SQLProtocol implements IOStrategy{
                             dos.flush();
                         }
 
-                        //
-                        //
 
 
 

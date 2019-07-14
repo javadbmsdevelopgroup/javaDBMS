@@ -11,7 +11,6 @@ public class AutomatonTools {
         return instance;
     }
     public static List<InputItem> toInputList(String str){
-        //create table student (stuCode int ,name string(50) ,classNum int)
         List<InputItem> iis=new ArrayList<>();
         String cur="";
         for(int i=0;i<str.length();i++){
@@ -40,10 +39,5 @@ public class AutomatonTools {
         return iis;
     }
 
-    public static void main(String[] args){
-        List<InputItem> inputItems=toInputList("create table student (stuCode int ,name string(50) ,classNum int)");
-        for(InputItem inputItem:inputItems){
-            System.out.println(inputItem.content);
-        }
-    }
+
 }

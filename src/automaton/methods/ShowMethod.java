@@ -40,7 +40,6 @@ public class ShowMethod implements INodeFunc, Serializable {
                 break;
             case "DATABASES":
                     String dbRootPath= PropertiesFileTool.getInstance().readConfig("DBRoot");
-                    //System.out.println(dbRoot);
                     File dbRoot = new File(dbRootPath);
                     File[] dbFiles = dbRoot.listFiles();
                     RelationView databasesView = new RelationView("Databases");

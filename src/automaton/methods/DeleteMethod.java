@@ -5,7 +5,7 @@ import automaton.InfCollection;
 import automaton.SQLSession;
 import dbms.*;
 import dbms.logic.DatabaseDBMSObj;
-import dbms.logic.Relation;
+
 import dbms.logic.TableDBMSObj;
 import dbms.physics.BplusTree;
 import filesystem.PropertiesFileTool;
@@ -15,10 +15,8 @@ import java.util.Stack;
 import java.util.concurrent.locks.Lock;
 
 public class DeleteMethod implements INodeFunc, Serializable {
-    //delete from course where 课程编号=1901;
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
-        System.out.println("delete method");
         SQLSession sqlSession=(SQLSession)objs[0];
         String tableName=infCollection.tableNames.pop();
         Lock readLock;
@@ -35,22 +33,17 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
                 //准备进行写写操作。需要上锁
-                System.out.println("Delete Wait write lock");
                 writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
                 writeLock.lock();
-                System.out.println("Delete get write lock");
+
                 while(r!=null){
-                    //System.out.println(r);
-                    //delete from course where 已选人数=0;
                     TableWriter tableWriter=new TableWriter();
-                    //System.out.println(pos+" "+r+" "+MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r));
+
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
-                        System.out.println("Try delete:"+r);
-                        System.out.println("删除:"+tableWriter.delete(pos,tableDBMSObj));
+                        System.out.println("Try delete:"+r+" "+tableWriter.delete(pos,tableDBMSObj));
                     }
                     pos++;
                     r=reader.readRecord(pos);
-                    // if(MethodTools.checkLogicExpression(infCollection.logicExpressions,r));
                 }
 
                 //释放锁
@@ -65,8 +58,6 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 writeLock.lock();
 
 
-
-                BplusTree bplusTree= CacheManage.getInstance().getIndex(tableDBMSObj);
                 int pos=MethodTools.getRecordPosThroughIndex((Stack<String>)infCollection.logicExpressions.clone(),tableDBMSObj);
                 TableWriter tableWriter=new TableWriter();
                 tableWriter.delete(pos,tableDBMSObj);

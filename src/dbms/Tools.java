@@ -5,12 +5,14 @@ import automaton.SQLAutomaton;
 import automaton.SQLSession;
 import automaton.methods.IndexCreateMethod;
 import dbms.logic.DatabaseDBMSObj;
-import dbms.logic.Relation;
 import dbms.logic.TableDBMSObj;
 import filesystem.PropertiesFileTool;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.locks.Lock;
 
 public class Tools {
@@ -18,6 +20,30 @@ public class Tools {
     public static Tools getInstance(){
         if(instance == null) instance=new Tools();
         return instance;
+    }
+    public static String refFormatNowDate() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Calendar calendar=Calendar.getInstance();
+        Date date = calendar.getTime();
+        String dateStringParse = sdf.format(date);
+        return dateStringParse;
+    }
+    public static String getDateFromLong(long TimeMillis){
+        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateStr = dateformat.format(TimeMillis);
+        return dateStr;
+    }
+    public static String removeAllZero(String source){
+        String re="";
+        for(int i=0;i<source.length();i++){
+            if(source.charAt(i)!='\u0000')
+            {
+                re+=source.charAt(i);
+            }else{
+                break;
+            }
+        }
+        return re;
     }
     public int getIntFromBytes(Byte[] intBytes){
         return (intBytes[3] & 0xFF |

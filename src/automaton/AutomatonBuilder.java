@@ -377,7 +377,7 @@ public class AutomatonBuilder {
 
         TransitionInf add_trans1=new TransitionInf(start,add_Node61,TransitionType.KEYWORD,"ADD");
         TransitionInf add_trans12=new TransitionInf(add_Node61,add_Node615,TransitionType.OBJNAME,"",new TBNameTrans());
-        TransitionInf add_trans2=new TransitionInf(add_Node61,add_Node62,TransitionType.KEYWORD,"CONSTRAN");
+        TransitionInf add_trans2=new TransitionInf(add_Node615,add_Node62,TransitionType.KEYWORD,"CONSTRAIN");
         TransitionInf add_trans3=new TransitionInf(add_Node62,add_Node64,TransitionType.KEYWORD,"POSITIVE",new KeyWordTrans());
         TransitionInf add_trans4=new TransitionInf(add_Node64,add_Node65,TransitionType.KEYWORD,"ON");
         TransitionInf add_trans5=new TransitionInf(add_Node65,add_Node63,TransitionType.OBJNAME,"",new ColumNameTrans());

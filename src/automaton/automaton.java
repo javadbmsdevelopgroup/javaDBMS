@@ -11,7 +11,7 @@ import java.util.Map;
 //有限自动机类
 public class Automaton implements Serializable {
     Map<Integer,AutomatonNode> automatonNodeMap=new HashMap<>();
-    TranstionFunc transitionFuns=new TranstionFunc();  //转移函数
+    TranstionFunc transitionFuns;  //转移函数
     AutomatonNode startNode=null;
     //提供节点集，转移函数
     public Automaton(List<AutomatonNode> automatonNodes,TranstionFunc ts) throws AutomatonNodeException {
@@ -42,7 +42,7 @@ public class Automaton implements Serializable {
         String s="";
         return transitionFuns.getCodedStr();
     }
-    //return machingNumber
+
 
     public AutomatonNode matchingGrammar(String input,Object... objects){
         this.transitionFuns.infCollection.cleanStacks();
@@ -53,19 +53,15 @@ public class Automaton implements Serializable {
         AutomatonNode cur=startNode;
 
         for(InputItem i:is){
-            System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
+            //System.out.print("当前输入:"+i.content+"\t\t 状态:"+cur.nodeCode+"->");
             cur=transitionFuns.transition(automatonNodeMap.get(cur.nodeCode),i,objects);
-            //System.out.println(cur.nodeCode);
             if(cur==null){
                 System.out.println("\n----------------------------\n"+"无法识别的语法"+" \n"+"----------------------------");
                 return null;
             }
-            if(cur.owariNode) {
-                //System.out.println("----------------------------\n"+"转移到达终态，无语法错误"+" \n"+"----------------------------");
-            }
         }
         if(!cur.owariNode){
-            System.out.println("\n----------------------------\n"+"无法识别的语法"+" \n"+"----------------------------");
+            System.out.println("\n----------------------------\n"+"未正常到达自动机终态"+" \n"+"----------------------------");
             return null;
         }
         return cur;

@@ -30,19 +30,6 @@ public class TableReadWriteLock {
     }
 
 
-   /* public static void main(String[] args){
-        Lock readLock=TableReadWriteLock.getInstance().getReadLock("锁上的对象名字");
-        readLock.lock();  //读锁
-        ////读操作
-        readLock.unlock();  //释放读锁
 
-        Lock writeLock=TableReadWriteLock.getInstance().getWriteLock("锁上的对象名字");
-
-        writeLock.lock();  //写锁
-        ////写操作
-        readLock.lock();   //释放写锁前要先上读锁
-        writeLock.unlock();  //释放写锁
-        readLock.unlock(); //释放读锁
-    }*/
 
 }

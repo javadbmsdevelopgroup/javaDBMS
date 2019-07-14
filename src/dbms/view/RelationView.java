@@ -1,6 +1,5 @@
 package dbms.view;
 
-import dbms.logic.Relation;
 
 import java.io.Serializable;
 import java.util.Collections;
@@ -93,42 +92,38 @@ public class RelationView implements Serializable {
     }
     //带限制地输出view
     public void printRelationView(int limit){
-        if(limit>rows.size()) return;
+        if(limit>rows.size())
+            return;
 
-        initMaxSizeArray();
-        for(int i=0;i<limit;i++){
-            for(int j=0;j<conlumNames.size();j++){
-               if(rows.get(i).vals.get(j).length()>maxLengths[j]) maxLengths[j]=rows.get(i).vals.get(j).length();
-            }
-        }
+
         System.out.print("+");
         //headline
+        int len = 22;
         for(int i=0;i<conlumNames.size();i++){
-            System.out.print(String.join("", Collections.nCopies(maxLengths[i]+2, "-")));
-            System.out.print("+");
+            System.out.print(String.join("", Collections.nCopies(len, "-")));
+            System.out.print("++");
         }
         System.out.println();
         //colums
         for(int i=0;i<conlumNames.size();i++){
             System.out.print("| ");
-            System.out.print(conlumNames.get(i));
-            System.out.print(String.join("", Collections.nCopies(maxLengths[i]-conlumNames.get(i).length(), " ")));
+            System.out.print(getPerfetString(conlumNames.get(i)));
             System.out.print(" |");
         }
+
         System.out.println();
         //headline
         System.out.print("+");
         for(int i=0;i<conlumNames.size();i++){
-            System.out.print(String.join("", Collections.nCopies(maxLengths[i]+2, "-")));
-            System.out.print("+");
+            System.out.print(String.join("", Collections.nCopies(len, "-")));
+            System.out.print("++");
         }
         System.out.println();
         //rows
         for(int i=0;i< limit;i++){
             for(int j=0;j<conlumNames.size();j++){
                 System.out.print("| ");
-                System.out.print(rows.get(i).vals.get(j));
-                System.out.print(String.join("", Collections.nCopies(maxLengths[j]-rows.get(i).vals.get(j).length(), " ")));
+                System.out.print(getPerfetString(rows.get(i).vals.get(j)));
                 System.out.print(" |");
             }
             System.out.println();
@@ -136,10 +131,28 @@ public class RelationView implements Serializable {
         //bottom
         System.out.print("+");
         for(int i=0;i<conlumNames.size();i++){
-            System.out.print(String.join("", Collections.nCopies(maxLengths[i]+2, "-")));
-            System.out.print("+");
+            System.out.print(String.join("", Collections.nCopies(len, "-")));
+            System.out.print("++");
         }
         System.out.println();
+    }
+
+
+    public String getPerfetString(String ss){
+        StringBuilder mybuild = new StringBuilder();
+        int l = 0;
+        int i = 0;
+        while (l < ss.length()){
+            if(ss.charAt(l) == '\u0000')
+                break;
+            if(ss.charAt(l) > 255)
+                i++;
+            mybuild.append("" + ss.charAt(l));
+            l++;
+        }
+        while (mybuild.length() < 20-i)
+            mybuild.append(" ");
+        return mybuild.toString();
     }
 
     public void printHeadLine(){

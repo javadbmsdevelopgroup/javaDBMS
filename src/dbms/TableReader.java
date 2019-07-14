@@ -83,28 +83,20 @@ public class TableReader {
 
     //读取第i行记录所在的块 (从0开始算)
     public RelationRow readRecord(int recordPosition){
-        //锁
-        /*Lock tableReadLock=null;*/
 
-        //System.out.println("尝试读取第"+recordPosition+"条记录");
 
         if(tableBuffer.isPageExist(recordPosition/pageSize)==false){
-            //System.out.println("相应页不在缓冲区,尝试加入");
             //首先读取一页
             int p=recordPosition/pageSize;
             int s=tableDBMSObj.tableStructure.getSize();
             RandomAccessFile randomAccessFile=null;
 
             try{
-                //打开表文件,加读锁
-               /* tableReadLock=TableReadWriteLock.getInstance().getReadLock(tableDBMSObj.tbName);
-                tableReadLock.lock();*/
+
             randomAccessFile=new RandomAccessFile(tableDBMSObj.dbBelongedTo.getRootPath()+"\\"+tableDBMSObj.dbBelongedTo.dbName+"\\"
                     +tableDBMSObj.tbName+".table","rw");
-            //System.out.println("s="+s+",p="+p+"page size="+pageSize);
             randomAccessFile.seek((s+1)*p*pageSize); //调到指定位置
             if(recordPosition*tableDBMSObj.tableStructure.getSize()>randomAccessFile.length()){
-                /*tableReadLock.unlock();   //释放读锁*/
                 //尝试访问文件中不存在的记录
                 randomAccessFile.close();
                 return null;
@@ -133,7 +125,7 @@ public class TableReader {
                         }
                         //加入页内
                         tp.records[i]=record;
-                        //System.out.println(record);
+
                     }else{
                         record.deleted=true;
                         tp.records[i]=record;
@@ -147,24 +139,22 @@ public class TableReader {
             }
                 //先执行页的置换算法或加载算法
                 //加新页到缓冲区，置换算法、加载算法由缓冲区类完成
-                //System.out.println("加入缓冲区");
+
                 tableBuffer.addPage(tp);
                 randomAccessFile.close();
-                /*tableReadLock.unlock();  //释放读锁*/
 
-                //CacheSignManage.cleanDirtyBit(tableDBMSObj.tbName,recordPosition);
+
 
 
             return tp.records[recordPosition%pageSize]; //返回指定行
 
             }catch (Exception e){
-               /* tableReadLock.unlock();*/
+
                 e.printStackTrace();
                 return null;
             }
         }else{
             //页已存在缓冲，直接返回
-            //System.out.println("相应页在缓冲区,直接返回");
             RelationRow r=tableBuffer.getPage(recordPosition/pageSize).records[recordPosition % pageSize];
             return r;
         }

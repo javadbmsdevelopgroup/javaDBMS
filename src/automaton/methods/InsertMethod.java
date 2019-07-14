@@ -46,14 +46,12 @@ public class InsertMethod implements INodeFunc, Serializable {
 
         try{
             TableDBMSObj tableDBMSObj = new TableDBMSObj(tableName,new DatabaseDBMSObj(sqlSession.curUseDatabase, DatabaseDBMSObj.rootPath));
-//insert into student values(111,222)
-        //检验参数对应性
 
+        //检验参数对应性
             if(infCollection.columNames.size()==0){  //直接用values的情况 (必须插入全部值)
                 for (int t=0;t< tableDBMSObj.tableStructure.dts.size();t++){
                     TableStructureItem tableStructureItem=tableDBMSObj.tableStructure.dts.get(tableDBMSObj.tableStructure.dts.size()-1-t);
                     infCollection.columNames.push(tableStructureItem.conlumName);
-                    //System.out.println("push "+tableStructureItem.conlumName);
                 }
             }
 

@@ -1,8 +1,10 @@
 package dbms;
 
 import dbms.logic.DatabaseDBMSObj;
+
 import dbms.logic.TableDBMSObj;
 import dbms.physics.BplusTree;
+import dbms.view.RelationView;
 import filesystem.PropertiesFileTool;
 
 import java.io.File;
@@ -29,6 +31,28 @@ public class CacheManage {
     }
 
 
+    public static boolean cacheWholeTable(String dbName,String tbName){
+        if(!DatabaseDBMSObj.isExist(dbName)) {
+            return false;
+        }
+        try {
+            TableDBMSObj tableDBMSObj = new TableDBMSObj(tbName, new DatabaseDBMSObj(dbName, DatabaseDBMSObj.rootPath));
+            int count=tableDBMSObj.getRecordCount(dbName);
+            //System.out.println(count);
+            TableReader reader=new TableReader(tableDBMSObj,count);
+            int pos=0;
+            RelationRow r=reader.readRecord(pos);
+            while(r!=null){
+                pos++;
+                r=reader.readRecord(pos);
+            }
+            readerMap.put(dbName+"."+tbName,reader);
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
     public static void loadAllindex(){
         String root=PropertiesFileTool.getInstance().readConfig("DBRoot");
         File dbF=new File(root);

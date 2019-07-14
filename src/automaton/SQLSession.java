@@ -25,12 +25,12 @@ public class SQLSession implements Serializable {
     public static void main(String[] args){
         SQLSession sqlSession=new SQLSession();
         SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
-        //sqlSession.sqlAutomaton=sqlAutomaton;
         Scanner sc=new Scanner(System.in);
         CacheManage.loadAllindex();
 
 
         System.out.println("SQL会话创建成功");
+
         while (true){
             System.out.print("YuiSQL> ");
             String sql=sc.nextLine();
@@ -41,6 +41,8 @@ public class SQLSession implements Serializable {
             if(obj==null) continue;
             if(obj instanceof RelationView){
                 ((RelationView)((RelationView) obj)).printRelationView();
+            }else{
+                System.out.println(obj.toString());
             }
         }
 

@@ -21,8 +21,6 @@ public  class  SocketServer extends Thread{
 		try {
 			//设置事件
 			server = new ServerSocket(port);
-			//clientIn=new StudentClientInEvent();
-			//inServerMsgIn=new InSelectCourseServerMsgIn();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

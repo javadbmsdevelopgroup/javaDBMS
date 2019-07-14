@@ -17,6 +17,7 @@ public class TableBuffer {
     int curSize=0;             //当前的缓冲区大小（已存了多少页）
     int totleSize;   //缓冲区的总大小，也就是最多能存多少页
     int earliest=0;    //因为页置换算法采用FIFO，所以需要记录当前最早进来的页的位置（如果需要置换的话就换掉那页）
+    //缓冲区大小（多少页）
     public TableBuffer(int size) throws BufferSizeException{
         if(size<=0) throw new BufferSizeException("BufferSize small than 0");
         totleSize=size;

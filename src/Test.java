@@ -4,23 +4,28 @@
 import dbms.RelationRow;
 import dbms.TableReader;
 import dbms.TableWriter;
-import dbms.logic.DataType;
-import dbms.logic.DatabaseDBMSObj;
-import dbms.logic.Relation;
-import dbms.logic.TableDBMSObj;
+import dbms.Tools;
+import dbms.logic.*;
 import dbms.physics.*;
 
 import filesystem.PropertiesFileTool;
 
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /////////测试类。。。有什么想测试的代码可以在这写写;
 public class Test {
     public static void multiThreadTest(){
 
     }
+
+
     public static void main(String[] args){
-        if(true){
+
+
+      /*  if(true){
             try {
                 PropertiesFileTool.getInstance().writeConfig("PageSize", "30");
                 PropertiesFileTool.getInstance().writeConfig("IndexSize","10000");
@@ -74,6 +79,6 @@ public class Test {
             System.out.println("索引建立完成");
         }catch (Exception e){
             e.printStackTrace();
-        }
+        }*/
     }
 }

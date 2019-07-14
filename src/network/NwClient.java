@@ -27,7 +27,7 @@ public class NwClient {
             oos = new ObjectOutputStream(socket.getOutputStream());
             ois = new ObjectInputStream(socket.getInputStream());
 
-            System.out.println("create successfully!");
+            //System.out.println("create successfully!");
         }catch (Exception e){
             e.printStackTrace();
             System.out.println("Client socket build failed!");

@@ -1,11 +1,13 @@
 package dbms.logic;
 
+import dbms.TableReadWriteLock;
 import dbms.logic.intergrityconstrain.IIntergrityConstraint;
 import dbms.logic.intergrityconstrain.IntergrityConstraint;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
 
 
 ////////////////////表结构类.这是实际的结构类。。可以写到文件(.tbs)还可以从文件中反序列化读取
@@ -21,17 +23,21 @@ public class TableStructure implements Serializable {
         dts.add(a);
     }  //添加一个属性项
 
-    public boolean addConstain(String cname, IIntergrityConstraint icMethod){
+ 
+    public boolean addConstain(String cname, IIntergrityConstraint icMethod,String tbName,String dbName){
         for (TableStructureItem tsi : dts){
             if(tsi.conlumName.compareTo(cname)==0){
                 tsi.addIntergrityConstaint(icMethod);
             }
-            try {
-                this.writeToStructFile(tableDBMSObjBelongedTo.dbBelongedTo.dbName, this.tableDBMSObjBelongedTo.tbName);
-            }catch (IOException e){
-                e.printStackTrace();
-            }
+
+
+        }
+
+        try {
+            this.writeToStructFile(dbName,tbName);
             return true;
+        }catch (IOException e){
+            e.printStackTrace();
         }
         return false;
     }
@@ -56,7 +62,6 @@ public class TableStructure implements Serializable {
         for (TableStructureItem tsi : dts){
             s+=tsi.size;
         }
-        //System.out.println("record size="+s);
         return s;
     }
 

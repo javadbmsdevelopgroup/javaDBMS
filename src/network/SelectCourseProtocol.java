@@ -4,11 +4,13 @@ import automaton.AutomatonBuilder;
 import automaton.AutomatonNode;
 import automaton.SQLAutomaton;
 import automaton.SQLSession;
+import dbms.Tools;
 import dbms.view.RelationView;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.Date;
 
 public class SelectCourseProtocol implements IOStrategy{
 
@@ -69,7 +71,41 @@ public class SelectCourseProtocol implements IOStrategy{
                         System.out.println("收到选课请求");
                         //获取学号
                         stuCode=dis.readInt();
+                        int courseCode=dis.readInt();
+                        System.out.println("stu:"+stuCode+" want to select "+courseCode);
+                        //判断是否已选
+                        Object selectedInf=SelectCourseServer.getResult("select * from stuCourse where 学号="+stuCode+" and 课程编号="+courseCode+";");
+                        if(selectedInf==null || !(selectedInf instanceof RelationView)) {
+                            dos.writeInt(-10);
+                            dos.flush();
+                            break;
+                        }else if(((RelationView)selectedInf).getRowCount()>0) {
+                            dos.writeInt(-11); //表示已选
+                            dos.flush();
+                            break;
+                        }
 
+                        //先减课容量
+                        //尝试选课
+                        Integer updateResult=(Integer)SelectCourseServer.getResult(
+                                "update course set 余剩容量=余剩容量-1,已选人数=已选人数+1 where 课程编号="+courseCode+";");
+                        if(updateResult>0){
+                            System.out.println("为"+stuCode+":"+courseCode+"更新课容量成功");
+                            String current = String.valueOf(System.currentTimeMillis());
+                            Integer insertResult=(Integer)SelectCourseServer.getResult(
+                                    "insert into stuCourse values("+stuCode+","+courseCode+","+current+")");
+                            if(insertResult>0){
+                                System.out.println("insert record success.");
+                            }else{
+                                System.out.println("insert record fail.");
+                            }
+                            dos.writeInt(insertResult);
+                            dos.flush();
+                        }else{
+                            System.out.println("尝试为"+stuCode+" 选课 "+courseCode+"失败");
+                            dos.writeInt(-1); //表示课容量修改失败
+                            dos.flush();
+                        }
                         break;
                     case 104:
                         System.out.println("收到选课信息查询");
