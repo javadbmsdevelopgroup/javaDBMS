@@ -10,17 +10,20 @@ import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class IndexCache {
     private static IndexCache instance=null;
-    public boolean changed=false;
+
     private IndexCache(){}
 
     public void init(){
         indexCache.clear();
     }
     private static Map<String,BplusTree> indexCache=new HashMap<>();
+    private static Set<String> changedTables=new HashSet<>();
     public static IndexCache getInstance(){
         if(instance==null) instance=new IndexCache();
         return instance;
@@ -103,7 +106,13 @@ public class IndexCache {
 
 
     }
-
+    public boolean isChanged(String dbName,String tbName){
+        if(changedTables.contains(dbName+"."+tbName)){
+            return true;
+        }else {
+            return false;
+        }
+    }
     public void resetRecord(RelationRow r,TableDBMSObj tableDBMSObj,int recordPos){
         BplusTree bplusTree=getIndex(tableDBMSObj);
         if(bplusTree==null) return;
@@ -113,7 +122,7 @@ public class IndexCache {
                 String val=(String)bplusTree.get((String)r.getVal(tableDBMSObj.tableStructure.indexOn));
                 if(val==null){
                     bplusTree.insert((String)r.getVal(tableDBMSObj.tableStructure.indexOn),recordPos);
-                    changed=true;
+                    changedTables.add(tableDBMSObj.dbBelongedTo.dbName+"."+tableDBMSObj.tbName);
                 }
                 break;
             case INT32:

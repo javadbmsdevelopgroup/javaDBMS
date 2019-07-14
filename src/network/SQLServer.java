@@ -30,10 +30,11 @@ public class SQLServer {
               case 1:
                   ss.startServer();
                   break;
-              case 2:
+              case 2: case 3:
                   ss.endServer();
                   //碎片整理
                   Tools.debrisCleanUp();
+                  System.exit(0);
                   break;
               case 4:
                   System.out.println("input \"databaseName.tableName\":");
@@ -52,7 +53,6 @@ public class SQLServer {
 
               }
 
-          if(x==3) break;
 
           }
 

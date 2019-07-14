@@ -70,8 +70,7 @@ public class Tools {
         Lock writeLock=null;
         if(!dbF.exists() || !dbF.isDirectory()) return;
         File[] dbs=dbF.listFiles();
-        writeLock.lock();
-        readLock.lock();
+
         for(File f:dbs){
             if(!f.isDirectory()) continue;
             File[] tbs=f.listFiles();
@@ -79,6 +78,7 @@ public class Tools {
             for(File tbf:tbs){
                 if(tbf.getName().indexOf(".table")>=0){
                     System.out.println("clean up:"+dbname+"\\"+tbf.getName());
+
                     try {
                         String tbName=tbf.getName().substring(0, (int) (tbf.getName().length() - 6));
                         TableReader reader=CacheManage.getInstance().getTableReader(dbname,tbName);
@@ -102,25 +102,26 @@ public class Tools {
 
                         if(tableDBMSObj.tableStructure.useIndex){
                             //重建索引
-                            SQLSession sqlSession=new SQLSession();
-                            sqlSession.curUseDatabase=dbname;
-                            (new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession)).matchingGrammar(
-                                    "create index on "+tbName+" ("+tableDBMSObj.tableStructure.indexOn+")",sqlSession
-                            );
+                            if(IndexCache.getInstance().isChanged(dbname,tbName)){
+                                SQLSession sqlSession=new SQLSession();
+                                sqlSession.curUseDatabase=dbname;
+                                (new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession)).matchingGrammar(
+                                        "create index on "+tbName+" ("+tableDBMSObj.tableStructure.indexOn+")",sqlSession
+                                );
+                            }
+
 
                         }
 
 
                     }catch (Exception e){
-                        writeLock.unlock();
-                        readLock.unlock();
+
                        e.printStackTrace();
                     }
                 }
             }
         }
-        writeLock.unlock();
-        readLock.unlock();
+
 
     }
     private Tools(){

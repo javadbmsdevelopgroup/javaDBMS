@@ -2,34 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/test/stuCourse.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/stuCourse.table" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses$TestThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses$TestThread.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DeleteMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/automaton/methods/DeleteMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableWriter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/Tools.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/Tools.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView$RelationViewItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView$RelationViewItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/view/RelationView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLProtocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLProtocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseProtocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseProtocol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer$ClientListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer$ClientListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/StudentClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/StudentClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TableWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/course.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/course.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/stuCourse.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/stuCourse.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/stuCourse.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/stuCourse.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/student.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/student.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/studentDB/student.tbs" beforeDir="false" afterPath="$PROJECT_DIR$/DB/studentDB/student.tbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/CacheManage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/CacheManage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/IndexCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/IndexCache.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbms/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/Tools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/NwClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/NwClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SQLClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SQLClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SQLProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SQLProtocol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/network/SQLServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SQLServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/StudentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/StudentClient.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -92,32 +73,56 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-270">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="83" column="97" selection-start-line="83" selection-start-column="97" selection-end-line="83" selection-end-column="97" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="35" column="37" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/network/SQLProtocol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="29" />
               <folding>
-                <element signature="e#626#627#0" expanded="true" />
-                <element signature="e#693#694#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+              <folding>
+                <element signature="method#getIndex#0;class#IndexCache#0" />
+                <element signature="method#loadIndex#0;class#IndexCache#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -201,23 +206,23 @@
         <option value="$PROJECT_DIR$/src/TableBuilder.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableReadWriteLock.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableReader.java" />
-        <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
-        <option value="$PROJECT_DIR$/src/dbms/CacheManage.java" />
         <option value="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" />
         <option value="$PROJECT_DIR$/src/dbms/view/RelationView.java" />
         <option value="$PROJECT_DIR$/src/network/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/network/SQLClient.java" />
         <option value="$PROJECT_DIR$/src/network/NwClient.java" />
         <option value="$PROJECT_DIR$/src/network/SelectCourseServer.java" />
-        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
-        <option value="$PROJECT_DIR$/src/network/SQLServer.java" />
         <option value="$PROJECT_DIR$/src/network/SQLProtocol.java" />
         <option value="$PROJECT_DIR$/src/network/StudentClient.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
         <option value="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" />
         <option value="$PROJECT_DIR$/src/automaton/AutomatonBuilder.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/MethodTools.java" />
+        <option value="$PROJECT_DIR$/src/network/SQLServer.java" />
+        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
+        <option value="$PROJECT_DIR$/src/dbms/CacheManage.java" />
+        <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
       </list>
     </option>
   </component>
@@ -343,7 +348,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.StudentClient">
+  <component name="RunManager" selected="Application.SQLServer">
     <configuration name="SQLServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="network.SQLServer" />
       <module name="javaDBMS" />
@@ -412,10 +417,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StudentClient" />
-        <item itemvalue="Application.SelectCourseServer" />
         <item itemvalue="Application.SQLServer" />
         <item itemvalue="Application.SQLSession" />
+        <item itemvalue="Application.StudentClient" />
+        <item itemvalue="Application.SelectCourseServer" />
         <item itemvalue="Application.TestMultiStuSelectCourses" />
       </list>
     </recent_temporary>
@@ -466,12 +471,12 @@
       <workItem from="1562929578527" duration="9654000" />
       <workItem from="1562939999192" duration="6442000" />
       <workItem from="1563014769552" duration="2066000" />
-      <workItem from="1563017323573" duration="21083000" />
+      <workItem from="1563017323573" duration="22202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346340000" />
+    <option name="totallyTimeSpent" value="347459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -486,7 +491,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.28602383" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2611051" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35211268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,6 +561,12 @@
           <line>23</line>
           <properties />
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/network/SQLServer.java</url>
+          <line>35</line>
+          <properties />
+          <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -713,20 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2580">
-          <caret line="98" lean-forward="true" selection-start-line="98" selection-end-line="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/RelationSItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -807,16 +804,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2095">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -824,23 +811,6 @@
           <folding>
             <element signature="method#main#0;class#Test#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="65" column="23" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="35" column="37" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -951,9 +921,54 @@
     <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="33" column="24" lean-forward="true" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="83" column="97" selection-start-line="83" selection-start-column="97" selection-end-line="83" selection-end-column="97" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="112" column="25" selection-start-line="112" selection-start-column="25" selection-end-line="112" selection-end-column="25" />
+          <folding>
+            <element signature="method#getIndex#0;class#IndexCache#0" />
+            <element signature="method#loadIndex#0;class#IndexCache#0" />
           </folding>
         </state>
       </provider>

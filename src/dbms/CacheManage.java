@@ -85,6 +85,7 @@ public class CacheManage {
             return readerMap.get(keyStr);
         }else{
             try{
+                System.out.println(tbName+" "+dbName);;
                 TableDBMSObj tableDBMSObj=new TableDBMSObj(tbName,new DatabaseDBMSObj(dbName,DatabaseDBMSObj.rootPath));
                 TableReader tableReader=new TableReader(tableDBMSObj,
                         Integer.parseInt(PropertiesFileTool.getInstance().readConfig("PageSize")));
