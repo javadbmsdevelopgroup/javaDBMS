@@ -46,8 +46,10 @@ public class DeleteMethod implements INodeFunc, Serializable {
                 while(r!=null){
                     TableWriter tableWriter=new TableWriter();
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
-                        System.out.println("Try delete:"+r+" ");
-                        //if(r.isDeleted()) continue;
+                        if(!r.isDeleted()){
+                            System.out.println("Try delete:"+r+" ");
+                        }
+
                         if(tableWriter.delete(pos,tableDBMSObj)){
                             count++;
                         }

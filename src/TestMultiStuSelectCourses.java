@@ -28,8 +28,9 @@ public class TestMultiStuSelectCourses {
         int a=r.nextInt(100);
         if(a<=percentOf) return true;
         return false;
-
     }
+
+
 
     //进行测试
     void doTest(){

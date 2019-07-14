@@ -46,10 +46,11 @@ public class UpdateMethod implements INodeFunc, Serializable {
                     if(MethodTools.checkLogicExpression((Stack<String>) infCollection.logicExpressions.clone(),r)){
                         System.out.println("Try update: "+r);
 
+                        Stack<String> setExpressStack = (Stack<String>)infCollection.others.clone();
                         //开干每个表达式
-                        while (!infCollection.others.empty()){
-                            String setExpression=infCollection.others.pop();
-                            System.out.println("pop"+setExpression);
+                        while (!setExpressStack.empty()){
+                            String setExpression=setExpressStack.pop();
+                            //System.out.println("pop"+setExpression);
                             String conlumName="";
                             String val="";
                             boolean l=true;

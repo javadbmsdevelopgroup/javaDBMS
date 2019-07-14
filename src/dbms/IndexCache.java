@@ -9,10 +9,7 @@ import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 //索引缓存
 public class IndexCache {
@@ -20,6 +17,9 @@ public class IndexCache {
     private static IndexCache instance=null;
 
     private IndexCache(){}
+
+
+
 
     public void init(){
         indexCache.clear();

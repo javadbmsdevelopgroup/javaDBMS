@@ -2,44 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61b8df05-9936-4086-b3cb-7f2196d73b2a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/ResetDataSet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/CacheReadWriteLock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/CacheReadWriteLock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/course.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/course.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/test/stuCourse.table" beforeDir="false" afterPath="$PROJECT_DIR$/DB/test/stuCourse.table" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/META-INF/javaDBMS.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses$TestThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses$TestThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/TestMultiStuSelectCourses.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/IndexCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationRow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/RelationRow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/dbms/TableReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/ClientListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketClient$sendMessThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer$ClientListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SocketServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ISocketEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/InSelectCourseServerMsgIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/ServerMessageIn.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/StudentClientInEvent$sendMessThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/event/StudentClientInEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/NwClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/NwClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/NwServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SQLClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseProtocol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/SelectCourseProtocol.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaDBMS/network/StudentClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/javaDBMS/network/StudentClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/automaton/methods/AddMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/AddMethod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dbms/IndexCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/IndexCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/RelationRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/RelationRow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TablePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TablePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dbms/TableReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/TableReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/ClientListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/NwClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/NwClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/NwServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/NwServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SQLClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SQLClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SelectCourseServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/SelectCourseServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SocketClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/SocketServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/event/ISocketEvent.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/event/InSelectCourseServerMsgIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/event/ServerMessageIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/network/event/StudentClientInEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dbms/Tools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dbms/Tools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/network/StudentClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/network/StudentClient.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,17 +40,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="29" column="109" selection-start-line="29" selection-start-column="109" selection-end-line="29" selection-end-column="109" />
+            <state relative-caret-position="171">
+              <caret line="48" column="91" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="91" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
+        <entry file="file://$PROJECT_DIR$/src/ResetDataSet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2460">
-              <caret line="82" column="66" lean-forward="true" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
+            <state relative-caret-position="401">
+              <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,29 +58,41 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
+        <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+            <state relative-caret-position="420">
+              <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/automaton/methods/SelectMethod.java">
+        <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dbms/CacheManage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="130" column="10" selection-start-line="130" selection-start-column="10" selection-end-line="130" selection-end-column="10" />
+            <state relative-caret-position="179">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -107,12 +103,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-900">
-              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+            <state relative-caret-position="990">
+              <caret line="76" column="39" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
               <folding>
                 <element signature="method#replaceRecord#0;class#TableReader#0" />
                 <element signature="method#deletePage#0;class#TableReader#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+              <folding>
+                <element signature="e#561#562#0" expanded="true" />
+                <element signature="e#595#596#0" expanded="true" />
+                <element signature="method#getInstance#0;class#IndexCache#0" />
+                <element signature="method#getIndex#0;class#IndexCache#0" />
+                <element signature="method#loadIndex#0;class#IndexCache#0" />
+                <element signature="method#isChanged#0;class#IndexCache#0" />
+                <element signature="method#resetRecord#0;class#IndexCache#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/network/StudentClient.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dbms/TableBuffer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -145,6 +173,7 @@
       <find>System</find>
       <find>print</find>
       <find>system</find>
+      <find>others</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -153,20 +182,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/network/SocketServer.java" />
         <option value="$PROJECT_DIR$/src/network/SQLProtocol.java" />
-        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
         <option value="$PROJECT_DIR$/src/network/SQLServer.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableWriter.java" />
         <option value="$PROJECT_DIR$/src/network/StudentClient.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableBuffer.java" />
         <option value="$PROJECT_DIR$/config.properties" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/SelectMethod.java" />
         <option value="$PROJECT_DIR$/src/dbms/logic/intergrityconstrain/KeyConstrain.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/ColumNameTrans.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/CreateMethod.java" />
-        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/DropMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/IndexCreateMethod.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/InsertMethod.java" />
@@ -193,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/dbms/CacheManage.java" />
         <option value="$PROJECT_DIR$/src/automaton/methods/AddMethod.java" />
         <option value="$PROJECT_DIR$/src/dbms/CacheReadWriteLock.java" />
-        <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
         <option value="$PROJECT_DIR$/src/dbms/RelationRow.java" />
         <option value="$PROJECT_DIR$/src/dbms/TablePage.java" />
         <option value="$PROJECT_DIR$/src/dbms/TableReader.java" />
@@ -202,8 +226,13 @@
         <option value="$PROJECT_DIR$/src/network/NwClient.java" />
         <option value="$PROJECT_DIR$/src/network/SelectCourseProtocol.java" />
         <option value="$PROJECT_DIR$/src/network/SQLClient.java" />
-        <option value="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" />
         <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/dbms/IndexCache.java" />
+        <option value="$PROJECT_DIR$/src/TestMultiStuSelectCourses.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java" />
+        <option value="$PROJECT_DIR$/src/ResetDataSet.java" />
+        <option value="$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java" />
+        <option value="$PROJECT_DIR$/src/dbms/Tools.java" />
       </list>
     </option>
   </component>
@@ -244,13 +273,20 @@
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="dbms" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
               <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="filesystem" type="462c0819:PsiDirectoryNode" />
+              <item name="automaton" type="462c0819:PsiDirectoryNode" />
+              <item name="methods" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="javaDBMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="dbms" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="javaDBMS" type="b2602c69:ProjectViewProjectNode" />
@@ -275,7 +311,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -297,7 +333,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SQLSession">
+  <component name="RunManager" selected="Application.SQLServer">
+    <configuration name="IndexCache" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="dbms.IndexCache" />
+      <module name="javaDBMS" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dbms.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResetDataSet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ResetDataSet" />
+      <module name="javaDBMS" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SQLServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="network.SQLServer" />
       <module name="javaDBMS" />
@@ -324,32 +380,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SelectCourseServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="network.SelectCourseServer" />
-      <module name="javaDBMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="network.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StudentClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="network.StudentClient" />
-      <module name="javaDBMS" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="network.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestMultiStuSelectCourses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestMultiStuSelectCourses" />
       <module name="javaDBMS" />
@@ -358,19 +388,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.SQLServer" />
-      <item itemvalue="Application.SelectCourseServer" />
-      <item itemvalue="Application.StudentClient" />
       <item itemvalue="Application.SQLSession" />
       <item itemvalue="Application.TestMultiStuSelectCourses" />
+      <item itemvalue="Application.IndexCache" />
+      <item itemvalue="Application.ResetDataSet" />
+      <item itemvalue="Application.SQLServer" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.SQLSession" />
-        <item itemvalue="Application.TestMultiStuSelectCourses" />
-        <item itemvalue="Application.SelectCourseServer" />
         <item itemvalue="Application.SQLServer" />
-        <item itemvalue="Application.StudentClient" />
+        <item itemvalue="Application.ResetDataSet" />
+        <item itemvalue="Application.IndexCache" />
+        <item itemvalue="Application.TestMultiStuSelectCourses" />
       </list>
     </recent_temporary>
   </component>
@@ -420,12 +450,12 @@
       <workItem from="1562929578527" duration="9654000" />
       <workItem from="1562939999192" duration="6442000" />
       <workItem from="1563014769552" duration="2066000" />
-      <workItem from="1563017323573" duration="38225000" />
+      <workItem from="1563017323573" duration="45473000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363482000" />
+    <option name="totallyTimeSpent" value="370730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -440,7 +470,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.08342362" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35536295" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.35211268" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -514,45 +544,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/TBNameTrans.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UseMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonNode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/AutomatonTools.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="method#getInstance#0;class#AutomatonTools#0" />
-            <element signature="method#toInputList#0;class#AutomatonTools#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/InfCollection.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -567,28 +558,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/InputItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/ITransMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="e#626#627#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -736,13 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="29" column="109" selection-start-line="29" selection-start-column="109" selection-end-line="29" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/automaton/methods/AddMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -775,19 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding>
-            <element signature="method#getIndex#0;class#IndexCache#0" />
-            <element signature="method#loadIndex#0;class#IndexCache#0" />
-            <element signature="method#isChanged#0;class#IndexCache#0" />
-            <element signature="method#resetRecord#0;class#IndexCache#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dbms/RelationRow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="708">
@@ -799,13 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -881,27 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-900">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding>
-            <element signature="method#replaceRecord#0;class#TableReader#0" />
-            <element signature="method#deletePage#0;class#TableReader#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2460">
-          <caret line="82" column="66" lean-forward="true" selection-start-line="82" selection-start-column="66" selection-end-line="82" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -911,8 +836,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TableBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
+        <state relative-caret-position="-270">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/InputItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="68" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/SQLAutomaton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="e#677#678#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/TableReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="76" column="39" selection-start-line="76" selection-start-column="39" selection-end-line="76" selection-end-column="39" />
+          <folding>
+            <element signature="method#replaceRecord#0;class#TableReader#0" />
+            <element signature="method#deletePage#0;class#TableReader#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/IndexCache.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+          <folding>
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#595#596#0" expanded="true" />
+            <element signature="method#getInstance#0;class#IndexCache#0" />
+            <element signature="method#getIndex#0;class#IndexCache#0" />
+            <element signature="method#loadIndex#0;class#IndexCache#0" />
+            <element signature="method#isChanged#0;class#IndexCache#0" />
+            <element signature="method#resetRecord#0;class#IndexCache#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/StudentClient.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestMultiStuSelectCourses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/UpdateMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="48" column="91" selection-start-line="48" selection-start-column="85" selection-end-line="48" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResetDataSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="14" column="73" selection-start-line="14" selection-start-column="73" selection-end-line="14" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/automaton/methods/DeleteMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/network/SQLServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dbms/Tools.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

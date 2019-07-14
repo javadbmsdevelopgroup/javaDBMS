@@ -99,7 +99,10 @@ public class Tools {
                         fis.close();
                         bos.close();
                         fos.close();
-
+                        File f1=new File(root+"\\"+dbname+"\\"+tbName+".table");
+                        File f2=new File(root+"\\"+dbname+"\\"+tbName+".tmp");
+                        f1.delete();
+                        f2.renameTo(f1);
                         if(tableDBMSObj.tableStructure.useIndex){
                             //重建索引
                             if(IndexCache.getInstance().isChanged(dbname,tbName)){
