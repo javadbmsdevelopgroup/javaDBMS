@@ -7,6 +7,7 @@ import java.net.Socket;
 import java.net.SocketException;
 import java.util.concurrent.SynchronousQueue;
 
+//服务器基类
 public class NwClient {
     private ObjectOutputStream oos = null;
     private ObjectInputStream ois = null;

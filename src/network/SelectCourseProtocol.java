@@ -12,6 +12,8 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Date;
 
+
+//选课服务器
 public class SelectCourseProtocol implements IOStrategy{
 
 

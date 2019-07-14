@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+//////////////缓存锁。防止多个线程同时修改缓存产生不一致
 public class CacheReadWriteLock {
     private static CacheReadWriteLock instance;
     private static Map<TableBuffer, ReentrantReadWriteLock> locks=new HashMap<>();

@@ -1,8 +1,6 @@
 package network;
 
 import automaton.SQLSession;
-import network.event.InSelectCourseServerMsgIn;
-import network.event.StudentClientInEvent;
 
 import java.net.Socket;
 import java.util.HashMap;

@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+//服务器基类
 public class NwServer {//building a server and create socket object for connecting
     //the constructor for this class
     private ServerSocket server = null;

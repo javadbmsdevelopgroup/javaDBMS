@@ -38,6 +38,8 @@ public class RelationRow implements Comparable<RelationRow>{
         return str;
 
     }
+
+    //获取列的数据类型
     public DataType getConlumType(String conlumName){
         for(int i=0;i<tbs.dts.size();i++){
             if(tbs.dts.get(i).conlumName.compareTo(conlumName)==0){

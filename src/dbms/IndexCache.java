@@ -16,6 +16,7 @@ import java.util.Set;
 
 //索引缓存
 public class IndexCache {
+    //单例设计模式
     private static IndexCache instance=null;
 
     private IndexCache(){}
@@ -23,7 +24,10 @@ public class IndexCache {
     public void init(){
         indexCache.clear();
     }
+
+    //是一个表名->索引的map
     private static Map<String,BplusTree> indexCache=new HashMap<>();
+    //存储的是缓存中索引发生了变动的表的集合
     private static Set<String> changedTables=new HashSet<>();
     public static IndexCache getInstance(){
         if(instance==null) instance=new IndexCache();

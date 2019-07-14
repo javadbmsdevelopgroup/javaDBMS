@@ -20,10 +20,9 @@ import java.util.concurrent.locks.Lock;
 public class TableReader {
 
     public TableDBMSObj tableDBMSObj=null;   //表逻辑对象
-    TableBuffer tableBuffer;        //缓冲区-存储着多个页
+    TableBuffer tableBuffer;        //缓冲区(存储着多个页)
     int pageSize;  //页大小
     int blockSize; //块大小
-    BplusTree indexCache=null;
     int kh=1;
 
 

@@ -16,7 +16,7 @@ public class AddMethod implements INodeFunc, Serializable {
     @Override
     public Object doWork(InfCollection infCollection, Object... objs){
         String constrainName=infCollection.keyWords.pop();    //完整性约束名称
-        /*对于SQLAutomaton.doWork提供的第一个object参数都是SQLSession对象
+        /*对于SQLAutomaton.doWork,提供的第一个object参数都是SQLSession对象
         * 里面包含了某个SQL会话中当前正在使用哪个数据库等信息
         * 因此下面这句代码进行强制类型转换，获取SQLSession对象
         * */

@@ -8,6 +8,8 @@ import dbms.view.RelationView;
 import java.net.SocketException;
 import java.util.Scanner;
 
+
+//SQL客户端
 public class SQLClient extends NwClient{
 
     public SQLClient(String ip,int port){
