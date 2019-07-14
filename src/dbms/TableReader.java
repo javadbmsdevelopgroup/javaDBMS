@@ -20,8 +20,9 @@ import java.util.concurrent.locks.Lock;
 public class TableReader {
 
     public TableDBMSObj tableDBMSObj=null;   //表逻辑对象
-    TableBuffer tableBuffer;        //缓冲
+    TableBuffer tableBuffer;        //缓冲区-存储着多个页
     int pageSize;  //页大小
+    int blockSize; //块大小
     BplusTree indexCache=null;
     int kh=1;
 
@@ -71,11 +72,11 @@ public class TableReader {
 
 
     //构造需要 表逻辑对象 页大小
-    public TableReader(TableDBMSObj tableDBMSObj,int pageSize) throws FileNotFoundException, BufferSizeException {
+    public TableReader(TableDBMSObj tableDBMSObj,int pageSize,int blockSize) throws FileNotFoundException, BufferSizeException {
         this.pageSize=pageSize;
+        this.blockSize=blockSize;
         this.tableDBMSObj=tableDBMSObj;
-        this.tableBuffer = new TableBuffer(pageSize);
-        //IndexCache.loadIndex(tableDBMSObj);
+        this.tableBuffer = new TableBuffer(blockSize);
     }
 
 

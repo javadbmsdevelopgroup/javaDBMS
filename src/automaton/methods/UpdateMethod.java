@@ -32,7 +32,7 @@ public class UpdateMethod implements INodeFunc, Serializable {
 
             int count=0;
 
-
+       
             writeLock= TableReadWriteLock.getInstance().getWriteLock(databaseDBMSObj.dbName+"."+tableName);
             writeLock.lock();
 

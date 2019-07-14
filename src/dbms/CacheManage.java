@@ -10,11 +10,13 @@ import filesystem.PropertiesFileTool;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-
+//////////////////////////////////////缓存管理
 public class CacheManage {
-    private static  CacheManage instance=null;
+    private static  CacheManage instance=null;             //使用单例模式
     private static Map<String, TableReader> readerMap=new HashMap<>();
     private static IndexCache indexCache=IndexCache.getInstance();
+
+    private CacheManage(){}
     public static CacheManage getInstance(){
         if(instance==null) instance=new CacheManage();
         return instance;
@@ -38,8 +40,9 @@ public class CacheManage {
         try {
             TableDBMSObj tableDBMSObj = new TableDBMSObj(tbName, new DatabaseDBMSObj(dbName, DatabaseDBMSObj.rootPath));
             int count=tableDBMSObj.getRecordCount(dbName);
-            //System.out.println(count);
-            TableReader reader=new TableReader(tableDBMSObj,count);
+
+            TableReader reader=new TableReader(tableDBMSObj,count,2);
+
             int pos=0;
             RelationRow r=reader.readRecord(pos);
             while(r!=null){
@@ -88,7 +91,9 @@ public class CacheManage {
                 System.out.println(tbName+" "+dbName);;
                 TableDBMSObj tableDBMSObj=new TableDBMSObj(tbName,new DatabaseDBMSObj(dbName,DatabaseDBMSObj.rootPath));
                 TableReader tableReader=new TableReader(tableDBMSObj,
-                        Integer.parseInt(PropertiesFileTool.getInstance().readConfig("PageSize")));
+                        Integer.parseInt(PropertiesFileTool.getInstance().readConfig("PageSize")),
+                        Integer.parseInt(PropertiesFileTool.getInstance().readConfig("BlockSize"))
+                        );
                 readerMap.put(dbName+"."+tbName,tableReader);
                 //如果用了索引，顺便加载索引
                 if(tableDBMSObj.tableStructure.useIndex){

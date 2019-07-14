@@ -11,8 +11,6 @@ import java.util.concurrent.locks.Lock;
 //sql会话              这是主要进行数据库操作的地方
 public class SQLSession implements Serializable {
     public String curUseDatabase="";
-    //public Automaton sqlAutomaton=null;
-
 
 
     public SQLSession(){

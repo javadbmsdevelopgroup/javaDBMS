@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReadWriteLock;
 public class TestMultiStuSelectCourses {
     //CyclicBarrier cyclicBarrier=new CyclicBarrier(200);
     Map<Integer,TestThread> scMap=new HashMap<>();
-    Random r=new Random();
+    static Random r=new Random();
     int[] lock=new int[0];
 
     private Set<Integer> getRamdomStudents(int count){
@@ -21,6 +21,14 @@ public class TestMultiStuSelectCourses {
         return integers;
     }
 
+
+    public boolean probabilyGet(int percentOf){
+        if(percentOf>=100) return true;
+        int a=r.nextInt(100);
+        if(a<=percentOf) return true;
+        return false;
+
+    }
     void doTest(){
         //创建200个客户端 (还未连接)
         for(Integer x:getRamdomStudents(200)){
@@ -64,6 +72,7 @@ public class TestMultiStuSelectCourses {
 
                     }else{
                         System.out.println(this.getName()+":"+sc.getName()+" Select course:"+couserCode+" fail");
+                        if(probabilyGet(30)) break;  //选课失败百分之30概率退出
                     }
                     yield();
                 }

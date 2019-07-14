@@ -12,7 +12,6 @@ public class TableBuffer {
     //表数据缓冲区，可以缓存size个页
     //页表地图，通过页号找对应的页
 
-
     Map<Integer,TablePage> pageMap=new HashMap<>();          //相当于一个页表。是一个散列表  key=页号  TablePage=具体的某页对象
     int curSize=0;             //当前的缓冲区大小（已存了多少页）
     int totleSize;   //缓冲区的总大小，也就是最多能存多少页
@@ -43,7 +42,6 @@ public class TableBuffer {
         }
 
         if(pageMap.containsKey(tablePage.getPageNum())) return true;
-        System.out.println(tablePage.getPageNum());
         pageMap.put(tablePage.getPageNum(),tablePage);
         return true;
     }
