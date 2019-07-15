@@ -18,7 +18,6 @@ public class TableWriter {
             //检查完整性约束
             for(int i=0;i<relationItems.size();i++){
                 if(!relationItems.get(i).checkIntegrity(tableDBMSObj.tableStructure)) {
-
                     return;
                 }
             }
@@ -63,11 +62,12 @@ public class TableWriter {
 
                     }
                 }
-                int pos=(int)randomAccessFile.length()/recordSize-1;
+                int pos=((int)randomAccessFile.length()/(recordSize+1))-1;
+
                 CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableDBMSObj.tbName,record,pos);
 
             }
-            int recordNum=((int)randomAccessFile.length()/tableDBMSObj.tableStructure.getSize())-1;
+
             randomAccessFile.close();
 
 
@@ -130,9 +130,6 @@ public class TableWriter {
         return true;
     }
         //删除掉某条记录
-
-
-
     public boolean delete(int recordNum, TableDBMSObj tableDBMSObj) throws IOException{
         TableReader reader=CacheManage.getInstance().getTableReader(tableDBMSObj.dbBelongedTo.dbName,tableDBMSObj.tbName);
         RelationRow r=reader.readRecord(recordNum);

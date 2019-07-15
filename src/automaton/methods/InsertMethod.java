@@ -64,8 +64,9 @@ public class InsertMethod implements INodeFunc, Serializable {
                 //下面执行写入操作
                 TableWriter tableWriter = new TableWriter();
 
-                RelationRow relationRow = new RelationRow(tableStructure);
+                RelationRow relationRow = new RelationRow(tableStructure); //创建一条新行
                 int size = tableStructure.dts.size();
+                //填充
                 for (int i=0;i<size;i++){
                     String val= infCollection.others.pop();
                     String cName=infCollection.columNames.pop();

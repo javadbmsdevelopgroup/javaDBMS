@@ -39,7 +39,9 @@ public class UpdateMethod implements INodeFunc, Serializable {
             if(!tableDBMSObj.tableStructure.useIndex){
                 int pos=0;
                 RelationRow r=reader.readRecord(pos);
-
+                if(r!=null){
+                    r=r.clone();
+                }
                 while(r!=null){
                     TableWriter tableWriter=new TableWriter();
 
@@ -104,14 +106,18 @@ public class UpdateMethod implements INodeFunc, Serializable {
                         }else{
                             if(tableWriter.replace(pos,r,tableDBMSObj)){
                                 count++;
+                                CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
                             }
                         }
 
 
-                        CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
+
                     }
                     pos++;
                     r=reader.readRecord(pos);
+                    if(r!=null){
+                        r=r.clone();
+                    }
 
                 }
             }else{
@@ -175,8 +181,9 @@ public class UpdateMethod implements INodeFunc, Serializable {
                     }else{
                         if(tableWriter.replace(pos,r,tableDBMSObj)){
                             count++;
+                            CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
                         }
-                        CacheManage.getInstance().resetRecordInCache(tableDBMSObj.dbBelongedTo.dbName,tableName,r,pos);
+
                     }
 
                 }

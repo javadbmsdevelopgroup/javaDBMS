@@ -38,7 +38,6 @@ public class NwClient {
     //transmit a sql command and a object to Server and get result
     public Object[] getResult(String sqlCommand, Object sql)  {
         try {
-
             oos.writeInt(1);
             oos.flush();
             oos.writeObject(sqlCommand);

@@ -53,15 +53,11 @@ public class Automaton implements Serializable {
         if(startNode==null) return null;
         //将句子转化为输入项列表
         List<InputItem> is=AutomatonTools.getInstance().toInputList(input);
-
         //当前所在节点
         AutomatonNode cur=startNode;
-
         for(InputItem i:is){
-
             //尝试转移  参数1:开始节点  参数二:输入项 参数三：提供的转移参数
             cur=transitionFuns.transition(automatonNodeMap.get(cur.nodeCode),i,objects);
-
             //=null就是无法转移.语法无效
             if(cur==null){
                 System.out.println("\n----------------------------\n"+"无法识别的语法"+" \n"+"----------------------------");

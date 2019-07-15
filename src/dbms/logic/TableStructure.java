@@ -15,15 +15,12 @@ public class TableStructure implements Serializable {
     //索引
     public boolean useIndex=false;     //是否使用索引
     public String indexOn="";
-
     private int size=0;
     private TableDBMSObj tableDBMSObjBelongedTo=null;   //所属的表逻辑对象,可以为null.为null时，表示其是一个独立的表结构，暂不属于任何表
     public List<TableStructureItem> dts=new ArrayList<>();  //表结构项对象（也就是属性项）
     public void addItem(TableStructureItem a){
         dts.add(a);
     }  //添加一个属性项
-
-
     //添加一个完整性约束
     public boolean addConstain(String cname, IIntergrityConstraint icMethod,String tbName,String dbName){
         for (TableStructureItem tsi : dts){
@@ -65,7 +62,7 @@ public class TableStructure implements Serializable {
         }
         return s;
     }
-
+    //获取某列数据类型
     public DataType getDataType(String columnName){
         for(TableStructureItem tableStructureItem:dts){
             if(tableStructureItem.conlumName.compareTo(columnName)==0){
@@ -74,6 +71,7 @@ public class TableStructure implements Serializable {
         }
         return null;
     }
+    //判断某列是否存在
     public boolean isColumnExists(String name){
         for (TableStructureItem tsi : dts){
             if(tsi.conlumName.compareTo(name)==0) return true;

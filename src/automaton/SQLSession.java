@@ -24,6 +24,8 @@ public class SQLSession implements Serializable {
     public static void main(String[] args){
         SQLSession sqlSession=new SQLSession();
         SQLAutomaton sqlAutomaton=new SQLAutomaton(AutomatonBuilder.buildAutomaton(),sqlSession);
+
+
         Scanner sc=new Scanner(System.in);
         CacheManage.loadAllindex();
 

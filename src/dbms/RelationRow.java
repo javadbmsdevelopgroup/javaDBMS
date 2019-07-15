@@ -82,6 +82,16 @@ public class RelationRow implements Comparable<RelationRow>{
     }
 
 
+    @Override
+    public RelationRow clone(){
+        RelationRow r=new RelationRow(this.tbs);
+        r.deleted=this.deleted;
+        for(int i=0;i<sis.size();i++){
+            r.setVal(tbs.dts.get(i).conlumName,sis.get(i).elementObj.val);
+        }
+
+        return r;
+    }
     //重载比较函数，用来比较两个元组
     @Override
     public int compareTo(RelationRow r){

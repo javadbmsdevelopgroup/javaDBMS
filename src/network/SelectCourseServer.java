@@ -13,7 +13,7 @@ public class SelectCourseServer{
     static Map<Integer, Socket> stuClientMap=new HashMap<>();
     static SQLClient sqlClient=new SQLClient("127.0.0.1",2999);
 
-    static SQLSession sqlSession=new SQLSession("test");
+    static SQLSession sqlSession=new SQLSession("studentDB");
 
 
     public static Object getResult(String com){
@@ -40,8 +40,10 @@ public class SelectCourseServer{
             }
             if(x == 1)
                 selectCourseServer.startServer();
-            else if (x == 2)
+            else if (x == 2){
                 selectCourseServer.endServer();
+                break;
+            }
             else
                 break;
         }

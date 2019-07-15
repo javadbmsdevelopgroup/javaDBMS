@@ -31,9 +31,9 @@ public class TableReader {
         tableBuffer.clean();
     }
     public boolean resetBufferRecord(int recordPos,RelationRow r){
-        int pageNum=recordPos/this.pageSize;
-        if(!tableBuffer.pageMap.containsKey(pageNum)) return false;
-        tableBuffer.pageMap.get(pageNum).records[recordPos%pageSize]=r;
+        int pageNum=recordPos/this.pageSize; //页号=记录号/页大小
+        if(!tableBuffer.pageMap.containsKey(pageNum)) return false;  //不存在该页。不用修改
+        tableBuffer.pageMap.get(pageNum).records[recordPos%pageSize]=r; //置换页
 
         return true;
     }
@@ -70,16 +70,13 @@ public class TableReader {
 
 
 
-    //构造需要 表逻辑对象 页大小
+    //构造需要 表逻辑对象 页大小,块大小
     public TableReader(TableDBMSObj tableDBMSObj,int pageSize,int blockSize) throws FileNotFoundException, BufferSizeException {
         this.pageSize=pageSize;
         this.blockSize=blockSize;
         this.tableDBMSObj=tableDBMSObj;
         this.tableBuffer = new TableBuffer(blockSize);
     }
-
-
-
 
     //读取第i行记录所在的块 (从0开始算)
     public RelationRow readRecord(int recordPosition){
